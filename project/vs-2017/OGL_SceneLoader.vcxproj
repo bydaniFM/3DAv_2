@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\libraries\targa\include\targa.h" />
     <ClInclude Include="..\..\src\Color_Buffer.hpp" />
     <ClInclude Include="..\..\src\Color_Buffer_Rgba8888.hpp" />
     <ClInclude Include="..\..\src\Cube.hpp" />
@@ -18,6 +19,7 @@
     <ClInclude Include="..\..\src\View.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\libraries\targa\src\targa.c" />
     <ClCompile Include="..\..\src\Cube.cpp" />
     <ClCompile Include="..\..\src\Elevation_Mesh.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
