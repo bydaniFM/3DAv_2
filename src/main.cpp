@@ -14,8 +14,6 @@
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
 
-#include <anim.h>
-
 using namespace sf;
 using namespace example;
 

@@ -16,6 +16,8 @@
     <ClInclude Include="..\..\src\Color_Buffer_Rgba8888.hpp" />
     <ClInclude Include="..\..\src\Cube.hpp" />
     <ClInclude Include="..\..\src\Elevation_Mesh.hpp" />
+    <ClInclude Include="..\..\src\Mesh.hpp" />
+    <ClInclude Include="..\..\src\Model.hpp" />
     <ClInclude Include="..\..\src\View.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -23,6 +25,8 @@
     <ClCompile Include="..\..\src\Cube.cpp" />
     <ClCompile Include="..\..\src\Elevation_Mesh.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\Mesh.cpp" />
+    <ClCompile Include="..\..\src\Model.cpp" />
     <ClCompile Include="..\..\src\View.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -72,7 +76,7 @@
       <AdditionalIncludeDirectories>$(SolutionDir)\..\..\libraries\sfml-2.3-vs-2015\include;$(SolutionDir)\..\..\libraries\gl\headers;$(SolutionDir)\..\..\libraries\targa\include;$(SolutionDir)\..\..\libraries\glew\include;$(SolutionDir)\..\..\libraries\glm;$(SolutionDir)\..\..\libraries\assimp\include;$(SolutionDir)\..\..\libraries\assimp\include\assimp</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)\..\..\libraries\sfml-2.3-vs-2015\lib;$(SolutionDir)\..\..\libraries\glew\lib;$(SolutionDir)\..\..\libraries\assimp\lib\Debug</AdditionalLibraryDirectories>
       <AdditionalDependencies>winmm.lib;sfml-main-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;opengl32.lib;glu32.lib;glew32s.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>

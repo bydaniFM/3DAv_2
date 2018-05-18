@@ -16,6 +16,7 @@
     #include <GL/glew.h>            // Debe incluirse antes que gl.h
     #include "Cube.hpp"
 	#include "Elevation_Mesh.hpp"
+	#include "Model.hpp"
 
     namespace example
     {
@@ -36,6 +37,7 @@
             float  angle;
 
 			Elevation_Mesh elevation_mesh;
+			Model model_example;
 
         public:
 

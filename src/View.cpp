@@ -66,7 +66,8 @@ namespace example
     View::View(int width, int height)
     :
         angle(0),
-		elevation_mesh(50, 50, 2.f, 2.f, 0.2f)
+		elevation_mesh(50, 50, 2.f, 2.f, 0.2f),
+		model_example("..\\..\\assets\\island.obj")
     {
         // Se habilita el backface culling, una luz y materiales básicos:
 
@@ -113,6 +114,7 @@ namespace example
 		glUniformMatrix4fv (model_view_matrix_id, 1, GL_FALSE, glm::value_ptr(model_view_matrix));
 
 		elevation_mesh.render ();
+		model_example.render();
     }
 
     void View::resize (int width, int height)
