@@ -39,7 +39,7 @@ namespace example
 		indices.reserve (number_of_indices);
 
 		// 1 CARGAR TEXTURA DE ELEVACION
-		std::auto_ptr< Texture > texture = load_texture("..\\..\\..\\..\\assets\\elevation_texture.tga");//(texture_path);
+		std::auto_ptr< Texture > texture = load_texture("..\\..\\assets\\elevation_texture.tga");//(texture_path);
 		/*
 		has_texture = texture.get() != 0;
 

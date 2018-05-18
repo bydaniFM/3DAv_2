@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2002
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Elevation Mesh", "Elevation Mesh.vcxproj", "{636EB426-ECAF-4E3F-ACE9-9DF1106AE01D}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OGL_SceneLoader", "OGL_SceneLoader.vcxproj", "{636EB426-ECAF-4E3F-ACE9-9DF1106AE01D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
