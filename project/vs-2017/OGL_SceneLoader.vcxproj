@@ -10,11 +10,24 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\Color_Buffer.hpp" />
+    <ClInclude Include="..\..\src\Color_Buffer_Rgba8888.hpp" />
+    <ClInclude Include="..\..\src\Cube.hpp" />
+    <ClInclude Include="..\..\src\Elevation_Mesh.hpp" />
+    <ClInclude Include="..\..\src\View.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\Cube.cpp" />
+    <ClCompile Include="..\..\src\Elevation_Mesh.cpp" />
+    <ClCompile Include="..\..\src\main.cpp" />
+    <ClCompile Include="..\..\src\View.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{636EB426-ECAF-4E3F-ACE9-9DF1106AE01D}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>PixelBufferWindow</RootNamespace>
-    <ProjectName>Elevation Mesh</ProjectName>
+    <ProjectName>OGL_SceneLoader</ProjectName>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -54,12 +67,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>SFML_STATIC;GLEW_STATIC;WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\..\..\libraries\sfml-2.3-vs-2015\include;$(SolutionDir)\..\..\..\..\libraries\gl\headers;$(SolutionDir)\..\..\..\..\libraries\targa\include;$(SolutionDir)\..\..\..\..\libraries\glew\include;$(SolutionDir)\..\..\..\..\libraries\glm;$(SolutionDir)\..\..\..\..\libraries\assimp\include;$(SolutionDir)\..\..\..\..\libraries\assimp\include\assimp</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\..\..\libraries\sfml-2.3-vs-2015\include;$(SolutionDir)\..\..\libraries\gl\headers;$(SolutionDir)\..\..\libraries\targa\include;$(SolutionDir)\..\..\libraries\glew\include;$(SolutionDir)\..\..\libraries\glm;$(SolutionDir)\..\..\libraries\assimp\include;$(SolutionDir)\..\..\libraries\assimp\include\assimp</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\..\..\libraries\sfml-2.3-vs-2015\lib;$(SolutionDir)\..\..\..\..\libraries\glew\lib;$(SolutionDir)\..\..\..\..\libraries\assimp\lib\Debug</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\..\..\libraries\sfml-2.3-vs-2015\lib;$(SolutionDir)\..\..\libraries\glew\lib;$(SolutionDir)\..\..\libraries\assimp\lib\Debug</AdditionalLibraryDirectories>
       <AdditionalDependencies>winmm.lib;sfml-main-d.lib;sfml-system-s-d.lib;sfml-window-s-d.lib;opengl32.lib;glu32.lib;glew32s.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -83,21 +96,6 @@
       <AdditionalDependencies>winmm.lib;sfml-main.lib;sfml-system-s.lib;sfml-window-s.lib;opengl32.lib;glu32.lib;glew32s.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\..\..\libraries\targa\src\targa.c" />
-    <ClCompile Include="..\..\code\Cube.cpp" />
-    <ClCompile Include="..\..\code\Elevation_Mesh.cpp" />
-    <ClCompile Include="..\..\code\main.cpp" />
-    <ClCompile Include="..\..\code\View.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\libraries\targa\include\targa.h" />
-    <ClInclude Include="..\..\code\Color_Buffer.hpp" />
-    <ClInclude Include="..\..\code\Color_Buffer_Rgba8888.hpp" />
-    <ClInclude Include="..\..\code\Cube.hpp" />
-    <ClInclude Include="..\..\code\Elevation_Mesh.hpp" />
-    <ClInclude Include="..\..\code\View.hpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
