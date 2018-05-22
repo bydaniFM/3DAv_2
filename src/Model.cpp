@@ -18,7 +18,8 @@ namespace example
 	void Model::loadModel(string path)
 	{
 		Assimp::Importer import;
-		const aiScene *scene = import.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
+		//const aiScene *scene = import.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
+		const aiScene *scene = import.ReadFile(path, aiProcess_CalcTangentSpace | aiProcess_Triangulate | aiProcess_SortByPType);
 
 		if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 		{
@@ -62,7 +63,7 @@ namespace example
 			vector.z = mesh->mVertices[i].z;
 			vertex.Position = vector;
 
-			cout << vector.x << " " << vector.y << " " << vector.z << endl;
+			/*cout << vector.x << " " << vector.y << " " << vector.z << endl;*/
 
 			vector.x = mesh->mNormals[i].x;
 			vector.y = mesh->mNormals[i].y;

@@ -10,7 +10,9 @@
 #include <memory>
 #include <string>
 #include <vector>
-#include <glm\glm.hpp>
+#include <glm/glm.hpp>                          // vec3, vec4, ivec4, mat4
+#include <glm/gtc/matrix_transform.hpp>         // translate, rotate, scale, perspective
+#include <glm/gtc/type_ptr.hpp>                 // value_ptr
 #include <GL/glew.h>
 #include <SFML/OpenGL.hpp>
 
