@@ -62,13 +62,8 @@ namespace example
 
 	public:
 
-		/*  Mesh Data  */
-		vector<Vertex> vertices;
-		vector<unsigned int> indices;
-		vector<Texture> textures;
-
 		//(Mesh(const string & path);
-		Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures);
+		Mesh(vector<Vertex> & vertices, vector<unsigned int> & indices, vector<Texture> & textures);
 
 		void render();
 	};
