@@ -13,11 +13,11 @@ namespace example
 {
 	Mesh::Mesh
 	(
-		vector<glm::vec3> positions, 
-		vector<glm::vec3> normals, 
-		vector<glm::vec2> texCoords, 
-		vector<unsigned int> & indices, 
-		vector<Texture> & textures
+		vector<glm::vec3>		positions, 
+		vector<glm::vec3>		normals, 
+		vector<glm::vec2>		texCoords, 
+		vector<unsigned int> &  indices, 
+		vector<Texture>      &	textures
 	)
 	{
 
@@ -26,19 +26,20 @@ namespace example
 
 		//Setup Mesh
 
+		/*glGenBuffers(VBO_COUNT, vbo_ids);
+		glGenVertexArrays(1, &vao_id);
+		glBindVertexArray(vao_id);*/
+
 		glGenVertexArrays(1, &vao_id);
 		glGenBuffers(1, &vbo_ids[COORDINATES_VBO]);
 		glGenBuffers(1, &vbo_ids[INDICES_VBO]);
-
 		glBindVertexArray(vao_id);
 
 		glBindBuffer(GL_ARRAY_BUFFER, vbo_ids[COORDINATES_VBO]);
 		glBufferData(GL_ARRAY_BUFFER, positions.size() * sizeof(glm::vec3), positions.data(), GL_STATIC_DRAW);
 
-		// vertex positions
 		glEnableVertexAttribArray(0);
-		//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 20, 0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo_ids[INDICES_VBO]);
@@ -90,5 +91,11 @@ namespace example
 		glBindVertexArray(vao_id);
 		glDrawElements(GL_TRIANGLES, number_of_indices, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
+
+		/*glPolygonMode(GL_FRONT, GL_FILL);
+		glPolygonMode(GL_BACK, GL_POINT);
+
+		glBindVertexArray(vao_id);
+		glDrawArrays(GL_TRIANGLES, 0, number_of_indices);*/
 	}
 }

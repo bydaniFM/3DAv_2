@@ -25,11 +25,11 @@ namespace example
 	//class   Color_Buffer_Rgba8888;
 	typedef Color_Buffer_Rgba8888 Texture;
 
-	struct Vertex {
+	/*struct Vertex {
 		glm::vec3 Position;
 		glm::vec3 Normal;
 		glm::vec2 TexCoords;
-	};
+	};*/
 
 	/*struct Texture {
 		unsigned int id;
@@ -63,7 +63,14 @@ namespace example
 	public:
 
 		//(Mesh(const string & path);
-		Mesh(vector<glm::vec3> positions, vector<glm::vec3> normals, vector<glm::vec2> texCoords, vector<unsigned int> & indices, vector<Texture> & textures);
+		Mesh
+		(
+			vector<glm::vec3>		positions, 
+			vector<glm::vec3>		normals, 
+			vector<glm::vec2>		texCoords, 
+			vector<unsigned int> &	indices, 
+			vector<Texture>      &	textures
+		);
 
 		void render();
 	};
