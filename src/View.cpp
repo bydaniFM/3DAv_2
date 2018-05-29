@@ -67,7 +67,7 @@ namespace example
     :
         angle(0),
 		elevation_mesh(50, 50, 2.f, 2.f, 0.2f),
-		model_example("..\\..\\assets\\island.obj")
+		model_example("..\\..\\assets\\mill.obj")
     {
         // Se habilita el backface culling, una luz y materiales básicos:
 
@@ -110,6 +110,7 @@ namespace example
 		model_view_matrix = glm::translate(model_view_matrix, glm::vec3(0.f, 0.f, -6.f));
 		model_view_matrix = glm::rotate(model_view_matrix, 10.f, glm::vec3(1.f, 0.f, 0.f));
 		model_view_matrix = glm::rotate(model_view_matrix, angle, glm::vec3(0.f, 1.f, 0.f));
+		model_view_matrix = glm::scale(model_view_matrix, glm::vec3(0.01f, 0.01f, .01f));
 
 		glUniformMatrix4fv (model_view_matrix_id, 1, GL_FALSE, glm::value_ptr(model_view_matrix));
 

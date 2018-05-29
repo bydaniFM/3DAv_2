@@ -19,7 +19,7 @@ namespace example
 	{
 		Assimp::Importer import;
 		//const aiScene *scene = import.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);
-		const aiScene *scene = import.ReadFile(path, aiProcess_CalcTangentSpace | aiProcess_Triangulate | aiProcess_SortByPType);
+		const aiScene *scene = import.ReadFile(path, aiProcess_Triangulate);
 
 		if (!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 		{
@@ -48,45 +48,44 @@ namespace example
 
 	Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 	{
-		vector<Vertex> vertices;
+		vector<glm::vec3> positions;
+		vector<glm::vec3> normals;
+		vector<glm::vec2> texCoords;
+
 		vector<unsigned int> indices;
 		vector<Texture> textures;
 
 		for (unsigned int i = 0; i < mesh->mNumVertices; i++)
 		{
-			Vertex vertex;
 			// process vertex positions, normals and texture coordinates
-			
-			glm::vec3 vector;
-			vector.x = mesh->mVertices[i].x;
-			vector.y = mesh->mVertices[i].y;
-			vector.z = mesh->mVertices[i].z;
-			vertex.Position = vector;
+			glm::vec3 position;
+			position.x = mesh->mVertices[i].x;
+			position.y = mesh->mVertices[i].y;
+			position.z = mesh->mVertices[i].z;
+			positions.push_back(position);
 
-			/*cout << vector.x << " " << vector.y << " " << vector.z << endl;*/
+			glm::vec3 normal;
+			normal.x = mesh->mNormals[i].x;
+			normal.y = mesh->mNormals[i].y;
+			normal.z = mesh->mNormals[i].z;
 
-			vector.x = mesh->mNormals[i].x;
-			vector.y = mesh->mNormals[i].y;
-			vector.z = mesh->mNormals[i].z;
-			vertex.Normal = vector;
+			glm::vec2 texCoord;
+			//if (mesh->mTextureCoords[0]) // does the mesh contain texture coordinates?
+			//{
+			//	vertex.TexCoords.x = mesh->mTextureCoords[0][i].x;
+			//	vertex.TexCoords.y = mesh->mTextureCoords[0][i].y;
+			//} else
+			//	vertex.TexCoords = glm::vec2(0.0f, 0.0f);
+			texCoord = glm::vec2(0.0f, 0.0f);
+			texCoords.push_back(texCoord);
 
-			if (mesh->mTextureCoords[0]) // does the mesh contain texture coordinates?
-			{
-				glm::vec2 vec;
-				vec.x = mesh->mTextureCoords[0][i].x;
-				vec.y = mesh->mTextureCoords[0][i].y;
-				vertex.TexCoords = vec;
-			} else
-				vertex.TexCoords = glm::vec2(0.0f, 0.0f);
-
-			vertices.push_back(vertex);
 		}
 		// process indices
 		for (unsigned int i = 0; i < mesh->mNumFaces; i++)
 		{
 			aiFace face = mesh->mFaces[i];
 			for (unsigned int j = 0; j < face.mNumIndices; j++)
-				indices.push_back(face.mIndices[j]);
+				indices.push_back(mesh->mFaces[i].mIndices[j]);
 		}
 
 		// process material
@@ -101,7 +100,7 @@ namespace example
 			textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
 		}*/
 
-		return Mesh(vertices, indices, textures);
+		return Mesh(positions, normals, texCoords, indices, textures);
 	}
 
 	//See optimization

@@ -11,32 +11,40 @@ using namespace std;
 
 namespace example
 {
-	Mesh::Mesh(vector<Vertex> vertices, vector<unsigned int> indices, vector<Texture> textures)
+	Mesh::Mesh
+	(
+		vector<glm::vec3>		positions, 
+		vector<glm::vec3>		normals, 
+		vector<glm::vec2>		texCoords, 
+		vector<unsigned int> &  indices, 
+		vector<Texture>      &	textures
+	)
 	{
-		this->vertices = vertices;
-		this->indices = indices;
-		this->textures = textures;
+
+
+		number_of_indices = indices.size();
 
 		//Setup Mesh
+
+		/*glGenBuffers(VBO_COUNT, vbo_ids);
+		glGenVertexArrays(1, &vao_id);
+		glBindVertexArray(vao_id);*/
 
 		glGenVertexArrays(1, &vao_id);
 		glGenBuffers(1, &vbo_ids[COORDINATES_VBO]);
 		glGenBuffers(1, &vbo_ids[INDICES_VBO]);
-
 		glBindVertexArray(vao_id);
-		glBindBuffer(GL_ARRAY_BUFFER, vbo_ids[COORDINATES_VBO]);
 
-		glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), &vertices[0], GL_STATIC_DRAW);
-		//glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(Vertex), vertices.data(), GL_STATIC_DRAW);
+		glBindBuffer(GL_ARRAY_BUFFER, vbo_ids[COORDINATES_VBO]);
+		glBufferData(GL_ARRAY_BUFFER, positions.size() * sizeof(glm::vec3), positions.data(), GL_STATIC_DRAW);
+
+		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vbo_ids[INDICES_VBO]);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), &indices[0], GL_STATIC_DRAW);
-		//glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
 
-		// vertex positions
-		glEnableVertexAttribArray(0);
-		//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 		//// vertex normals
 		//glEnableVertexAttribArray(1);
 		//glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, Normal));
@@ -81,7 +89,13 @@ namespace example
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
 		glBindVertexArray(vao_id);
-		glDrawElements(GL_TRIANGLES, indices.size(), GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, number_of_indices, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
+
+		/*glPolygonMode(GL_FRONT, GL_FILL);
+		glPolygonMode(GL_BACK, GL_POINT);
+
+		glBindVertexArray(vao_id);
+		glDrawArrays(GL_TRIANGLES, 0, number_of_indices);*/
 	}
 }
