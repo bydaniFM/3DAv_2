@@ -63,7 +63,7 @@ namespace example
 	public:
 
 		//(Mesh(const string & path);
-		Mesh(vector<Vertex> & vertices, vector<unsigned int> & indices, vector<Texture> & textures);
+		Mesh(vector<glm::vec3> positions, vector<glm::vec3> normals, vector<glm::vec2> texCoords, vector<unsigned int> & indices, vector<Texture> & textures);
 
 		void render();
 	};

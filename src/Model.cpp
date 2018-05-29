@@ -48,33 +48,48 @@ namespace example
 
 	Mesh Model::processMesh(aiMesh *mesh, const aiScene *scene)
 	{
-		vector<Vertex> vertices;
+		//vector<Vertex> vertices;
 		vector<unsigned int> indices;
 		vector<Texture> textures;
 
-		for (unsigned int i = 0; i < mesh->mNumVertices; i++)
+		vector<glm::vec3> positions;
+		vector<glm::vec3> normals;
+		vector<glm::vec2> texCoords;
+
+		for (unsigned int i = 0; i < 337; i++)
 		{
-			Vertex vertex;
+			//Vertex vertex;
 			// process vertex positions, normals and texture coordinates
-			
-			vertex.Position.x = mesh->mVertices[i].x;
+			glm::vec3 position;
+			position.x = mesh->mVertices[i].x;
+			position.y = mesh->mVertices[i].y;
+			position.z = mesh->mVertices[i].z;
+			positions.push_back(position);
+			/*vertex.Position.x = mesh->mVertices[i].x;
 			vertex.Position.y = mesh->mVertices[i].y;
-			vertex.Position.z = mesh->mVertices[i].z;
+			vertex.Position.z = mesh->mVertices[i].z;*/
 
 			/*cout << vector.x << " " << vector.y << " " << vector.z << endl;*/
 
-			vertex.Normal.x = mesh->mNormals[i].x;
+			glm::vec3 normal;
+			normal.x = mesh->mNormals[i].x;
+			normal.y = mesh->mNormals[i].y;
+			normal.z = mesh->mNormals[i].z;
+			/*vertex.Normal.x = mesh->mNormals[i].x;
 			vertex.Normal.y = mesh->mNormals[i].y;
-			vertex.Normal.z = mesh->mNormals[i].z;
+			vertex.Normal.z = mesh->mNormals[i].z;*/
 
-			if (mesh->mTextureCoords[0]) // does the mesh contain texture coordinates?
-			{
-				vertex.TexCoords.x = mesh->mTextureCoords[0][i].x;
-				vertex.TexCoords.y = mesh->mTextureCoords[0][i].y;
-			} else
-				vertex.TexCoords = glm::vec2(0.0f, 0.0f);
+			glm::vec2 texCoord;
+			//if (mesh->mTextureCoords[0]) // does the mesh contain texture coordinates?
+			//{
+			//	vertex.TexCoords.x = mesh->mTextureCoords[0][i].x;
+			//	vertex.TexCoords.y = mesh->mTextureCoords[0][i].y;
+			//} else
+			//	vertex.TexCoords = glm::vec2(0.0f, 0.0f);
+			texCoord = glm::vec2(0.0f, 0.0f);
+			texCoords.push_back(texCoord);
 
-			vertices.push_back(vertex);
+			//vertices.push_back(vertex);
 		}
 		// process indices
 		for (unsigned int i = 0; i < mesh->mNumFaces; i++)
@@ -96,7 +111,7 @@ namespace example
 			textures.insert(textures.end(), specularMaps.begin(), specularMaps.end());
 		}*/
 
-		return Mesh(vertices, indices, textures);
+		return Mesh(positions, normals, texCoords, indices, textures);
 	}
 
 	//See optimization
