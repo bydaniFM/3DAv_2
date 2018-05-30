@@ -17,15 +17,16 @@
 #include "Elevation_Mesh.hpp"
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
+#include "Input.hpp"
 
 using namespace sf;
 using namespace example;
 
 int main ()
 {
-    Window window(VideoMode(800, 600), "OpenGL Examples: Texturing", Style::Default, ContextSettings(32));
+    shared_ptr<Window> window = make_shared<Window>(VideoMode(800, 600), "OpenGL Examples: Texturing", Style::Default, ContextSettings(32));
 
-    window.setVerticalSyncEnabled (true);
+    window->setVerticalSyncEnabled (true);
 
     // Una vez se ha creado el contexto de OpenGL ya se puede inicializar Glew:
 
@@ -43,39 +44,29 @@ int main ()
 
     View view(800, 600, make_shared<Scene>(scene));
 
+	Input input(window);
+
     // Se ejecuta el bucle principal:
 
     bool running = true;
 
     do
     {
-        Event event;
+		Input::InputData input_data = input.check();
 
-        while (window.pollEvent (event))
-        {
-            switch (event.type)
-            {
-                case Event::Closed:
-                {
-                    running = false;
-                    break;
-                }
+		if (input_data->at(Input::close))
+			running = false;
 
-                case Event::Resized:
-                {
-                    Vector2u window_size = window.getSize ();
+		if (input_data->at(Input::resize))
+		{
+			Vector2u window_size = window->getSize();
+			view.resize(window_size.x, window_size.y);
+		}
 
-                    view.resize (window_size.x, window_size.y);
-
-                    break;
-                }
-            }
-        }
-
-        view.update ();
+		view.update(input_data);
         view.render ();
 
-        window.display ();
+        window->display ();
     }
     while (running);
 

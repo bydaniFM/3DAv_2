@@ -15,28 +15,15 @@ namespace example
 
 	public:
 
-		/*Node(int cols, int rows, float width, float depth, float elevation)
-			:
-			Elevation_Mesh(cols, rows, width, depth, elevation)
-		{
-		}
-
-		Node(char *path)
-			:
-			Model(path)
-		{
-		}*/
-
-		/*Node(Scene & scene)
-			:
-			scene(scene)
-		{
-		}*/
-
 		Node() {}
 
 		virtual void render()
 		{
 		}
+
+		virtual void update()
+		{
+		}
+
 	};
 }

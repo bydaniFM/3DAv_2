@@ -18,6 +18,7 @@
 	//#include "Elevation_Mesh.hpp"
 	//#include "Model.hpp"
 	#include "Scene.hpp"
+	#include "Input.hpp"
 
     namespace example
     {
@@ -45,7 +46,7 @@
 
             View(int width, int height, shared_ptr<Scene> scene);
 
-            void   update ();
+            void   update (Input::InputData input_data);
             void   render ();
             void   resize (int width, int height);
 

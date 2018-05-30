@@ -94,15 +94,16 @@ namespace example
 		resize (width, height);
     }
 
-    void View::update ()
+    void View::update (Input::InputData input_data)
     {
         angle += 0.5f;
-    }
 
-    void View::render ()
-    {
-		glClearColor (.4f, .4f, .4f, 1.f);
-        glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		if (input_data->at(Input::button_forward))
+		{
+			cout << "Moving camera forward" << endl;
+		}
+
+		cout << "Mouse pos: " << input_data->at(Input::axis_x) << " " << input_data->at(Input::axis_y) << endl;
 
 		glm::mat4 model_view_matrix;
 
@@ -110,8 +111,18 @@ namespace example
 		model_view_matrix = glm::rotate(model_view_matrix, 10.f, glm::vec3(1.f, 0.f, 0.f));
 		model_view_matrix = glm::rotate(model_view_matrix, angle, glm::vec3(0.f, 1.f, 0.f));
 		model_view_matrix = glm::scale(model_view_matrix, glm::vec3(0.01f, 0.01f, .01f));
+		model_view_matrix = glm::rotate(model_view_matrix, 10.f, glm::vec3(input_data->at(Input::axis_x), input_data->at(Input::axis_y), 0));
 
-		glUniformMatrix4fv (model_view_matrix_id, 1, GL_FALSE, glm::value_ptr(model_view_matrix));
+		glUniformMatrix4fv(model_view_matrix_id, 1, GL_FALSE, glm::value_ptr(model_view_matrix));
+
+    }
+
+    void View::render ()
+    {
+		glClearColor (.4f, .4f, .4f, 1.f);
+        glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		
 
 		/*elevation_mesh.render ();
 		model_example.render();*/
