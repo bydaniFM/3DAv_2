@@ -18,6 +18,8 @@
     <ClInclude Include="..\..\src\Elevation_Mesh.hpp" />
     <ClInclude Include="..\..\src\Mesh.hpp" />
     <ClInclude Include="..\..\src\Model.hpp" />
+    <ClInclude Include="..\..\src\Node.hpp" />
+    <ClInclude Include="..\..\src\Scene.hpp" />
     <ClInclude Include="..\..\src\View.hpp" />
   </ItemGroup>
   <ItemGroup>

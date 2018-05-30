@@ -13,13 +13,14 @@ Date:	18705/2018
 #include <Importer.hpp>
 #include <postprocess.h>
 
+#include "Node.hpp"
 #include "Mesh.hpp"
 
 using namespace std;
 
 namespace example
 {
-	class Model
+	class Model : public Node
 	{
 		vector<Mesh> meshes;
 		string directory;

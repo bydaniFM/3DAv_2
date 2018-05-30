@@ -63,11 +63,10 @@ namespace example
 		"    //gl_FragColor = vec4(1.0, 1.0, 1.0, 1.0);"
         "}";*/
 
-    View::View(int width, int height)
+    View::View(int width, int height, shared_ptr<Scene> scene)
     :
         angle(0),
-		elevation_mesh(50, 50, 2.f, 2.f, 0.2f),
-		model_example("..\\..\\assets\\mill.obj")
+		scene(scene)
     {
         // Se habilita el backface culling, una luz y materiales básicos:
 
@@ -114,8 +113,10 @@ namespace example
 
 		glUniformMatrix4fv (model_view_matrix_id, 1, GL_FALSE, glm::value_ptr(model_view_matrix));
 
-		elevation_mesh.render ();
-		model_example.render();
+		/*elevation_mesh.render ();
+		model_example.render();*/
+
+		scene->render();
     }
 
     void View::resize (int width, int height)

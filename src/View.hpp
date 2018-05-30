@@ -15,8 +15,9 @@
     #include <string>
     #include <GL/glew.h>            // Debe incluirse antes que gl.h
     #include "Cube.hpp"
-	#include "Elevation_Mesh.hpp"
-	#include "Model.hpp"
+	//#include "Elevation_Mesh.hpp"
+	//#include "Model.hpp"
+	#include "Scene.hpp"
 
     namespace example
     {
@@ -36,12 +37,13 @@
             Cube   cube;
             float  angle;
 
-			Elevation_Mesh elevation_mesh;
-			Model model_example;
+			/*Elevation_Mesh elevation_mesh;
+			Model model_example;*/
+			shared_ptr<Scene> scene;
 
         public:
 
-            View(int width, int height);
+            View(int width, int height, shared_ptr<Scene> scene);
 
             void   update ();
             void   render ();

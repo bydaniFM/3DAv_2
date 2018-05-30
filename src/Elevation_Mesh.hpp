@@ -16,13 +16,15 @@
 #include <SFML/OpenGL.hpp>
 #include <glm/glm.hpp>                          // vec3, vec4, ivec4, mat4
 
+#include "Node.hpp"
+
 namespace example
 {
 
 	class   Color_Buffer_Rgba8888;
 	typedef Color_Buffer_Rgba8888 Texture;
 
-    class Elevation_Mesh
+    class Elevation_Mesh : public Node
     {
     private:
 
