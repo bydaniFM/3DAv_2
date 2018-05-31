@@ -30,6 +30,8 @@
             static const std::string   vertex_shader_code;
             static const std::string fragment_shader_code;
 
+			glm::mat4 model_view_matrix;
+
 			GLint  model_view_matrix_id;
 			GLint  projection_matrix_id;
 

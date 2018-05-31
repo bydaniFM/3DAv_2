@@ -29,7 +29,8 @@ namespace example
 			resize,
 			axis_x,
 			axis_y,
-			button_forward
+			button_forward,
+			button_pan
 		};
 
 		typedef shared_ptr<map<input_type, float>> InputData;
@@ -59,6 +60,7 @@ namespace example
 			(*input_data)[axis_x] = 0;
 			(*input_data)[axis_y] = 0;
 			(*input_data)[button_forward] = 0;
+			(*input_data)[button_pan] = 0;
 
 			mouse_pos = Vector2i();
 			prev_mouse_pos = Vector2i();
@@ -113,6 +115,24 @@ namespace example
 							(*input_data)[button_forward] = false;
 						}
 
+						break;
+					}
+
+					case Event::MouseButtonPressed:
+					{
+						if (event.mouseButton.button == sf::Mouse::Left)
+						{
+							(*input_data)[button_pan] = true;
+						}
+						break;
+					}
+
+					case Event::MouseButtonReleased:
+					{
+						if (event.mouseButton.button == sf::Mouse::Left)
+						{
+							(*input_data)[button_pan] = false;
+						}
 						break;
 					}
 				}
