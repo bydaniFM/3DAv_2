@@ -37,7 +37,7 @@ int main ()
 	//Inicialización del grafo de escena
 
 	Scene scene;
-	scene.add(make_shared<Elevation_Mesh>(50, 50, 2.f, 2.f, 0.2f));
+	scene.add(make_shared<Elevation_Mesh>(500, 500, 20.f, 20.f, 2.f));
 	scene.add(make_shared<Model>((char*)"..\\..\\assets\\mill.obj"));
 
     // Una vez se ha inicializado GLEW se puede crear una instancia de View:

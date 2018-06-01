@@ -30,6 +30,7 @@ namespace example
 			axis_x,
 			axis_y,
 			button_forward,
+			button_back,
 			button_pan
 		};
 
@@ -60,6 +61,7 @@ namespace example
 			(*input_data)[axis_x] = 0;
 			(*input_data)[axis_y] = 0;
 			(*input_data)[button_forward] = 0;
+			(*input_data)[button_back] = 0;
 			(*input_data)[button_pan] = 0;
 
 			mouse_pos = Vector2i();
@@ -104,6 +106,10 @@ namespace example
 						{
 							(*input_data)[button_forward] = true;
 						}
+						else if (event.key.code == sf::Keyboard::S)
+						{
+							(*input_data)[button_back] = true;
+						}
 
 						break;
 					}
@@ -113,6 +119,10 @@ namespace example
 						if (event.key.code == sf::Keyboard::W)
 						{
 							(*input_data)[button_forward] = false;
+						} 
+						else if (event.key.code == sf::Keyboard::S)
+						{
+							(*input_data)[button_back] = false;
 						}
 
 						break;

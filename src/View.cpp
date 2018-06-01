@@ -102,7 +102,7 @@ namespace example
 
     void View::update (Input::InputData input_data)
     {
-        angle += 0.5f;
+        //angle += 0.5f;
 
 		if (input_data->at(Input::button_forward))
 		{
@@ -110,7 +110,7 @@ namespace example
 		}
 
 		//cout << "Mouse pos: " << input_data->at(Input::axis_x) << " " << input_data->at(Input::axis_y) << endl;
-		cout << input_data->at(Input::button_pan) << endl;
+		//cout << input_data->at(Input::button_pan) << endl;
 
 		//glm::mat4 model_view_matrix;
 
@@ -120,10 +120,11 @@ namespace example
 		if (input_data->at(Input::button_pan)) {
 			if (input_data->at(Input::axis_x) || input_data->at(Input::axis_y))
 			{
-				model_view_matrix = glm::rotate(model_view_matrix, 1.f, glm::vec3(input_data->at(Input::axis_y), input_data->at(Input::axis_x), 0));
+				model_view_matrix = glm::rotate(model_view_matrix, 1.f, glm::vec3(input_data->at(Input::axis_y), input_data->at(Input::axis_x), 0.f));
 			}
 		}
 		model_view_matrix = glm::translate(model_view_matrix, glm::vec3(0.f, 0.f, -input_data->at(Input::button_forward) * 1.0f));
+		model_view_matrix = glm::translate(model_view_matrix, glm::vec3(0.f, 0.f, input_data->at(Input::button_back) * 1.0f));
 
 
 		glUniformMatrix4fv(model_view_matrix_id, 1, GL_FALSE, glm::value_ptr(glm::inverse(model_view_matrix)));
