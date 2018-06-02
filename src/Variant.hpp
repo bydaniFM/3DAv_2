@@ -150,7 +150,8 @@ namespace example
 			case BOOL:    return value.bool_value ? 1.f : 0.f;
 			case INT:     return value.float_value;
 			case FLOAT:   return value.float_value;
-			case STRING:  return strtol(value.string_value->c_str(), nullptr, 10);
+			case STRING:  return stof(value.string_value->c_str());
+			//case STRING:  return strtol(value.string_value->c_str(), nullptr, 10);
 			}
 
 			return 0;

@@ -7,7 +7,7 @@ Date:	30/05/2018
 
 #pragma once
 
-#include <vector>;
+#include <vector>
 #include <memory>
 
 #include <glm/glm.hpp>                          // vec3, vec4, ivec4, mat4
@@ -20,6 +20,8 @@ namespace example
 	class Node
 	{
 		vector < shared_ptr < Node > > children;
+
+	protected:
 
 		glm::mat4 transform;
 
@@ -41,6 +43,11 @@ namespace example
 			{
 				child->update();
 			}
+		}
+
+		void addChild(shared_ptr<Node> child)
+		{
+			children.push_back(child);
 		}
 
 		void move(const glm::vec3 & displacement)

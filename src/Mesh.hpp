@@ -17,15 +17,13 @@
 #include <SFML/OpenGL.hpp>
 
 #include "Color_Buffer_Rgba8888.hpp"
+#include "Shader_Program.hpp"
 
 using namespace std;
 
 namespace example
 {
 	typedef Color_Buffer_Rgba8888 Texture;
-
-	///Base color of the model
-	Color_Buffer_Rgba8888::Color color;
 
 	/*struct Vertex {
 		glm::vec3 Position;
@@ -42,6 +40,10 @@ namespace example
 	class Mesh
 	{
 	private:
+
+		///Base color of the model
+		//Queda setear el id de opengl
+		Texture::Color color;
 
 		typedef glm::vec2 Point2f;
 		typedef glm::vec3 Point3f;
@@ -74,6 +76,6 @@ namespace example
 			vector<Texture>      &	textures
 		);
 
-		void render();
+		void render(Shader_Program & shader);
 	};
 }

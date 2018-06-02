@@ -11,10 +11,8 @@
 
 #include <cassert>
 #include <string>
+#include "myScene.hpp"
 #include "View.hpp"
-#include "Scene.hpp"
-#include "Model.hpp"
-#include "Elevation_Mesh.hpp"
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
 #include "Input.hpp"
@@ -36,9 +34,7 @@ int main ()
 
 	//Inicialización del grafo de escena
 
-	Scene scene;
-	scene.add(make_shared<Elevation_Mesh>(500, 500, 20.f, 20.f, 2.f));
-	scene.add(make_shared<Model>((char*)"..\\..\\assets\\mill.obj"));
+	myScene scene;
 
     // Una vez se ha inicializado GLEW se puede crear una instancia de View:
 

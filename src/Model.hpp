@@ -23,6 +23,12 @@ namespace example
 	class Model : public Node
 	{
 		vector<Mesh> meshes;
+
+		GLint          model_view_matrix_id;
+		GLint          projection_matrix_id;
+
+		shared_ptr < Shader_Program > shader;	//Meshes will share only one shader, while having different colors/textures
+
 		string directory;
 
 	public:
@@ -31,7 +37,8 @@ namespace example
 		{
 			loadModel(path);
 		}
-		void render(/*Shader shader*/) override;
+
+		void render(const glm::mat4 & parent_model_view) override;
 
 	private:
 

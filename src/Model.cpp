@@ -9,10 +9,22 @@ Date:	18705/2018
 
 namespace example
 {
-	void Model::render(/*Shader shader*/)
+	void Model::render(const glm::mat4 & parent_model_view)
 	{
-		for (unsigned int i = 0; i < meshes.size(); i++)
-			meshes[i].render(/*shader*/);
+		//for (unsigned int i = 0; i < meshes.size(); i++)
+		//	meshes[i].render(/*shader*/);
+
+		glm::mat4 model_view = parent_model_view * Node::transform;
+
+		shader->use();
+		shader->set_uniform_value(model_view_matrix_id, model_view);
+
+		for (auto & mesh : meshes)
+		{
+			mesh.render(*shader);
+		}
+
+		Node::render(model_view);			// llama al método render() de la clase Node
 	}
 
 	void Model::loadModel(string path)

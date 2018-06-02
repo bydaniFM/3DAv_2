@@ -55,7 +55,7 @@ namespace example
 		glBindVertexArray(0);
 	}
 
-	void Mesh::render(/*Shader shader*/)
+	void Mesh::render(Shader_Program & shader)
 	{
 		//unsigned int diffuseNr = 1;
 		//unsigned int specularNr = 1;
@@ -84,6 +84,10 @@ namespace example
 		model_view_matrix = glm::rotate(model_view_matrix, 0.f, glm::vec3(0.f, 1.f, 0.f));
 
 		glUniformMatrix4fv(model_view_matrix_id, 1, GL_FALSE, glm::value_ptr(model_view_matrix));*/
+
+
+		//Set base color											CONTINUAR
+		//shader.set_uniform_value(0, color.data.value);
 
 		// draw mesh
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
