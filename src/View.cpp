@@ -91,12 +91,44 @@ namespace example
 		model_view_matrix_id = glGetUniformLocation(program_id, "model_view_matrix");
 		projection_matrix_id = glGetUniformLocation(program_id, "projection_matrix");
 
+		//Base transformation
+		model_view_matrix = glm::translate(model_view_matrix, glm::vec3(0.f, 0.f, -6.f));
+		model_view_matrix = glm::rotate(model_view_matrix, 10.f, glm::vec3(1.f, 0.f, 0.f));
+		model_view_matrix = glm::rotate(model_view_matrix, angle, glm::vec3(0.f, 1.f, 0.f));
+		//model_view_matrix = glm::scale(model_view_matrix, glm::vec3(0.01f, 0.01f, .01f));
+
 		resize (width, height);
     }
 
-    void View::update ()
+    void View::update (Input::InputData input_data)
     {
-        angle += 0.5f;
+        //angle += 0.5f;
+
+		if (input_data->at(Input::button_forward))
+		{
+			cout << "Moving camera forward" << endl;
+		}
+
+		//cout << "Mouse pos: " << input_data->at(Input::axis_x) << " " << input_data->at(Input::axis_y) << endl;
+		//cout << input_data->at(Input::button_pan) << endl;
+
+		//glm::mat4 model_view_matrix;
+
+		
+
+		//Input transformation
+		if (input_data->at(Input::button_pan)) {
+			if (input_data->at(Input::axis_x) || input_data->at(Input::axis_y))
+			{
+				model_view_matrix = glm::rotate(model_view_matrix, 1.f, glm::vec3(input_data->at(Input::axis_y), input_data->at(Input::axis_x), 0.f));
+			}
+		}
+		model_view_matrix = glm::translate(model_view_matrix, glm::vec3(0.f, 0.f, -input_data->at(Input::button_forward).as_float() * 1.0f));
+		model_view_matrix = glm::translate(model_view_matrix, glm::vec3(0.f, 0.f, input_data->at(Input::button_back).as_float() * 1.0f));
+
+
+		glUniformMatrix4fv(model_view_matrix_id, 1, GL_FALSE, glm::value_ptr(glm::inverse(model_view_matrix)));
+
     }
 
     void View::render ()
@@ -104,14 +136,7 @@ namespace example
 		glClearColor (.4f, .4f, .4f, 1.f);
         glClear (GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		glm::mat4 model_view_matrix;
-
-		model_view_matrix = glm::translate(model_view_matrix, glm::vec3(0.f, 0.f, -6.f));
-		model_view_matrix = glm::rotate(model_view_matrix, 10.f, glm::vec3(1.f, 0.f, 0.f));
-		model_view_matrix = glm::rotate(model_view_matrix, angle, glm::vec3(0.f, 1.f, 0.f));
-		model_view_matrix = glm::scale(model_view_matrix, glm::vec3(0.01f, 0.01f, .01f));
-
-		glUniformMatrix4fv (model_view_matrix_id, 1, GL_FALSE, glm::value_ptr(model_view_matrix));
+		
 
 		/*elevation_mesh.render ();
 		model_example.render();*/

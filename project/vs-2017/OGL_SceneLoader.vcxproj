@@ -16,10 +16,12 @@
     <ClInclude Include="..\..\src\Color_Buffer_Rgba8888.hpp" />
     <ClInclude Include="..\..\src\Cube.hpp" />
     <ClInclude Include="..\..\src\Elevation_Mesh.hpp" />
+    <ClInclude Include="..\..\src\Input.hpp" />
     <ClInclude Include="..\..\src\Mesh.hpp" />
     <ClInclude Include="..\..\src\Model.hpp" />
     <ClInclude Include="..\..\src\Node.hpp" />
     <ClInclude Include="..\..\src\Scene.hpp" />
+    <ClInclude Include="..\..\src\Variant.hpp" />
     <ClInclude Include="..\..\src\View.hpp" />
   </ItemGroup>
   <ItemGroup>
