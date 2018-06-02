@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\libraries\targa\include\targa.h" />
+    <ClInclude Include="..\..\src\Camera.hpp" />
     <ClInclude Include="..\..\src\Color_Buffer.hpp" />
     <ClInclude Include="..\..\src\Color_Buffer_Rgba8888.hpp" />
     <ClInclude Include="..\..\src\Cube.hpp" />
@@ -21,7 +22,11 @@
     <ClInclude Include="..\..\src\Model.hpp" />
     <ClInclude Include="..\..\src\Node.hpp" />
     <ClInclude Include="..\..\src\Scene.hpp" />
+    <ClInclude Include="..\..\src\Shader.hpp" />
+    <ClInclude Include="..\..\src\Shader_Program.hpp" />
+    <ClInclude Include="..\..\src\Skybox.hpp" />
     <ClInclude Include="..\..\src\Variant.hpp" />
+    <ClInclude Include="..\..\src\Vertex_Shader.hpp" />
     <ClInclude Include="..\..\src\View.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +36,9 @@
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\Mesh.cpp" />
     <ClCompile Include="..\..\src\Model.cpp" />
+    <ClCompile Include="..\..\src\Shader.cpp" />
+    <ClCompile Include="..\..\src\Shader_Program.cpp" />
+    <ClCompile Include="..\..\src\Skybox.cpp" />
     <ClCompile Include="..\..\src\View.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

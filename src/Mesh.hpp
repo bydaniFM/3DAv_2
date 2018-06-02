@@ -22,8 +22,10 @@ using namespace std;
 
 namespace example
 {
-	//class   Color_Buffer_Rgba8888;
 	typedef Color_Buffer_Rgba8888 Texture;
+
+	///Base color of the model
+	Color_Buffer_Rgba8888::Color color;
 
 	/*struct Vertex {
 		glm::vec3 Position;
