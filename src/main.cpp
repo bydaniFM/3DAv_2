@@ -38,7 +38,7 @@ int main ()
 
     // Una vez se ha inicializado GLEW se puede crear una instancia de View:
 
-    View view(800, 600, make_shared<Scene>(scene));
+    //View view(800, 600, make_shared<Scene>(scene));
 
 	Input input(window);
 
@@ -56,11 +56,12 @@ int main ()
 		if (input_data->at(Input::resize))
 		{
 			Vector2u window_size = window->getSize();
-			view.resize(window_size.x, window_size.y);
+			 scene.resize(window_size.x, window_size.y);
 		}
 
-		view.update(input_data);
-        view.render ();
+		scene.processInput(input_data);
+		scene.update();
+		scene.render ();
 
         window->display ();
     }

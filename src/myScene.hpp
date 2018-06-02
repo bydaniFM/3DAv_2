@@ -30,5 +30,7 @@ namespace example
 			scene->add(make_shared<Elevation_Mesh>(500, 500, 20.f, 20.f, 2.f));
 			scene->add(make_shared<Model>((char*)"..\\..\\assets\\mill.obj"));
 		}
+
+		void processInput(Input::InputData input_data) override;
 	};
 }

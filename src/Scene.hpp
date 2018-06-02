@@ -16,6 +16,7 @@ Date:	30/05/2018
 #include "Shader_Program.hpp"
 #include "Vertex_Shader.hpp"
 #include "Fragment_Shader.hpp"
+#include "Input.hpp"
 
 using namespace std;
 
@@ -27,6 +28,9 @@ namespace example
 
 		Node root;
 
+		static const std::string   vertex_shader_code;
+		static const std::string fragment_shader_code;
+
 		GLint model_view_matrix_id;
 		GLint projection_matrix_id;
 
@@ -36,19 +40,7 @@ namespace example
 
 	public:
 
-		Scene()
-		{
-			shaders["default"].reset(new Shader_Program());
-			//shaders["sky"].reset(new Shader_Program("assets/metal.vs", "assets/metal.fs"));
-
-			shaders["default"]->attach(  Vertex_Shader(Shader::Source_Code::from_file("..\\..\\assets\\default_vs.hlsl")));
-			shaders["default"]->attach(Fragment_Shader(Shader::Source_Code::from_file("..\\..\\assets\\default_fs.hlsl")));
-
-			shaders["default"]->link();
-
-			model_view_matrix_id = shaders["default"]->get_uniform_id("model_view_matrix");
-			projection_matrix_id = shaders["default"]->get_uniform_id("projection_matrix");
-		}
+		Scene();
 
 		void add(shared_ptr<Node> node)
 		{
@@ -77,5 +69,7 @@ namespace example
 				shader.second->set_uniform_value(projection_matrix_id, projection_matrix);
 			}
 		}
+
+		virtual void processInput(Input::InputData input_data) = 0;
 	};
 }
