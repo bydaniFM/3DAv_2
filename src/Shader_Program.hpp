@@ -1,4 +1,3 @@
-
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
  *                                                                             *
  *  Copyright © 2014+ Ángel Rodríguez Ballesteros                              *
@@ -12,26 +11,33 @@
  *                                                                             *
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+/*
+
+Continued by:	Daniel Fernández
+Date:			30/05/2018
+
+*/
+
 #ifndef OGL_SHADER_PROGRAM_HEADER
 #define OGL_SHADER_PROGRAM_HEADER
 
     #include <cassert>
     #include "Shader.hpp"
-    #include <Vector.hpp>
-    #include <Matrix.hpp>
+	#include <glm/glm.hpp>                          // vec3, vec4, ivec4, mat4
+	#include <glm/gtc/matrix_transform.hpp>         // translate, rotate, scale, perspective
+	#include <glm/gtc/type_ptr.hpp>                 // value_ptr
 
     namespace example
     {
-
-        using toolkit::Vector2f;
-        using toolkit::Vector3f;
-        using toolkit::Vector4f;
-        using toolkit::Matrix22f;
-        using toolkit::Matrix33f;
-        using toolkit::Matrix44f;
-
-        class Shader_Program : Non_Copyable
+        class Shader_Program// : Non_Copyable
         {
+			typedef glm::vec2 Vector2f;
+			typedef glm::vec3 Vector3f;
+			typedef glm::vec4 Vector4f;
+			typedef glm::mat2 Matrix22f;
+			typedef glm::mat3 Matrix33f;
+			typedef glm::mat4 Matrix44f;
+
         public:
 
             static void disable ()
@@ -110,9 +116,9 @@
             void set_uniform_value (GLint uniform_id, const Vector2f  & vector) { glUniform2f (uniform_id, vector[0], vector[1]); }
             void set_uniform_value (GLint uniform_id, const Vector3f  & vector) { glUniform3f (uniform_id, vector[0], vector[1], vector[2]); }
             void set_uniform_value (GLint uniform_id, const Vector4f  & vector) { glUniform4f (uniform_id, vector[0], vector[1], vector[2], vector[3]); }
-            void set_uniform_value (GLint uniform_id, const Matrix22f & matrix) { glUniformMatrix2fv (uniform_id, 1, GL_FALSE, matrix.values); }
-            void set_uniform_value (GLint uniform_id, const Matrix33f & matrix) { glUniformMatrix3fv (uniform_id, 1, GL_FALSE, matrix.values); }
-            void set_uniform_value (GLint uniform_id, const Matrix44f & matrix) { glUniformMatrix4fv (uniform_id, 1, GL_FALSE, matrix.values); }
+            void set_uniform_value (GLint uniform_id, const Matrix22f & matrix) { glUniformMatrix2fv (uniform_id, 1, GL_FALSE, glm::value_ptr(matrix)); }
+            void set_uniform_value (GLint uniform_id, const Matrix33f & matrix) { glUniformMatrix3fv (uniform_id, 1, GL_FALSE, glm::value_ptr(matrix)); }
+            void set_uniform_value (GLint uniform_id, const Matrix44f & matrix) { glUniformMatrix4fv (uniform_id, 1, GL_FALSE, glm::value_ptr(matrix)); }
 
         public:
 

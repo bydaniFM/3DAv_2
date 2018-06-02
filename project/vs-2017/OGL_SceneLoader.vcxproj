@@ -17,6 +17,7 @@
     <ClInclude Include="..\..\src\Color_Buffer_Rgba8888.hpp" />
     <ClInclude Include="..\..\src\Cube.hpp" />
     <ClInclude Include="..\..\src\Elevation_Mesh.hpp" />
+    <ClInclude Include="..\..\src\Fragment_Shader.hpp" />
     <ClInclude Include="..\..\src\Input.hpp" />
     <ClInclude Include="..\..\src\Mesh.hpp" />
     <ClInclude Include="..\..\src\Model.hpp" />

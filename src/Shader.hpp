@@ -17,12 +17,12 @@
 
     #include <string>
     #include <GL/glew.h>
-    #include <Non_Copyable.hpp>
+    //#include <Non_Copyable.hpp>
 
     namespace example
     {
 
-        class Shader : Non_Copyable
+        class Shader// : Non_Copyable
         {
         public:
 
