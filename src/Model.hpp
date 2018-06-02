@@ -31,7 +31,7 @@ namespace example
 		{
 			loadModel(path);
 		}
-		void render(/*Shader shader*/);
+		void render(/*Shader shader*/) override;
 
 	private:
 

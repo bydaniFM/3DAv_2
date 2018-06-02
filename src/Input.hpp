@@ -7,8 +7,10 @@ Date:	30/05/2018
 
 #pragma once
 
-#include <memory>
 #include <map>
+#include <memory>
+//#include <variant>
+#include "Variant.hpp"
 
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
@@ -34,7 +36,7 @@ namespace example
 			button_pan
 		};
 
-		typedef shared_ptr<map<input_type, float>> InputData;
+		typedef shared_ptr < map < input_type, Variant > > InputData;
 
 	private:
 
@@ -54,15 +56,15 @@ namespace example
 			:
 			window(window)
 		{
-			input_data = make_shared<map<input_type, float>>();
+			input_data = make_shared < map < input_type, Variant > >();
 
-			(*input_data)[close] = 0;
-			(*input_data)[resize] = 0;
-			(*input_data)[axis_x] = 0;
-			(*input_data)[axis_y] = 0;
-			(*input_data)[button_forward] = 0;
-			(*input_data)[button_back] = 0;
-			(*input_data)[button_pan] = 0;
+			(*input_data)[close] = false; // = false;
+			(*input_data)[resize] = false; // = false;
+			(*input_data)[axis_x] = 0.f; // = 0.f;
+			(*input_data)[axis_y] = 0.f; // = 0.f;
+			(*input_data)[button_forward] = false; // = false;
+			(*input_data)[button_back] = false; // = false;
+			(*input_data)[button_pan] = false; // = false;
 
 			mouse_pos = Vector2i();
 			prev_mouse_pos = Vector2i();

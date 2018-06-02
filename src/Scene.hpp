@@ -20,6 +20,9 @@ namespace example
 	{
 		vector<shared_ptr<Node>> graph;
 
+		// vector de shader programs
+		// Camera
+
 	public:
 
 		Scene()

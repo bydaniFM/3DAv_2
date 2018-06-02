@@ -21,6 +21,7 @@
     <ClInclude Include="..\..\src\Model.hpp" />
     <ClInclude Include="..\..\src\Node.hpp" />
     <ClInclude Include="..\..\src\Scene.hpp" />
+    <ClInclude Include="..\..\src\Variant.hpp" />
     <ClInclude Include="..\..\src\View.hpp" />
   </ItemGroup>
   <ItemGroup>
