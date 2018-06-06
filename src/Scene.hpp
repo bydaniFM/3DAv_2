@@ -26,7 +26,7 @@ namespace example
 	{
 		//vector<shared_ptr<Node>> graph;
 
-		Node root;
+		shared_ptr< Node > root;
 
 		static const std::string   vertex_shader_code;
 		static const std::string fragment_shader_code;
@@ -44,17 +44,17 @@ namespace example
 
 		void add(shared_ptr<Node> node)
 		{
-			root.addChild(node);
+			root->addChild(node);
 		}
 
 		void render()
 		{
-			root.render(camera.get_projection());
+			root->render(camera.get_projection());
 		}
 
 		void update()
 		{
-			root.update();
+			root->update();
 		}
 
 		void resize(int width, int height)
@@ -70,6 +70,8 @@ namespace example
 			}
 		}
 
-		virtual void processInput(Input::InputData input_data) = 0;
+		virtual void processInput(Input::InputData input_data)
+		{
+		}
 	};
 }

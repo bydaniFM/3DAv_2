@@ -37,6 +37,8 @@ namespace example
 
 	Scene::Scene()
 	{
+		root = make_shared<Node>();
+
 		shaders["default"].reset(new Shader_Program());
 		//shaders["sky"].reset(new Shader_Program("assets/metal.vs", "assets/metal.fs"));
 

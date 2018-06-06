@@ -17,15 +17,13 @@ namespace example
 {
 	class myScene : public Scene
 	{
-		unique_ptr < Scene > scene;
+		shared_ptr < Scene > scene;
 
 	public:
 
 		myScene()
-			:
-			scene()
 		{
-			//scene = make_unique<Scene>(new Scene());
+			scene = make_shared<Scene>();
 
 			scene->add(make_shared<Elevation_Mesh>(500, 500, 20.f, 20.f, 2.f));
 			scene->add(make_shared<Model>((char*)"..\\..\\assets\\mill.obj"));

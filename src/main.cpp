@@ -22,7 +22,7 @@ using namespace example;
 
 int main ()
 {
-    shared_ptr<Window> window = make_shared<Window>(VideoMode(800, 600), "OpenGL Examples: Texturing", Style::Default, ContextSettings(32));
+    shared_ptr<Window> window = make_shared<Window>(VideoMode(800, 600), "OpenGL Scene loader", Style::Default, ContextSettings(32));
 
     window->setVerticalSyncEnabled (true);
 

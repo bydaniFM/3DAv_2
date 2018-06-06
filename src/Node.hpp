@@ -28,6 +28,10 @@ namespace example
 	public:
 
 		Node() = default;
+		//{
+		//	//children = vector < shared_ptr < Node > >();
+		//	children.reserve(sizeof(shared_ptr<Node>) * 300);
+		//}
 
 		virtual void render(const glm::mat4 & parent_model_view)
 		{
