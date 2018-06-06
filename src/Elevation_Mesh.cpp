@@ -194,6 +194,34 @@ namespace example
 	glm::vec3 Elevation_Mesh::calculate_normal(const Point3f & p0, const Point3f & p1, const Point3f & p2)
 	{
 		// calcular los dos vectores del triángulos y retornar su producto vectorial...
+
+		//for (int j = 0)
+		//{
+		//	for (int i = ...)
+		//	{
+		//		vec3 center = points[i][j];
+
+		//		vec3 a, b, c, d;
+
+		//		if (i > 0)
+		//		{
+		//			a = points[i - 1][j] - center;
+		//		} else
+		//		{
+		//			a.x = center.x - tile_width;
+		//			a.y = center.y;
+		//			a.z = center.z;
+		//		}
+		//		//calculos
+		//		vec3 v0 = glm::cross(a, b);
+		//		vec3 v1 = glm::cross(b, c);
+		//		vec3 v2 = glm::cross(c, d);
+		//		vec3 v3 = glm::cross(d, a);
+
+		//		vec3 normal = (v0 + v1 + v2 + v3) / 4.f;
+		//	}
+		//}
+
 		return glm::vec3();
 	}
 
@@ -206,6 +234,10 @@ namespace example
 	{
 		glm::vec3 normal  = calculate_normal(p1, p4, p3);
 		          normal += calculate_normal(p1, p2, p4);
+				  /*normal += calculate_normal(p1, p2, p4);
+				  normal += calculate_normal(p1, p2, p4);
+				  normal += calculate_normal(p1, p2, p4);
+				  normal += calculate_normal(p1, p2, p4);*/
 		// calcular las otras 5 normales...
 
 		// retornar la media aritmética
