@@ -28,6 +28,7 @@ namespace example
 	public:
 
 		Node() = default;
+		virtual ~Node() = default;
 		//{
 		//	//children = vector < shared_ptr < Node > >();
 		//	children.reserve(sizeof(shared_ptr<Node>) * 300);

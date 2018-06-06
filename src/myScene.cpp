@@ -15,6 +15,16 @@ using namespace glm;
 
 namespace example
 {
+	myScene::myScene()
+		/*:
+		scene()*/
+	{
+		//scene = make_shared<Scene>();
+
+		add(make_shared<Elevation_Mesh>(500, 500, 20.f, 20.f, 2.f));
+		add(make_shared<Model>((char*)"..\\..\\assets\\mill.obj"));
+	}
+
 	void myScene::processInput(Input::InputData input_data)
 	{
 		if (input_data->at(Input::button_forward))

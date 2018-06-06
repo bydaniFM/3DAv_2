@@ -34,7 +34,7 @@ int main ()
 
 	//Inicialización del grafo de escena
 
-	myScene scene;
+	shared_ptr < myScene > scene(new myScene);
 
     // Una vez se ha inicializado GLEW se puede crear una instancia de View:
 
@@ -56,12 +56,12 @@ int main ()
 		if (input_data->at(Input::resize))
 		{
 			Vector2u window_size = window->getSize();
-			 scene.resize(window_size.x, window_size.y);
+			 scene->resize(window_size.x, window_size.y);
 		}
 
-		scene.processInput(input_data);
-		scene.update();
-		scene.render ();
+		scene->processInput(input_data);
+		scene->update();
+		scene->render ();
 
         window->display ();
     }

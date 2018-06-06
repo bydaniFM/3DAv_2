@@ -17,17 +17,12 @@ namespace example
 {
 	class myScene : public Scene
 	{
-		shared_ptr < Scene > scene;
+		//shared_ptr < Scene > scene;
+		//Scene * scene;
 
 	public:
 
-		myScene()
-		{
-			scene = make_shared<Scene>();
-
-			scene->add(make_shared<Elevation_Mesh>(500, 500, 20.f, 20.f, 2.f));
-			scene->add(make_shared<Model>((char*)"..\\..\\assets\\mill.obj"));
-		}
+		myScene();
 
 		void processInput(Input::InputData input_data) override;
 	};
