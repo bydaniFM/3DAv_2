@@ -26,8 +26,13 @@ using namespace glm;
 namespace example
 {
 
-	Elevation_Mesh::Elevation_Mesh(int cols, int rows, float width, float depth, float elevation)
+	Elevation_Mesh::Elevation_Mesh(int cols, int rows, float width, float depth, float elevation, shared_ptr < Shader_Program > shader)
+		:
+		shader(shader)
     {
+		model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
+		projection_matrix_id = shader->get_uniform_id("projection_matrix");
+
 		unsigned number_of_vertices =  cols      *  rows;
 				 number_of_indices  = (cols - 1) * (rows - 1) * 2 * 3;
 
@@ -245,8 +250,13 @@ namespace example
 		return normal / 6.f;
 	}
 
-    void Elevation_Mesh::render ()
+    void Elevation_Mesh::render (const glm::mat4 & parent_model_view)
     {
+		glm::mat4 model_view = parent_model_view * Node::transform;
+
+		shader->use();
+		shader->set_uniform_value(model_view_matrix_id, model_view);
+
 		// Se selecciona el VAO que contiene los datos de la malla y se dibujan sus elementos:
 
 		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);

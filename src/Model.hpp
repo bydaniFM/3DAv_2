@@ -13,24 +13,38 @@ Date:	18705/2018
 #include <Importer.hpp>
 #include <postprocess.h>
 
+#include "Node.hpp"
 #include "Mesh.hpp"
 
 using namespace std;
 
 namespace example
 {
-	class Model
+	class Model : public Node
 	{
 		vector<Mesh> meshes;
+
+		GLint          model_view_matrix_id;
+		GLint          projection_matrix_id;
+
+		///Meshes will share only one shader, while having different colors/textures
+		shared_ptr < Shader_Program > shader;
+
 		string directory;
 
 	public:
 
-		Model(char *path)
+		Model(char *path, shared_ptr<Shader_Program> shader)
+			:
+			shader(shader)
 		{
+			model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
+			projection_matrix_id = shader->get_uniform_id("projection_matrix");
+
 			loadModel(path);
 		}
-		void render(/*Shader shader*/);
+
+		void render(const glm::mat4 & parent_model_view) override;
 
 	private:
 

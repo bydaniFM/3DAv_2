@@ -10,18 +10,21 @@
 \* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 #include <cassert>
+#include <string>
+#include "myScene.hpp"
 #include "View.hpp"
 #include <SFML/Window.hpp>
 #include <SFML/OpenGL.hpp>
+#include "Input.hpp"
 
 using namespace sf;
 using namespace example;
 
 int main ()
 {
-    Window window(VideoMode(800, 600), "OpenGL Examples: Texturing", Style::Default, ContextSettings(32));
+    shared_ptr<Window> window = make_shared<Window>(VideoMode(800, 600), "OpenGL Scene loader", Style::Default, ContextSettings(32));
 
-    window.setVerticalSyncEnabled (true);
+    window->setVerticalSyncEnabled (true);
 
     // Una vez se ha creado el contexto de OpenGL ya se puede inicializar Glew:
 
@@ -29,9 +32,16 @@ int main ()
 
     assert(glew_initialization == GLEW_OK);
 
+	//Inicialización del grafo de escena
+
+	shared_ptr < myScene > scene(new myScene);
+	scene->resize(800, 600);
+
     // Una vez se ha inicializado GLEW se puede crear una instancia de View:
 
-    View view(800, 600);
+    //View view(800, 600, make_shared<Scene>(scene));
+
+	Input input(window);
 
     // Se ejecuta el bucle principal:
 
@@ -39,33 +49,22 @@ int main ()
 
     do
     {
-        Event event;
+		Input::InputData input_data = input.check();
 
-        while (window.pollEvent (event))
-        {
-            switch (event.type)
-            {
-                case Event::Closed:
-                {
-                    running = false;
-                    break;
-                }
+		if (input_data->at(Input::close))
+			running = false;
 
-                case Event::Resized:
-                {
-                    Vector2u window_size = window.getSize ();
+		if (input_data->at(Input::resize))
+		{
+			Vector2u window_size = window->getSize();
+			 scene->resize(window_size.x, window_size.y);
+		}
 
-                    view.resize (window_size.x, window_size.y);
+		scene->processInput(input_data);
+		scene->update();
+		scene->render ();
 
-                    break;
-                }
-            }
-        }
-
-        view.update ();
-        view.render ();
-
-        window.display ();
+        window->display ();
     }
     while (running);
 

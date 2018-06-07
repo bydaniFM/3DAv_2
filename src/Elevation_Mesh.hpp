@@ -16,13 +16,16 @@
 #include <SFML/OpenGL.hpp>
 #include <glm/glm.hpp>                          // vec3, vec4, ivec4, mat4
 
+#include "Node.hpp"
+#include "Shader_Program.hpp"
+
 namespace example
 {
 
 	class   Color_Buffer_Rgba8888;
 	typedef Color_Buffer_Rgba8888 Texture;
 
-    class Elevation_Mesh
+    class Elevation_Mesh : public Node
     {
     private:
 
@@ -43,13 +46,18 @@ namespace example
 
     private:
 
+		shared_ptr < Shader_Program > shader;
+
+		GLint          model_view_matrix_id;
+		GLint          projection_matrix_id;
+
         GLuint  vbo_ids[VBO_COUNT];      // Ids de los VBOs que se usan
 		GLuint  vao_id;                  // Id del VAO de la malla
 		GLsizei number_of_indices;
 
     public:
 
-		Elevation_Mesh(int cols, int rows, float width, float depth, float elevation);
+		Elevation_Mesh(int cols, int rows, float width, float depth, float elevation, shared_ptr < Shader_Program > shader);
         ~Elevation_Mesh();
 
 		//Point3f calculateNormal(Point3f p0, Point3f p1, Point3f p2, Point3f p3, Point3f p4);
@@ -63,7 +71,7 @@ namespace example
 		);
 		
 
-        void render ();
+        void render (const glm::mat4 & parent_model_view) override;
 
 	private:
 
