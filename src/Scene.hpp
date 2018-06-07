@@ -34,9 +34,14 @@ namespace example
 		GLint model_view_matrix_id;
 		GLint projection_matrix_id;
 
-		map < string, shared_ptr< Shader_Program > > shaders;
+	protected:
 
 		Camera camera;
+
+		float angle_around_x;
+		float angle_around_y;
+
+		map < string, shared_ptr< Shader_Program > > shaders;
 
 	public:
 
@@ -49,7 +54,12 @@ namespace example
 
 		void render()
 		{
-			root->render(camera.get_projection());
+
+			glClearColor(.4f, .4f, .4f, 1.f);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+			//root->render(glm::inverse(camera.get_model_view()));
+			root->render(camera.get_model_view());
 		}
 
 		void update()
@@ -65,7 +75,7 @@ namespace example
 
 			for (auto & shader : shaders)
 			{
-				shader.second->use(); // use();
+				shader.second->use();
 				shader.second->set_uniform_value(projection_matrix_id, projection_matrix);
 			}
 		}

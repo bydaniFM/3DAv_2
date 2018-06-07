@@ -35,6 +35,7 @@ int main ()
 	//Inicialización del grafo de escena
 
 	shared_ptr < myScene > scene(new myScene);
+	scene->resize(800, 600);
 
     // Una vez se ha inicializado GLEW se puede crear una instancia de View:
 

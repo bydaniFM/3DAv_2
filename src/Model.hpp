@@ -27,14 +27,20 @@ namespace example
 		GLint          model_view_matrix_id;
 		GLint          projection_matrix_id;
 
-		shared_ptr < Shader_Program > shader;	//Meshes will share only one shader, while having different colors/textures
+		///Meshes will share only one shader, while having different colors/textures
+		shared_ptr < Shader_Program > shader;
 
 		string directory;
 
 	public:
 
-		Model(char *path)
+		Model(char *path, shared_ptr<Shader_Program> shader)
+			:
+			shader(shader)
 		{
+			model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
+			projection_matrix_id = shader->get_uniform_id("projection_matrix");
+
 			loadModel(path);
 		}
 

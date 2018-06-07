@@ -11,9 +11,6 @@ namespace example
 {
 	void Model::render(const glm::mat4 & parent_model_view)
 	{
-		//for (unsigned int i = 0; i < meshes.size(); i++)
-		//	meshes[i].render(/*shader*/);
-
 		glm::mat4 model_view = parent_model_view * Node::transform;
 
 		shader->use();

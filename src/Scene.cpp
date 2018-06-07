@@ -36,8 +36,13 @@ namespace example
 		"}";
 
 	Scene::Scene()
+		:
+		camera(1.f, 1000.f)
 	{
 		root = make_shared<Node>();
+
+		angle_around_x = 0.0f;
+		angle_around_y = 0.0f;
 
 		shaders["default"].reset(new Shader_Program());
 		//shaders["sky"].reset(new Shader_Program("assets/metal.vs", "assets/metal.fs"));
@@ -51,5 +56,10 @@ namespace example
 
 		model_view_matrix_id = shaders["default"]->get_uniform_id("model_view_matrix");
 		projection_matrix_id = shaders["default"]->get_uniform_id("projection_matrix");
+
+		// Se habilita el backface culling, una luz y materiales básicos:
+
+		glEnable(GL_CULL_FACE);
+		glEnable(GL_DEPTH_TEST);
 	}
 }
