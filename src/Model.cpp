@@ -7,14 +7,30 @@ Date:	18705/2018
 
 #include "Model.hpp"
 
+extern "C"
+{
+#include <targa.h>
+}
+
 namespace example
 {
 	void Model::render(const glm::mat4 & parent_model_view)
 	{
+		if (has_texture)
+		{
+			glBindTexture(GL_TEXTURE_2D, texture_id);
+		}
+		else
+		{
+			glBindTexture(GL_TEXTURE_2D, 0);
+		}
+
 		glm::mat4 model_view = parent_model_view * Node::transform;
 
 		shader->use();
 		shader->set_uniform_value(model_view_matrix_id, model_view);
+		shader->set_uniform_value(main_color_id, main_color);
+		shader->set_uniform_value(has_texture_id, !has_texture);
 
 		for (auto & mesh : meshes)
 		{
@@ -38,6 +54,8 @@ namespace example
 		directory = path.substr(0, path.find_last_of('/'));
 
 		processNode(scene->mRootNode, scene);
+
+		processTexture(path);
 	}
 
 	void Model::processNode(aiNode *node, const aiScene *scene)
@@ -79,13 +97,12 @@ namespace example
 			normal.z = mesh->mNormals[i].z;
 
 			glm::vec2 texCoord;
-			//if (mesh->mTextureCoords[0]) // does the mesh contain texture coordinates?
-			//{
-			//	vertex.TexCoords.x = mesh->mTextureCoords[0][i].x;
-			//	vertex.TexCoords.y = mesh->mTextureCoords[0][i].y;
-			//} else
-			//	vertex.TexCoords = glm::vec2(0.0f, 0.0f);
-			texCoord = glm::vec2(0.0f, 0.0f);
+			if (mesh->mTextureCoords[0]) // does the mesh contain texture coordinates?
+			{
+				texCoord.x = mesh->mTextureCoords[0][i].x;
+				texCoord.y = mesh->mTextureCoords[0][i].y;
+			} else
+				texCoord = glm::vec2(0.0f, 0.0f);
 			texCoords.push_back(texCoord);
 
 		}
@@ -112,20 +129,77 @@ namespace example
 		return Mesh(positions, normals, texCoords, indices, textures);
 	}
 
-	//See optimization
-	/*vector<Texture> Model::loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName)
+	void Model::processTexture(string path)
 	{
-		vector<Texture> textures;
-		for (unsigned int i = 0; i < mat->GetTextureCount(type); i++)
+		path = path.substr(0, path.find_last_of('.')) + ".tga";
+		const char * texture_path = path.c_str();
+
+		if (texture_path != 0)
 		{
-			aiString str;
-			mat->GetTexture(type, i, &str);
-			Texture texture;
-			texture.id = TextureFromFile(str.C_Str(), directory);
-			texture.type = typeName;
-			texture.path = str;
-			textures.push_back(texture);
+			std::auto_ptr< Texture > texture = loadTexture(texture_path);
+
+			has_texture = texture.get() != 0;
+
+			if (has_texture)
+			{
+				// Se habilitan las texturas, se genera un id para un búfer de textura,
+				// se selecciona el búfer de textura creado y se configuran algunos de
+				// sus parámetros:
+
+				glEnable(GL_TEXTURE_2D);
+				glGenTextures(1, &texture_id);
+				glBindTexture(GL_TEXTURE_2D, texture_id);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+				glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+
+				// Se suben los colores de la textura a la memoria de vídeo:
+
+				glTexImage2D
+				(
+					GL_TEXTURE_2D,
+					0,
+					GL_RGBA,
+					texture->get_width(),
+					texture->get_height(),
+					0,
+					GL_RGBA,
+					GL_UNSIGNED_BYTE,
+					texture->colors()
+				);
+			}
 		}
-		return textures;
-	}*/
+	}
+
+	auto_ptr< Texture > Model::loadTexture(string path)
+	{
+		std::auto_ptr< Texture > texture;
+		tga_image                loaded_image;
+
+		if (tga_read(&loaded_image, path.c_str()) == TGA_NOERR)
+		{
+			// Si se ha podido cargar la imagen desde el archivo, se crea un búfer para una textura:
+
+			texture.reset(new Texture(loaded_image.width, loaded_image.height));
+
+			// Se convierte el formato de píxel de la imagen cargada a RGBA8888:
+
+			tga_convert_depth(&loaded_image, texture->bits_per_color());
+			tga_swap_red_blue(&loaded_image);
+
+			// Se copian los pixels del búfer de la imagen cargada al búfer de la textura:
+
+			Texture::Color * loaded_image_pixels = reinterpret_cast< Texture::Color * >(loaded_image.image_data);
+			Texture::Color * loaded_image_pixels_end = loaded_image_pixels + loaded_image.width * loaded_image.height;
+			Texture::Color * image_buffer_pixels = texture->colors();
+
+			while (loaded_image_pixels <  loaded_image_pixels_end)
+			{
+				*image_buffer_pixels++ = *loaded_image_pixels++;
+			}
+
+			tga_free_buffers(&loaded_image);
+		}
+
+		return (texture);
+	}
 }

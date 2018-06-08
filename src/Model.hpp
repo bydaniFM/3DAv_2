@@ -24,22 +24,49 @@ namespace example
 	{
 		vector<Mesh> meshes;
 
-		GLint          model_view_matrix_id;
-		GLint          projection_matrix_id;
+		GLint			model_view_matrix_id;
+		GLint			projection_matrix_id;
+		GLuint			texture_id;
+		GLint			main_color_id;
+		GLint			has_texture_id;
+
+		glm::vec4		main_color;
 
 		///Meshes will share only one shader, while having different colors/textures
 		shared_ptr < Shader_Program > shader;
 
 		string directory;
+		bool has_texture;
 
 	public:
 
 		Model(char *path, shared_ptr<Shader_Program> shader)
 			:
-			shader(shader)
+			shader(shader),
+			has_texture(false)
 		{
 			model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
 			projection_matrix_id = shader->get_uniform_id("projection_matrix");
+			main_color_id        = shader->get_uniform_id("main_color");
+			has_texture_id		 = shader->get_uniform_id("no_texture");
+
+			main_color = glm::vec4(1, 1, 1, 1);
+			
+			loadModel(path);
+
+		}
+
+		Model(char *path, shared_ptr<Shader_Program> shader, glm::vec4 color)
+			:
+			shader(shader),
+			has_texture(false)
+		{
+			model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
+			projection_matrix_id = shader->get_uniform_id("projection_matrix");
+			main_color_id		 = shader->get_uniform_id("main_color");
+			has_texture_id       = shader->get_uniform_id("no_texture");
+
+			main_color = color;
 
 			loadModel(path);
 		}
@@ -51,6 +78,7 @@ namespace example
 		void loadModel(string path);
 		void processNode(aiNode *node, const aiScene *scene);
 		Mesh processMesh(aiMesh *mesh, const aiScene *scene);
-		vector<Texture> loadMaterialTextures(aiMaterial *mat, aiTextureType type, string typeName);
+		void processTexture(string path);
+		auto_ptr< Texture > loadTexture(string path); //vector?
 	};
 }
