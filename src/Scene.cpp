@@ -29,9 +29,6 @@ namespace example
 
 		shaders["default"]->link();
 
-		//model_view_matrix_id = shaders["default"]->get_uniform_id("model_view_matrix");
-		projection_matrix_id = shaders["default"]->get_uniform_id("projection_matrix");
-
 		//Default lit shader
 
 		shaders["default_lit"].reset(new Shader_Program);
@@ -40,9 +37,6 @@ namespace example
 		shaders["default_lit"]->attach(Fragment_Shader(Shader::Source_Code::from_file("..\\..\\assets\\default_textured_lit.fs")));
 
 		shaders["default_lit"]->link();
-
-		//model_view_matrix_id = shaders["default_lit"]->get_uniform_id("model_view_matrix");
-		//projection_matrix_id = shaders["default_lit"]->get_uniform_id("projection_matrix");
 
 		configure_light(shaders["default_lit"]);
 
@@ -54,9 +48,6 @@ namespace example
 		shaders["sky"]->attach(Fragment_Shader(Shader::Source_Code::from_file("..\\..\\assets\\skybox.fs")));
 
 		shaders["sky"]->link();
-
-		/*model_view_matrix_id = shaders["sky"]->get_uniform_id("model_view_matrix");
-		projection_matrix_id = shaders["sky"]->get_uniform_id("projection_matrix");*/
 
 		skybox = make_shared<Skybox>("..\\..\\assets\\sky-cube-map-", shaders["sky"]);
 

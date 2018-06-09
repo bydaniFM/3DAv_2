@@ -68,9 +68,7 @@ namespace example
 		shader(shader)
     {
         assert(texture_cube.is_ok ());
-
-        // Se compilan y linkan los shaders:
-		
+				
         model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
         projection_matrix_id = shader->get_uniform_id ("projection_matrix");
 

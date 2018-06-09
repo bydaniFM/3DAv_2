@@ -20,10 +20,10 @@ namespace example
 		//scene = make_shared<Scene>();
 
 		add(make_shared<Elevation_Mesh>(500, 500, 20.f, 20.f, 2.f, shaders["default"]));
-		//add(make_shared<Model>((char*)"..\\..\\assets\\mill.obj", shaders["default_lit"], glm::vec3(1, 0, 0)));
+		add(make_shared<Model>((char*)"..\\..\\assets\\mill.obj", shaders["default_lit"], glm::vec3(1, 0, 0)));
 		add(make_shared<Model>((char*)"..\\..\\assets\\spitfire.FBX", shaders["default_lit"]));
 
-		camera.move(glm::vec3(0.f, 0.f, -60.f));
+		camera.move(glm::vec3(0.f, 20.f, -60.f));
 	}
 
 	void myScene::processInput(Input::InputData input_data)

@@ -49,7 +49,6 @@ namespace example
 		shared_ptr < Shader_Program > shader;
 
 		GLint          model_view_matrix_id;
-		GLint          projection_matrix_id;
 
         GLuint  vbo_ids[VBO_COUNT];      // Ids de los VBOs que se usan
 		GLuint  vao_id;                  // Id del VAO de la malla

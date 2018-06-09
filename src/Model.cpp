@@ -37,7 +37,7 @@ namespace example
 			mesh.render(*shader);
 		}
 
-		Node::render(model_view);			// llama al método render() de la clase Node
+		Node::render(model_view);
 
 		shader->disable();
 	}

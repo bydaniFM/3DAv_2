@@ -25,12 +25,10 @@ namespace example
 {
 	class Scene
 	{
-		//vector<shared_ptr<Node>> graph;
-
 		shared_ptr< Node > root;
 		
-		GLint model_view_matrix_id;
-		GLint projection_matrix_id;
+		//GLint model_view_matrix_id;
+		//GLint projection_matrix_id;
 
 	protected:
 
