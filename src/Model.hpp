@@ -47,7 +47,7 @@ namespace example
 			has_texture(false)
 		{
 			model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
-			projection_matrix_id = shader->get_uniform_id("projection_matrix");
+			//projection_matrix_id = shader->get_uniform_id("projection_matrix");
 			normal_matrix_id     = shader->get_uniform_id("normal_matrix");
 			main_color_id        = shader->get_uniform_id("material_color");
 			has_texture_id		 = shader->get_uniform_id("no_texture");
@@ -64,7 +64,7 @@ namespace example
 			has_texture(false)
 		{
 			model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
-			projection_matrix_id = shader->get_uniform_id("projection_matrix");
+			//projection_matrix_id = shader->get_uniform_id("projection_matrix");
 			normal_matrix_id	 = shader->get_uniform_id("normal_matrix");
 			main_color_id		 = shader->get_uniform_id("material_color");
 			has_texture_id       = shader->get_uniform_id("no_texture");

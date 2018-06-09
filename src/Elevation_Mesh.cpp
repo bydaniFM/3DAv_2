@@ -150,15 +150,15 @@ namespace example
 
 		// Se generan índices para los VBOs del cubo:
 
-		/*glGenBuffers(VBO_COUNT, vbo_ids);
+		glGenBuffers(VBO_COUNT, vbo_ids);
 		glGenVertexArrays(1, &vao_id);
-		glBindVertexArray(vao_id);*/
+		glBindVertexArray(vao_id);
 
-		glGenVertexArrays(1, &vao_id);
+		/*glGenVertexArrays(1, &vao_id);
 		glGenBuffers(1, &vbo_ids[COORDINATES_VBO]);
 		glGenBuffers(1, &vbo_ids[UVS_VBO]);
 		glGenBuffers(1, &vbo_ids[INDICES_VBO]);
-		glBindVertexArray(vao_id);
+		glBindVertexArray(vao_id);*/
 
 		// Se suben a un VBO los datos de coordenadas:
 
@@ -169,8 +169,6 @@ namespace example
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
 		// Se suben a un VBO los datos de uvs:
-
-		// Se configuran el atributo de coordenadas de textura:
 
 		glBindBuffer(GL_ARRAY_BUFFER, vbo_ids[UVS_VBO]);
 		glBufferData(GL_ARRAY_BUFFER, uvs.size() * sizeof(glm::vec2), uvs.data(), GL_STATIC_DRAW);
@@ -260,6 +258,15 @@ namespace example
 
     void Elevation_Mesh::render (const glm::mat4 & parent_model_view)
     {
+		if (has_texture)
+		{
+			glBindTexture(GL_TEXTURE_2D, texture_id);
+		}
+		else
+		{
+			glBindTexture(GL_TEXTURE_2D, 0);
+		}
+
 		glm::mat4 model_view = parent_model_view * Node::transform;
 
 		shader->use();
@@ -275,6 +282,8 @@ namespace example
 		glBindVertexArray(vao_id);
 		glDrawElements(GL_TRIANGLES, number_of_indices, GL_UNSIGNED_INT, 0);
 		//glBindVertexArray(0);
+
+		shader->disable();
     }
 
 	std::auto_ptr< Texture > Elevation_Mesh::load_texture(const char * texture_file_path)

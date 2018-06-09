@@ -38,6 +38,8 @@ namespace example
 		}
 
 		Node::render(model_view);			// llama al método render() de la clase Node
+
+		shader->disable();
 	}
 
 	void Model::loadModel(string path)

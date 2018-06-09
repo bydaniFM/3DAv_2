@@ -108,7 +108,7 @@ namespace example
 
         texture_cube.bind ();
 
-        glm::mat4 model_view_matrix = camera.get_model_view ();
+        glm::mat4 model_view_matrix = glm::scale(camera.get_model_view(), glm::vec3(1000, 1000, 1000));
         glm::mat4 projection_matrix = camera.get_projection ();
 
         glUniformMatrix4fv (model_view_matrix_id, 1, GL_FALSE, glm::value_ptr(model_view_matrix));

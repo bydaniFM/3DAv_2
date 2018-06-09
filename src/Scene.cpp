@@ -12,8 +12,8 @@ namespace example
 	using namespace std;
 	
 	Scene::Scene()
-		/*:
-		camera(1.f, 1000.f)*/
+		:
+		camera(1.f, 2000.f)
 	{
 		root = make_shared<Node>();
 
@@ -29,7 +29,7 @@ namespace example
 
 		shaders["default"]->link();
 
-		model_view_matrix_id = shaders["default"]->get_uniform_id("model_view_matrix");
+		//model_view_matrix_id = shaders["default"]->get_uniform_id("model_view_matrix");
 		projection_matrix_id = shaders["default"]->get_uniform_id("projection_matrix");
 
 		//Default lit shader
@@ -41,8 +41,8 @@ namespace example
 
 		shaders["default_lit"]->link();
 
-		model_view_matrix_id = shaders["default_lit"]->get_uniform_id("model_view_matrix");
-		projection_matrix_id = shaders["default_lit"]->get_uniform_id("projection_matrix");
+		//model_view_matrix_id = shaders["default_lit"]->get_uniform_id("model_view_matrix");
+		//projection_matrix_id = shaders["default_lit"]->get_uniform_id("projection_matrix");
 
 		configure_light(shaders["default_lit"]);
 
