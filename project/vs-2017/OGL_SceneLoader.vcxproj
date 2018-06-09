@@ -27,6 +27,7 @@
     <ClInclude Include="..\..\src\Shader.hpp" />
     <ClInclude Include="..\..\src\Shader_Program.hpp" />
     <ClInclude Include="..\..\src\Skybox.hpp" />
+    <ClInclude Include="..\..\src\Texture_Cube.hpp" />
     <ClInclude Include="..\..\src\Variant.hpp" />
     <ClInclude Include="..\..\src\Vertex_Shader.hpp" />
     <ClInclude Include="..\..\src\View.hpp" />
@@ -44,6 +45,7 @@
     <ClCompile Include="..\..\src\Shader.cpp" />
     <ClCompile Include="..\..\src\Shader_Program.cpp" />
     <ClCompile Include="..\..\src\Skybox.cpp" />
+    <ClCompile Include="..\..\src\Texture_Cube.cpp" />
     <ClCompile Include="..\..\src\View.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

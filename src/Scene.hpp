@@ -13,6 +13,7 @@ Date:	30/05/2018
 
 #include "Node.hpp"
 #include "Camera.hpp"
+#include "Skybox.hpp"
 #include "Shader_Program.hpp"
 #include "Vertex_Shader.hpp"
 #include "Fragment_Shader.hpp"
@@ -34,6 +35,8 @@ namespace example
 	protected:
 
 		Camera camera;
+		
+		shared_ptr < Skybox > skybox;
 
 		float angle_around_x;
 		float angle_around_y;
@@ -54,6 +57,8 @@ namespace example
 
 			glClearColor(.4f, .4f, .4f, 1.f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+			skybox->render(camera);
 
 			//root->render(glm::inverse(camera.get_model_view()));
 			root->render(camera.get_model_view());

@@ -12,8 +12,8 @@ namespace example
 	using namespace std;
 	
 	Scene::Scene()
-		:
-		camera(1.f, 1000.f)
+		/*:
+		camera(1.f, 1000.f)*/
 	{
 		root = make_shared<Node>();
 
@@ -48,7 +48,17 @@ namespace example
 
 		//Sky shader
 
-		//shaders["sky"].reset(new Shader_Program("assets/metal.vs", "assets/metal.fs"));
+		shaders["sky"].reset(new Shader_Program);
+
+		shaders["sky"]->attach(Vertex_Shader(Shader::Source_Code::from_file("..\\..\\assets\\skybox.vs")));
+		shaders["sky"]->attach(Fragment_Shader(Shader::Source_Code::from_file("..\\..\\assets\\skybox.fs")));
+
+		shaders["sky"]->link();
+
+		/*model_view_matrix_id = shaders["sky"]->get_uniform_id("model_view_matrix");
+		projection_matrix_id = shaders["sky"]->get_uniform_id("projection_matrix");*/
+
+		skybox = make_shared<Skybox>("..\\..\\assets\\sky-cube-map-", shaders["sky"]);
 
 		// Se habilita el backface culling, una luz y materiales b�sicos:
 
