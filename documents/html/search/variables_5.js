@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['height',['height',['../classexample_1_1_color___buffer.html#ae01f4538ee30af1d3072a425c5ad37ac',1,'example::Color_Buffer']]]
+  ['g',['g',['../structoglsl_1_1_color___buffer___rgba8888_1_1_color.html#a3abc80e31a6eea04a6a82e073cf82997',1,'oglsl::Color_Buffer_Rgba8888::Color']]]
 ];

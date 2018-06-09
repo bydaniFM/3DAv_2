@@ -13,39 +13,117 @@ Inheritance diagram for example\+:\+:Node\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classexample_1_1_node_a27eff42d7d0078761627f2fa5ede06bc}{Node}} ()
+\mbox{\hyperlink{classexample_1_1_node_a064cdd4ba93aa74cff9f5b037ed84bbf}{Node}} ()=default
 \item 
-virtual void \mbox{\hyperlink{classexample_1_1_node_a6e9c30ac62693f7fa0a4080202df45df}{render}} ()
+virtual \mbox{\hyperlink{classexample_1_1_node_a0d38a83c31d57519fd1df600f1f30e27}{$\sim$\+Node}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classexample_1_1_node_a520d3d88a4600b0d9987dbeae10ddede}{render}} (const glm\+::mat4 \&parent\+\_\+model\+\_\+view)
 \item 
 virtual void \mbox{\hyperlink{classexample_1_1_node_a6d570b9e13063686b8057d8f561e196e}{update}} ()
+\item 
+void \mbox{\hyperlink{classexample_1_1_node_a67a27b32f8d6211bac54a7ef5e8c8dc6}{add\+Child}} (string name, shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_node}{Node}} $>$ child)
+\item 
+map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_node}{Node}} $>$ $>$ \mbox{\hyperlink{classexample_1_1_node_a35e8fbeddcdf711d734bd00a470f0178}{get\+Children}} ()
+\item 
+void \mbox{\hyperlink{classexample_1_1_node_af0193704909c9018ba9ceab210556bb7}{move}} (const glm\+::vec3 \&displacement)
+\item 
+void \mbox{\hyperlink{classexample_1_1_node_ab4eff1ab9218668c46dcb2d436db93be}{rotate\+\_\+around\+\_\+x}} (float angle)
+\item 
+void \mbox{\hyperlink{classexample_1_1_node_a0f0b0dcf74439bd1b31b7e86908586b5}{rotate\+\_\+around\+\_\+y}} (float angle)
+\item 
+void \mbox{\hyperlink{classexample_1_1_node_aae218610f555df382bd7cdf63b794fb0}{rotate\+\_\+around\+\_\+z}} (float angle)
+\item 
+void \mbox{\hyperlink{classexample_1_1_node_ab1fbe6b0c8bcb630130f5f39a1b85769}{scale}} (float scale)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::mat4 \mbox{\hyperlink{classexample_1_1_node_a98a9bba2771dc273f59d8f1adda2e3e9}{transform}}
 \end{DoxyCompactItemize}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classexample_1_1_node_a27eff42d7d0078761627f2fa5ede06bc}\label{classexample_1_1_node_a27eff42d7d0078761627f2fa5ede06bc}} 
+\mbox{\Hypertarget{classexample_1_1_node_a064cdd4ba93aa74cff9f5b037ed84bbf}\label{classexample_1_1_node_a064cdd4ba93aa74cff9f5b037ed84bbf}} 
 \index{example\+::\+Node@{example\+::\+Node}!Node@{Node}}
 \index{Node@{Node}!example\+::\+Node@{example\+::\+Node}}
 \subsubsection{\texorpdfstring{Node()}{Node()}}
-{\footnotesize\ttfamily example\+::\+Node\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily example\+::\+Node\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classexample_1_1_node_a0d38a83c31d57519fd1df600f1f30e27}\label{classexample_1_1_node_a0d38a83c31d57519fd1df600f1f30e27}} 
+\index{example\+::\+Node@{example\+::\+Node}!````~Node@{$\sim$\+Node}}
+\index{````~Node@{$\sim$\+Node}!example\+::\+Node@{example\+::\+Node}}
+\subsubsection{\texorpdfstring{$\sim$\+Node()}{~Node()}}
+{\footnotesize\ttfamily virtual example\+::\+Node\+::$\sim$\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classexample_1_1_node_a6e9c30ac62693f7fa0a4080202df45df}\label{classexample_1_1_node_a6e9c30ac62693f7fa0a4080202df45df}} 
+\mbox{\Hypertarget{classexample_1_1_node_a67a27b32f8d6211bac54a7ef5e8c8dc6}\label{classexample_1_1_node_a67a27b32f8d6211bac54a7ef5e8c8dc6}} 
+\index{example\+::\+Node@{example\+::\+Node}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!example\+::\+Node@{example\+::\+Node}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}}
+{\footnotesize\ttfamily void example\+::\+Node\+::add\+Child (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_node}{Node}} $>$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_node_a35e8fbeddcdf711d734bd00a470f0178}\label{classexample_1_1_node_a35e8fbeddcdf711d734bd00a470f0178}} 
+\index{example\+::\+Node@{example\+::\+Node}!get\+Children@{get\+Children}}
+\index{get\+Children@{get\+Children}!example\+::\+Node@{example\+::\+Node}}
+\subsubsection{\texorpdfstring{get\+Children()}{getChildren()}}
+{\footnotesize\ttfamily map$<$ string, shared\+\_\+ptr $<$ \mbox{\hyperlink{classexample_1_1_node}{Node}} $>$ $>$ example\+::\+Node\+::get\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_node_af0193704909c9018ba9ceab210556bb7}\label{classexample_1_1_node_af0193704909c9018ba9ceab210556bb7}} 
+\index{example\+::\+Node@{example\+::\+Node}!move@{move}}
+\index{move@{move}!example\+::\+Node@{example\+::\+Node}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void example\+::\+Node\+::move (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{displacement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_node_a520d3d88a4600b0d9987dbeae10ddede}\label{classexample_1_1_node_a520d3d88a4600b0d9987dbeae10ddede}} 
 \index{example\+::\+Node@{example\+::\+Node}!render@{render}}
 \index{render@{render}!example\+::\+Node@{example\+::\+Node}}
 \subsubsection{\texorpdfstring{render()}{render()}}
-{\footnotesize\ttfamily virtual void example\+::\+Node\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual void example\+::\+Node\+::render (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{parent\+\_\+model\+\_\+view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
-Reimplemented in \mbox{\hyperlink{classexample_1_1_elevation___mesh_a67216abcf32e92e3da91810e10822c6e}{example\+::\+Elevation\+\_\+\+Mesh}}, and \mbox{\hyperlink{classexample_1_1_model_ade64225bbb0381bbd5a8dddeac81d983}{example\+::\+Model}}.
+Reimplemented in \mbox{\hyperlink{classexample_1_1_elevation___mesh_a6af1c74193b5e68d638382caa08f1d1a}{example\+::\+Elevation\+\_\+\+Mesh}}, and \mbox{\hyperlink{classexample_1_1_model_ab280b30836095117f49acc5dfa92daf9}{example\+::\+Model}}.
+
+\mbox{\Hypertarget{classexample_1_1_node_ab4eff1ab9218668c46dcb2d436db93be}\label{classexample_1_1_node_ab4eff1ab9218668c46dcb2d436db93be}} 
+\index{example\+::\+Node@{example\+::\+Node}!rotate\+\_\+around\+\_\+x@{rotate\+\_\+around\+\_\+x}}
+\index{rotate\+\_\+around\+\_\+x@{rotate\+\_\+around\+\_\+x}!example\+::\+Node@{example\+::\+Node}}
+\subsubsection{\texorpdfstring{rotate\+\_\+around\+\_\+x()}{rotate\_around\_x()}}
+{\footnotesize\ttfamily void example\+::\+Node\+::rotate\+\_\+around\+\_\+x (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_node_a0f0b0dcf74439bd1b31b7e86908586b5}\label{classexample_1_1_node_a0f0b0dcf74439bd1b31b7e86908586b5}} 
+\index{example\+::\+Node@{example\+::\+Node}!rotate\+\_\+around\+\_\+y@{rotate\+\_\+around\+\_\+y}}
+\index{rotate\+\_\+around\+\_\+y@{rotate\+\_\+around\+\_\+y}!example\+::\+Node@{example\+::\+Node}}
+\subsubsection{\texorpdfstring{rotate\+\_\+around\+\_\+y()}{rotate\_around\_y()}}
+{\footnotesize\ttfamily void example\+::\+Node\+::rotate\+\_\+around\+\_\+y (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_node_aae218610f555df382bd7cdf63b794fb0}\label{classexample_1_1_node_aae218610f555df382bd7cdf63b794fb0}} 
+\index{example\+::\+Node@{example\+::\+Node}!rotate\+\_\+around\+\_\+z@{rotate\+\_\+around\+\_\+z}}
+\index{rotate\+\_\+around\+\_\+z@{rotate\+\_\+around\+\_\+z}!example\+::\+Node@{example\+::\+Node}}
+\subsubsection{\texorpdfstring{rotate\+\_\+around\+\_\+z()}{rotate\_around\_z()}}
+{\footnotesize\ttfamily void example\+::\+Node\+::rotate\+\_\+around\+\_\+z (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_node_ab1fbe6b0c8bcb630130f5f39a1b85769}\label{classexample_1_1_node_ab1fbe6b0c8bcb630130f5f39a1b85769}} 
+\index{example\+::\+Node@{example\+::\+Node}!scale@{scale}}
+\index{scale@{scale}!example\+::\+Node@{example\+::\+Node}}
+\subsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily void example\+::\+Node\+::scale (\begin{DoxyParamCaption}\item[{float}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 \mbox{\Hypertarget{classexample_1_1_node_a6d570b9e13063686b8057d8f561e196e}\label{classexample_1_1_node_a6d570b9e13063686b8057d8f561e196e}} 
 \index{example\+::\+Node@{example\+::\+Node}!update@{update}}
 \index{update@{update}!example\+::\+Node@{example\+::\+Node}}
 \subsubsection{\texorpdfstring{update()}{update()}}
 {\footnotesize\ttfamily virtual void example\+::\+Node\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classexample_1_1_node_a98a9bba2771dc273f59d8f1adda2e3e9}\label{classexample_1_1_node_a98a9bba2771dc273f59d8f1adda2e3e9}} 
+\index{example\+::\+Node@{example\+::\+Node}!transform@{transform}}
+\index{transform@{transform}!example\+::\+Node@{example\+::\+Node}}
+\subsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily glm\+::mat4 example\+::\+Node\+::transform\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 

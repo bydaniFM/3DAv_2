@@ -13,31 +13,40 @@ Inheritance diagram for example\+:\+:Model\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classexample_1_1_model_a0e1e9b91041e92ab9c45c5297a5c7a7a}{Model}} (char $\ast$path)
+\mbox{\hyperlink{classexample_1_1_model_af955e145332333c5ec8a23fcc24ccd5f}{Model}} (char $\ast$path, shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader)
 \item 
-void \mbox{\hyperlink{classexample_1_1_model_ade64225bbb0381bbd5a8dddeac81d983}{render}} ()
+\mbox{\hyperlink{classexample_1_1_model_a2a701d4681196c9c0312743b1acac645}{Model}} (char $\ast$path, shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader, glm\+::vec3 color)
+\item 
+void \mbox{\hyperlink{classexample_1_1_model_ab280b30836095117f49acc5dfa92daf9}{render}} (const glm\+::mat4 \&parent\+\_\+model\+\_\+view) override
 \end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classexample_1_1_model_a0e1e9b91041e92ab9c45c5297a5c7a7a}\label{classexample_1_1_model_a0e1e9b91041e92ab9c45c5297a5c7a7a}} 
+\mbox{\Hypertarget{classexample_1_1_model_af955e145332333c5ec8a23fcc24ccd5f}\label{classexample_1_1_model_af955e145332333c5ec8a23fcc24ccd5f}} 
 \index{example\+::\+Model@{example\+::\+Model}!Model@{Model}}
 \index{Model@{Model}!example\+::\+Model@{example\+::\+Model}}
-\subsubsection{\texorpdfstring{Model()}{Model()}}
-{\footnotesize\ttfamily example\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{char $\ast$}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\subsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily example\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classexample_1_1_model_a2a701d4681196c9c0312743b1acac645}\label{classexample_1_1_model_a2a701d4681196c9c0312743b1acac645}} 
+\index{example\+::\+Model@{example\+::\+Model}!Model@{Model}}
+\index{Model@{Model}!example\+::\+Model@{example\+::\+Model}}
+\subsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily example\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader,  }\item[{glm\+::vec3}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{classexample_1_1_model_ade64225bbb0381bbd5a8dddeac81d983}\label{classexample_1_1_model_ade64225bbb0381bbd5a8dddeac81d983}} 
+\mbox{\Hypertarget{classexample_1_1_model_ab280b30836095117f49acc5dfa92daf9}\label{classexample_1_1_model_ab280b30836095117f49acc5dfa92daf9}} 
 \index{example\+::\+Model@{example\+::\+Model}!render@{render}}
 \index{render@{render}!example\+::\+Model@{example\+::\+Model}}
 \subsubsection{\texorpdfstring{render()}{render()}}
-{\footnotesize\ttfamily void example\+::\+Model\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void example\+::\+Model\+::render (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{parent\+\_\+model\+\_\+view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Reimplemented from \mbox{\hyperlink{classexample_1_1_node_a6e9c30ac62693f7fa0a4080202df45df}{example\+::\+Node}}.
+Reimplemented from \mbox{\hyperlink{classexample_1_1_node_a520d3d88a4600b0d9987dbeae10ddede}{example\+::\+Node}}.
 
 
 

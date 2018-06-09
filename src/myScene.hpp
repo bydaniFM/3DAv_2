@@ -13,11 +13,11 @@ Date:	02/06/2018
 
 using namespace std;
 
-namespace example
+namespace oglsl
 {
 	class myScene : public Scene
 	{
-		float helix_angle;
+		float angle;
 
 	public:
 

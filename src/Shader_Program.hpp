@@ -27,7 +27,7 @@ Date:			30/05/2018
 	#include <glm/gtc/matrix_transform.hpp>         // translate, rotate, scale, perspective
 	#include <glm/gtc/type_ptr.hpp>                 // value_ptr
 
-    namespace example
+    namespace oglsl
     {
         class Shader_Program// : Non_Copyable
         {

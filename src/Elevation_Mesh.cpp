@@ -23,7 +23,7 @@ extern "C"
 using std::vector;
 using namespace glm;
 
-namespace example
+namespace oglsl
 {
 
 	Elevation_Mesh::Elevation_Mesh(int cols, int rows, float width, float depth, float elevation, shared_ptr < Shader_Program > shader)

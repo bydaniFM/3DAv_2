@@ -1,0 +1,80 @@
+\hypertarget{classoglsl_1_1_elevation___mesh}{}\section{oglsl\+:\+:Elevation\+\_\+\+Mesh Class Reference}
+\label{classoglsl_1_1_elevation___mesh}\index{oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}}
+
+
+{\ttfamily \#include $<$Elevation\+\_\+\+Mesh.\+hpp$>$}
+
+Inheritance diagram for oglsl\+:\+:Elevation\+\_\+\+Mesh\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classoglsl_1_1_elevation___mesh}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoglsl_1_1_elevation___mesh_ab23733c3bcec54943bb012c272a44ca3}{Elevation\+\_\+\+Mesh}} (int cols, int rows, float width, float depth, float elevation, shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader)
+\begin{DoxyCompactList}\small\item\em Creates an elevetion mesh with texture. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classoglsl_1_1_elevation___mesh_afc3f5227d96a854e9e66723fbf728cb2}{$\sim$\+Elevation\+\_\+\+Mesh}} ()
+\item 
+glm\+::vec3 \mbox{\hyperlink{classoglsl_1_1_elevation___mesh_ad141ee161715d896f41ca7b31b9d0c7d}{calculate\+\_\+normal}} (const Point3f \&p0, const Point3f \&p1, const Point3f \&p2)
+\item 
+glm\+::vec3 \mbox{\hyperlink{classoglsl_1_1_elevation___mesh_a768320a6bdacdeff34528c0c08f92b5c}{calculate\+\_\+normal}} (const Point3f \&p0, const Point3f \&p1, const Point3f \&p2, const Point3f \&p3, const Point3f \&p4, const Point3f \&p5, const Point3f \&p6, const Point3f \&p7, const Point3f \&p8)
+\item 
+void \mbox{\hyperlink{classoglsl_1_1_elevation___mesh_afb39dc1633680dccabb4b8da72ac4733}{render}} (const glm\+::mat4 \&parent\+\_\+model\+\_\+view) override
+\begin{DoxyCompactList}\small\item\em Renders the mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_elevation___mesh_ab23733c3bcec54943bb012c272a44ca3}\label{classoglsl_1_1_elevation___mesh_ab23733c3bcec54943bb012c272a44ca3}} 
+\index{oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}!Elevation\+\_\+\+Mesh@{Elevation\+\_\+\+Mesh}}
+\index{Elevation\+\_\+\+Mesh@{Elevation\+\_\+\+Mesh}!oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}}
+\subsubsection{\texorpdfstring{Elevation\+\_\+\+Mesh()}{Elevation\_Mesh()}}
+{\footnotesize\ttfamily oglsl\+::\+Elevation\+\_\+\+Mesh\+::\+Elevation\+\_\+\+Mesh (\begin{DoxyParamCaption}\item[{int}]{cols,  }\item[{int}]{rows,  }\item[{float}]{width,  }\item[{float}]{depth,  }\item[{float}]{elevation,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader }\end{DoxyParamCaption})}
+
+
+
+Creates an elevetion mesh with texture. 
+
+\mbox{\Hypertarget{classoglsl_1_1_elevation___mesh_afc3f5227d96a854e9e66723fbf728cb2}\label{classoglsl_1_1_elevation___mesh_afc3f5227d96a854e9e66723fbf728cb2}} 
+\index{oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}!````~Elevation\+\_\+\+Mesh@{$\sim$\+Elevation\+\_\+\+Mesh}}
+\index{````~Elevation\+\_\+\+Mesh@{$\sim$\+Elevation\+\_\+\+Mesh}!oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}}
+\subsubsection{\texorpdfstring{$\sim$\+Elevation\+\_\+\+Mesh()}{~Elevation\_Mesh()}}
+{\footnotesize\ttfamily oglsl\+::\+Elevation\+\_\+\+Mesh\+::$\sim$\+Elevation\+\_\+\+Mesh (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_elevation___mesh_ad141ee161715d896f41ca7b31b9d0c7d}\label{classoglsl_1_1_elevation___mesh_ad141ee161715d896f41ca7b31b9d0c7d}} 
+\index{oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}!calculate\+\_\+normal@{calculate\+\_\+normal}}
+\index{calculate\+\_\+normal@{calculate\+\_\+normal}!oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}}
+\subsubsection{\texorpdfstring{calculate\+\_\+normal()}{calculate\_normal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily glm\+::vec3 oglsl\+::\+Elevation\+\_\+\+Mesh\+::calculate\+\_\+normal (\begin{DoxyParamCaption}\item[{const Point3f \&}]{p0,  }\item[{const Point3f \&}]{p1,  }\item[{const Point3f \&}]{p2 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoglsl_1_1_elevation___mesh_a768320a6bdacdeff34528c0c08f92b5c}\label{classoglsl_1_1_elevation___mesh_a768320a6bdacdeff34528c0c08f92b5c}} 
+\index{oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}!calculate\+\_\+normal@{calculate\+\_\+normal}}
+\index{calculate\+\_\+normal@{calculate\+\_\+normal}!oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}}
+\subsubsection{\texorpdfstring{calculate\+\_\+normal()}{calculate\_normal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily glm\+::vec3 oglsl\+::\+Elevation\+\_\+\+Mesh\+::calculate\+\_\+normal (\begin{DoxyParamCaption}\item[{const Point3f \&}]{p0,  }\item[{const Point3f \&}]{p1,  }\item[{const Point3f \&}]{p2,  }\item[{const Point3f \&}]{p3,  }\item[{const Point3f \&}]{p4,  }\item[{const Point3f \&}]{p5,  }\item[{const Point3f \&}]{p6,  }\item[{const Point3f \&}]{p7,  }\item[{const Point3f \&}]{p8 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classoglsl_1_1_elevation___mesh_afb39dc1633680dccabb4b8da72ac4733}\label{classoglsl_1_1_elevation___mesh_afb39dc1633680dccabb4b8da72ac4733}} 
+\index{oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}!render@{render}}
+\index{render@{render}!oglsl\+::\+Elevation\+\_\+\+Mesh@{oglsl\+::\+Elevation\+\_\+\+Mesh}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void oglsl\+::\+Elevation\+\_\+\+Mesh\+::render (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{parent\+\_\+model\+\_\+view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Renders the mesh. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classoglsl_1_1_node_a09545b18a2d798327601a6251c091444}{oglsl\+::\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_elevation___mesh_8hpp}{Elevation\+\_\+\+Mesh.\+hpp}}\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_elevation___mesh_8cpp}{Elevation\+\_\+\+Mesh.\+cpp}}\end{DoxyCompactItemize}

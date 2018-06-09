@@ -1,0 +1,180 @@
+\hypertarget{classoglsl_1_1_camera}{}\section{oglsl\+:\+:Camera Class Reference}
+\label{classoglsl_1_1_camera}\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+
+
+{\ttfamily \#include $<$Camera.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoglsl_1_1_camera_abb13e0c73a2478c0eb88466438a705ac}{Camera}} (float ratio=1.f)
+\item 
+\mbox{\hyperlink{classoglsl_1_1_camera_a725f993e05b3bd5d1c7b2d9c857406d4}{Camera}} (float near\+\_\+z, float far\+\_\+z, float ratio=1.f)
+\item 
+\mbox{\hyperlink{classoglsl_1_1_camera_a1fcaea89ed1e9933d8c842c91c2826e8}{Camera}} (float fov, float near\+\_\+z, float far\+\_\+z, float ratio)
+\item 
+float \mbox{\hyperlink{classoglsl_1_1_camera_a25329c200eb972bd291e69550bc36b76}{get\+\_\+fov}} () const
+\item 
+float \mbox{\hyperlink{classoglsl_1_1_camera_acd70d8db4ba96a511b65980ada6c7d99}{get\+\_\+near\+\_\+z}} () const
+\item 
+float \mbox{\hyperlink{classoglsl_1_1_camera_aea9f12c1bc947a01bc5e6a4e57edec3d}{get\+\_\+far\+\_\+z}} () const
+\item 
+float \mbox{\hyperlink{classoglsl_1_1_camera_a3b63f5ced299648edb5d59305af17607}{get\+\_\+ratio}} () const
+\item 
+const Point \& \mbox{\hyperlink{classoglsl_1_1_camera_a39b53d2b1aafd94d080c843f1fe52b4a}{get\+\_\+location}} () const
+\item 
+const Point \& \mbox{\hyperlink{classoglsl_1_1_camera_ad326436aa613e959f4af37f55f2d3bdb}{get\+\_\+target}} () const
+\item 
+void \mbox{\hyperlink{classoglsl_1_1_camera_a51ad7034c0a10ad19b20e33bd46eca44}{set\+\_\+fov}} (float new\+\_\+fov)
+\item 
+void \mbox{\hyperlink{classoglsl_1_1_camera_a69c283b01b97024ec296487f6cddabb6}{set\+\_\+near\+\_\+z}} (float new\+\_\+near\+\_\+z)
+\item 
+void \mbox{\hyperlink{classoglsl_1_1_camera_aa748211e2ac590c69fa8557df337139e}{set\+\_\+far\+\_\+z}} (float new\+\_\+far\+\_\+z)
+\item 
+void \mbox{\hyperlink{classoglsl_1_1_camera_ad6589c31c3af3b8b503404dcc77340da}{set\+\_\+ratio}} (float new\+\_\+ratio)
+\item 
+void \mbox{\hyperlink{classoglsl_1_1_camera_aa1b54984fcded5741edb6567de591568}{set\+\_\+location}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{classoglsl_1_1_camera_aacc8dff16915674550dc6d6455565c1f}{set\+\_\+target}} (float x, float y, float z)
+\item 
+void \mbox{\hyperlink{classoglsl_1_1_camera_a1ed2ab7da65d3c57b6a77a64c3a0a721}{reset}} (float new\+\_\+fov, float new\+\_\+near\+\_\+z, float new\+\_\+far\+\_\+z, float new\+\_\+ratio)
+\item 
+void \mbox{\hyperlink{classoglsl_1_1_camera_af53ebc56e9465ce12f559c02ecd453a8}{move}} (const glm\+::vec3 \&translation)
+\item 
+void \mbox{\hyperlink{classoglsl_1_1_camera_a296e47acedb22dac6fb01fbac5263dc0}{rotate}} (const glm\+::mat4 \&rotation)
+\item 
+glm\+::mat4 \mbox{\hyperlink{classoglsl_1_1_camera_a8f2bb51e63f0aaa923f72090f6ef161e}{get\+\_\+projection}} () const
+\item 
+glm\+::mat4 \mbox{\hyperlink{classoglsl_1_1_camera_a79ae892a62f2a1d12d3c49a43de214ed}{get\+\_\+model\+\_\+view}} () const
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_camera_abb13e0c73a2478c0eb88466438a705ac}\label{classoglsl_1_1_camera_abb13e0c73a2478c0eb88466438a705ac}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily oglsl\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{float}]{ratio = {\ttfamily 1.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a725f993e05b3bd5d1c7b2d9c857406d4}\label{classoglsl_1_1_camera_a725f993e05b3bd5d1c7b2d9c857406d4}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily oglsl\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{float}]{near\+\_\+z,  }\item[{float}]{far\+\_\+z,  }\item[{float}]{ratio = {\ttfamily 1.f} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a1fcaea89ed1e9933d8c842c91c2826e8}\label{classoglsl_1_1_camera_a1fcaea89ed1e9933d8c842c91c2826e8}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!Camera@{Camera}}
+\index{Camera@{Camera}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{Camera()}{Camera()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily oglsl\+::\+Camera\+::\+Camera (\begin{DoxyParamCaption}\item[{float}]{fov,  }\item[{float}]{near\+\_\+z,  }\item[{float}]{far\+\_\+z,  }\item[{float}]{ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_camera_aea9f12c1bc947a01bc5e6a4e57edec3d}\label{classoglsl_1_1_camera_aea9f12c1bc947a01bc5e6a4e57edec3d}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!get\+\_\+far\+\_\+z@{get\+\_\+far\+\_\+z}}
+\index{get\+\_\+far\+\_\+z@{get\+\_\+far\+\_\+z}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+\_\+far\+\_\+z()}{get\_far\_z()}}
+{\footnotesize\ttfamily float oglsl\+::\+Camera\+::get\+\_\+far\+\_\+z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a25329c200eb972bd291e69550bc36b76}\label{classoglsl_1_1_camera_a25329c200eb972bd291e69550bc36b76}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!get\+\_\+fov@{get\+\_\+fov}}
+\index{get\+\_\+fov@{get\+\_\+fov}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+\_\+fov()}{get\_fov()}}
+{\footnotesize\ttfamily float oglsl\+::\+Camera\+::get\+\_\+fov (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a39b53d2b1aafd94d080c843f1fe52b4a}\label{classoglsl_1_1_camera_a39b53d2b1aafd94d080c843f1fe52b4a}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!get\+\_\+location@{get\+\_\+location}}
+\index{get\+\_\+location@{get\+\_\+location}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+\_\+location()}{get\_location()}}
+{\footnotesize\ttfamily const Point\& oglsl\+::\+Camera\+::get\+\_\+location (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a79ae892a62f2a1d12d3c49a43de214ed}\label{classoglsl_1_1_camera_a79ae892a62f2a1d12d3c49a43de214ed}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!get\+\_\+model\+\_\+view@{get\+\_\+model\+\_\+view}}
+\index{get\+\_\+model\+\_\+view@{get\+\_\+model\+\_\+view}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+\_\+model\+\_\+view()}{get\_model\_view()}}
+{\footnotesize\ttfamily glm\+::mat4 oglsl\+::\+Camera\+::get\+\_\+model\+\_\+view (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_acd70d8db4ba96a511b65980ada6c7d99}\label{classoglsl_1_1_camera_acd70d8db4ba96a511b65980ada6c7d99}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!get\+\_\+near\+\_\+z@{get\+\_\+near\+\_\+z}}
+\index{get\+\_\+near\+\_\+z@{get\+\_\+near\+\_\+z}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+\_\+near\+\_\+z()}{get\_near\_z()}}
+{\footnotesize\ttfamily float oglsl\+::\+Camera\+::get\+\_\+near\+\_\+z (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a8f2bb51e63f0aaa923f72090f6ef161e}\label{classoglsl_1_1_camera_a8f2bb51e63f0aaa923f72090f6ef161e}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!get\+\_\+projection@{get\+\_\+projection}}
+\index{get\+\_\+projection@{get\+\_\+projection}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+\_\+projection()}{get\_projection()}}
+{\footnotesize\ttfamily glm\+::mat4 oglsl\+::\+Camera\+::get\+\_\+projection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a3b63f5ced299648edb5d59305af17607}\label{classoglsl_1_1_camera_a3b63f5ced299648edb5d59305af17607}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!get\+\_\+ratio@{get\+\_\+ratio}}
+\index{get\+\_\+ratio@{get\+\_\+ratio}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+\_\+ratio()}{get\_ratio()}}
+{\footnotesize\ttfamily float oglsl\+::\+Camera\+::get\+\_\+ratio (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_ad326436aa613e959f4af37f55f2d3bdb}\label{classoglsl_1_1_camera_ad326436aa613e959f4af37f55f2d3bdb}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!get\+\_\+target@{get\+\_\+target}}
+\index{get\+\_\+target@{get\+\_\+target}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{get\+\_\+target()}{get\_target()}}
+{\footnotesize\ttfamily const Point\& oglsl\+::\+Camera\+::get\+\_\+target (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_af53ebc56e9465ce12f559c02ecd453a8}\label{classoglsl_1_1_camera_af53ebc56e9465ce12f559c02ecd453a8}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!move@{move}}
+\index{move@{move}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void oglsl\+::\+Camera\+::move (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{translation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a1ed2ab7da65d3c57b6a77a64c3a0a721}\label{classoglsl_1_1_camera_a1ed2ab7da65d3c57b6a77a64c3a0a721}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!reset@{reset}}
+\index{reset@{reset}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily void oglsl\+::\+Camera\+::reset (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+fov,  }\item[{float}]{new\+\_\+near\+\_\+z,  }\item[{float}]{new\+\_\+far\+\_\+z,  }\item[{float}]{new\+\_\+ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a296e47acedb22dac6fb01fbac5263dc0}\label{classoglsl_1_1_camera_a296e47acedb22dac6fb01fbac5263dc0}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!rotate@{rotate}}
+\index{rotate@{rotate}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{rotate()}{rotate()}}
+{\footnotesize\ttfamily void oglsl\+::\+Camera\+::rotate (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{rotation }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_aa748211e2ac590c69fa8557df337139e}\label{classoglsl_1_1_camera_aa748211e2ac590c69fa8557df337139e}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!set\+\_\+far\+\_\+z@{set\+\_\+far\+\_\+z}}
+\index{set\+\_\+far\+\_\+z@{set\+\_\+far\+\_\+z}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{set\+\_\+far\+\_\+z()}{set\_far\_z()}}
+{\footnotesize\ttfamily void oglsl\+::\+Camera\+::set\+\_\+far\+\_\+z (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+far\+\_\+z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a51ad7034c0a10ad19b20e33bd46eca44}\label{classoglsl_1_1_camera_a51ad7034c0a10ad19b20e33bd46eca44}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!set\+\_\+fov@{set\+\_\+fov}}
+\index{set\+\_\+fov@{set\+\_\+fov}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{set\+\_\+fov()}{set\_fov()}}
+{\footnotesize\ttfamily void oglsl\+::\+Camera\+::set\+\_\+fov (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+fov }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_aa1b54984fcded5741edb6567de591568}\label{classoglsl_1_1_camera_aa1b54984fcded5741edb6567de591568}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!set\+\_\+location@{set\+\_\+location}}
+\index{set\+\_\+location@{set\+\_\+location}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{set\+\_\+location()}{set\_location()}}
+{\footnotesize\ttfamily void oglsl\+::\+Camera\+::set\+\_\+location (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_a69c283b01b97024ec296487f6cddabb6}\label{classoglsl_1_1_camera_a69c283b01b97024ec296487f6cddabb6}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!set\+\_\+near\+\_\+z@{set\+\_\+near\+\_\+z}}
+\index{set\+\_\+near\+\_\+z@{set\+\_\+near\+\_\+z}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{set\+\_\+near\+\_\+z()}{set\_near\_z()}}
+{\footnotesize\ttfamily void oglsl\+::\+Camera\+::set\+\_\+near\+\_\+z (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+near\+\_\+z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_ad6589c31c3af3b8b503404dcc77340da}\label{classoglsl_1_1_camera_ad6589c31c3af3b8b503404dcc77340da}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!set\+\_\+ratio@{set\+\_\+ratio}}
+\index{set\+\_\+ratio@{set\+\_\+ratio}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{set\+\_\+ratio()}{set\_ratio()}}
+{\footnotesize\ttfamily void oglsl\+::\+Camera\+::set\+\_\+ratio (\begin{DoxyParamCaption}\item[{float}]{new\+\_\+ratio }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_camera_aacc8dff16915674550dc6d6455565c1f}\label{classoglsl_1_1_camera_aacc8dff16915674550dc6d6455565c1f}} 
+\index{oglsl\+::\+Camera@{oglsl\+::\+Camera}!set\+\_\+target@{set\+\_\+target}}
+\index{set\+\_\+target@{set\+\_\+target}!oglsl\+::\+Camera@{oglsl\+::\+Camera}}
+\subsubsection{\texorpdfstring{set\+\_\+target()}{set\_target()}}
+{\footnotesize\ttfamily void oglsl\+::\+Camera\+::set\+\_\+target (\begin{DoxyParamCaption}\item[{float}]{x,  }\item[{float}]{y,  }\item[{float}]{z }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_camera_8hpp}{Camera.\+hpp}}\end{DoxyCompactItemize}

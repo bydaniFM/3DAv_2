@@ -1,0 +1,176 @@
+\hypertarget{classoglsl_1_1_node}{}\section{oglsl\+:\+:Node Class Reference}
+\label{classoglsl_1_1_node}\index{oglsl\+::\+Node@{oglsl\+::\+Node}}
+
+
+Represents an object in the scene graph.  
+
+
+
+
+{\ttfamily \#include $<$Node.\+hpp$>$}
+
+Inheritance diagram for oglsl\+:\+:Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classoglsl_1_1_node}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoglsl_1_1_node_a485089d967532e58ecb6eaa1bcbb1185}{Node}} ()=default
+\item 
+virtual \mbox{\hyperlink{classoglsl_1_1_node_a45566d6c50af1f1676f0f11d3ef2b715}{$\sim$\+Node}} ()=default
+\item 
+virtual void \mbox{\hyperlink{classoglsl_1_1_node_a09545b18a2d798327601a6251c091444}{render}} (const glm\+::mat4 \&parent\+\_\+model\+\_\+view)
+\begin{DoxyCompactList}\small\item\em Renders child nodes. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classoglsl_1_1_node_af0c785449427102ed6922ea82e994577}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates child nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_node_a2429fc76cc11f2b67a9161dc12517bab}{add\+Child}} (string name, shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_node}{Node}} $>$ child)
+\begin{DoxyCompactList}\small\item\em Adds a new child to this node. \end{DoxyCompactList}\item 
+map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_node}{Node}} $>$ $>$ \mbox{\hyperlink{classoglsl_1_1_node_a7f3fb74d9bb97e2bc5f20ba75fbfa1e6}{get\+Children}} ()
+\begin{DoxyCompactList}\small\item\em Returns a map with this node\textquotesingle{}s children. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_node_a69b0ce077cfafe57a573a65299440949}{move}} (const glm\+::vec3 \&displacement)
+\begin{DoxyCompactList}\small\item\em Displaces the current transform. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_node_ab3463958740710e6af2a502ecd10d5ba}{rotate\+\_\+around\+\_\+x}} (float angle)
+\begin{DoxyCompactList}\small\item\em Rotates transform around x axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_node_a18862e40a37f13088bf454eb113e42d6}{rotate\+\_\+around\+\_\+y}} (float angle)
+\begin{DoxyCompactList}\small\item\em Rotates transform around y axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_node_afcd334ef611ba394879cd32be71d4c43}{rotate\+\_\+around\+\_\+z}} (float angle)
+\begin{DoxyCompactList}\small\item\em Rotates transform around z axis. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_node_a331a350e8311a310a77a109e6af6d135}{scale}} (float scale)
+\begin{DoxyCompactList}\small\item\em Scales the transform in all axes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+glm\+::mat4 \mbox{\hyperlink{classoglsl_1_1_node_a6b7251cdc6e62932d29f9094347b9e01}{transform}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an object in the scene graph. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_node_a485089d967532e58ecb6eaa1bcbb1185}\label{classoglsl_1_1_node_a485089d967532e58ecb6eaa1bcbb1185}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!Node@{Node}}
+\index{Node@{Node}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}}
+{\footnotesize\ttfamily oglsl\+::\+Node\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_node_a45566d6c50af1f1676f0f11d3ef2b715}\label{classoglsl_1_1_node_a45566d6c50af1f1676f0f11d3ef2b715}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!````~Node@{$\sim$\+Node}}
+\index{````~Node@{$\sim$\+Node}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{$\sim$\+Node()}{~Node()}}
+{\footnotesize\ttfamily virtual oglsl\+::\+Node\+::$\sim$\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_node_a2429fc76cc11f2b67a9161dc12517bab}\label{classoglsl_1_1_node_a2429fc76cc11f2b67a9161dc12517bab}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!add\+Child@{add\+Child}}
+\index{add\+Child@{add\+Child}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{add\+Child()}{addChild()}}
+{\footnotesize\ttfamily void oglsl\+::\+Node\+::add\+Child (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_node}{Node}} $>$}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Adds a new child to this node. 
+
+\mbox{\Hypertarget{classoglsl_1_1_node_a7f3fb74d9bb97e2bc5f20ba75fbfa1e6}\label{classoglsl_1_1_node_a7f3fb74d9bb97e2bc5f20ba75fbfa1e6}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!get\+Children@{get\+Children}}
+\index{get\+Children@{get\+Children}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{get\+Children()}{getChildren()}}
+{\footnotesize\ttfamily map$<$ string, shared\+\_\+ptr $<$ \mbox{\hyperlink{classoglsl_1_1_node}{Node}} $>$ $>$ oglsl\+::\+Node\+::get\+Children (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a map with this node\textquotesingle{}s children. 
+
+\mbox{\Hypertarget{classoglsl_1_1_node_a69b0ce077cfafe57a573a65299440949}\label{classoglsl_1_1_node_a69b0ce077cfafe57a573a65299440949}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!move@{move}}
+\index{move@{move}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void oglsl\+::\+Node\+::move (\begin{DoxyParamCaption}\item[{const glm\+::vec3 \&}]{displacement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Displaces the current transform. 
+
+\mbox{\Hypertarget{classoglsl_1_1_node_a09545b18a2d798327601a6251c091444}\label{classoglsl_1_1_node_a09545b18a2d798327601a6251c091444}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!render@{render}}
+\index{render@{render}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily virtual void oglsl\+::\+Node\+::render (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{parent\+\_\+model\+\_\+view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Renders child nodes. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classoglsl_1_1_model_a22b769c49add4d10774e90466338c695}{oglsl\+::\+Model}}, and \mbox{\hyperlink{classoglsl_1_1_elevation___mesh_afb39dc1633680dccabb4b8da72ac4733}{oglsl\+::\+Elevation\+\_\+\+Mesh}}.
+
+\mbox{\Hypertarget{classoglsl_1_1_node_ab3463958740710e6af2a502ecd10d5ba}\label{classoglsl_1_1_node_ab3463958740710e6af2a502ecd10d5ba}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!rotate\+\_\+around\+\_\+x@{rotate\+\_\+around\+\_\+x}}
+\index{rotate\+\_\+around\+\_\+x@{rotate\+\_\+around\+\_\+x}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{rotate\+\_\+around\+\_\+x()}{rotate\_around\_x()}}
+{\footnotesize\ttfamily void oglsl\+::\+Node\+::rotate\+\_\+around\+\_\+x (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotates transform around x axis. 
+
+\mbox{\Hypertarget{classoglsl_1_1_node_a18862e40a37f13088bf454eb113e42d6}\label{classoglsl_1_1_node_a18862e40a37f13088bf454eb113e42d6}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!rotate\+\_\+around\+\_\+y@{rotate\+\_\+around\+\_\+y}}
+\index{rotate\+\_\+around\+\_\+y@{rotate\+\_\+around\+\_\+y}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{rotate\+\_\+around\+\_\+y()}{rotate\_around\_y()}}
+{\footnotesize\ttfamily void oglsl\+::\+Node\+::rotate\+\_\+around\+\_\+y (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotates transform around y axis. 
+
+\mbox{\Hypertarget{classoglsl_1_1_node_afcd334ef611ba394879cd32be71d4c43}\label{classoglsl_1_1_node_afcd334ef611ba394879cd32be71d4c43}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!rotate\+\_\+around\+\_\+z@{rotate\+\_\+around\+\_\+z}}
+\index{rotate\+\_\+around\+\_\+z@{rotate\+\_\+around\+\_\+z}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{rotate\+\_\+around\+\_\+z()}{rotate\_around\_z()}}
+{\footnotesize\ttfamily void oglsl\+::\+Node\+::rotate\+\_\+around\+\_\+z (\begin{DoxyParamCaption}\item[{float}]{angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Rotates transform around z axis. 
+
+\mbox{\Hypertarget{classoglsl_1_1_node_a331a350e8311a310a77a109e6af6d135}\label{classoglsl_1_1_node_a331a350e8311a310a77a109e6af6d135}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!scale@{scale}}
+\index{scale@{scale}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{scale()}{scale()}}
+{\footnotesize\ttfamily void oglsl\+::\+Node\+::scale (\begin{DoxyParamCaption}\item[{float}]{scale }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Scales the transform in all axes. 
+
+\mbox{\Hypertarget{classoglsl_1_1_node_af0c785449427102ed6922ea82e994577}\label{classoglsl_1_1_node_af0c785449427102ed6922ea82e994577}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!update@{update}}
+\index{update@{update}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void oglsl\+::\+Node\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Updates child nodes. 
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_node_a6b7251cdc6e62932d29f9094347b9e01}\label{classoglsl_1_1_node_a6b7251cdc6e62932d29f9094347b9e01}} 
+\index{oglsl\+::\+Node@{oglsl\+::\+Node}!transform@{transform}}
+\index{transform@{transform}!oglsl\+::\+Node@{oglsl\+::\+Node}}
+\subsubsection{\texorpdfstring{transform}{transform}}
+{\footnotesize\ttfamily glm\+::mat4 oglsl\+::\+Node\+::transform\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_node_8hpp}{Node.\+hpp}}\end{DoxyCompactItemize}

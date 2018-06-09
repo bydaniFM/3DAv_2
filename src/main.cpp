@@ -1,13 +1,9 @@
+/*
 
-/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *\
- *                                                                             *
- *  Started by Ángel on march of 2014                                          *
- *                                                                             *
- *  This is free software released into the public domain.                     *
- *                                                                             *
- *  angel.rodriguez@esne.edu                                                   *
- *                                                                             *
-\* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+Author: Daniel Fernández
+Date:	30/05/2018
+
+*/
 
 #include <cassert>
 #include <string>
@@ -18,7 +14,7 @@
 #include "Input.hpp"
 
 using namespace sf;
-using namespace example;
+using namespace oglsl;
 
 int main ()
 {
@@ -26,7 +22,7 @@ int main ()
 
     window->setVerticalSyncEnabled (true);
 
-    // Una vez se ha creado el contexto de OpenGL ya se puede inicializar Glew:
+	// Init Glew after OpenGL context is created
 
     GLenum glew_initialization =  glewInit ();
 
@@ -36,10 +32,6 @@ int main ()
 
 	shared_ptr < myScene > scene(new myScene);
 	scene->resize(800, 600);
-
-    // Una vez se ha inicializado GLEW se puede crear una instancia de View:
-
-    //View view(800, 600, make_shared<Scene>(scene));
 
 	Input input(window);
 

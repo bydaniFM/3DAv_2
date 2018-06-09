@@ -21,40 +21,48 @@ Date:	30/05/2018
 
 using namespace std;
 
-namespace example
+namespace oglsl
 {
 	class Scene
 	{
+		/// Scene graph's parent node
 		shared_ptr< Node > root;
 		
-		//GLint model_view_matrix_id;
-		//GLint projection_matrix_id;
-
 	protected:
 
+		/// Main camera
 		Camera camera;
 		
+		/// Default skybox
 		shared_ptr < Skybox > skybox;
 
+		/// Camera angle around x axis
 		float angle_around_x;
+		/// Camera angle around y axis
 		float angle_around_y;
 
+		/// Available shaders for the scene
 		map < string, shared_ptr< Shader_Program > > shaders;
 
 	public:
 
+		/// Sets up scene variables and default shaders
 		Scene();
 
+		/// Ads a new object to the scene
 		void add(string name, shared_ptr<Node> node)
 		{
 			root->addChild(name, node);
 		}
 
+		/// Gets and object from the scene root
 		shared_ptr < Node > getObject(string name)
 		{
 			return root->getChildren()[name];
 		}
 
+		/// Renders the scene
+		/// First renders the skybox and then all the objects in the graph
 		void render()
 		{
 
@@ -67,11 +75,13 @@ namespace example
 			root->render(camera.get_model_view());
 		}
 
+		/// Updates the graph root
 		virtual void update()
 		{
 			root->update();
 		}
 
+		/// Resizes the camera and projection_matrix of all shaders
 		void resize(int width, int height)
 		{
 			camera.set_ratio(float(width) / height);
@@ -87,10 +97,15 @@ namespace example
 			}
 		}
 
+		/// Processes input data
+		/// To implement in child scene
 		virtual void processInput(Input::InputData input_data)
 		{
 		}
 
+		/// Configures lights
+		/// Default setup
+		/// @param program Shader to apply light parameters. Must support lightning
 		virtual void configure_light(shared_ptr < Shader_Program > program);
 	};
 }

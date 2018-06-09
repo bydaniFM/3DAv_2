@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['inputdata',['InputData',['../classexample_1_1_input.html#a574fd91f61d018474389e778c31e0da2',1,'example::Input']]]
+  ['inputdata',['InputData',['../classoglsl_1_1_input.html#a3b21d7328538e661f366af5d6059c197',1,'oglsl::Input']]]
 ];

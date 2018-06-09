@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['scene',['Scene',['../classexample_1_1_scene.html',1,'example']]]
+  ['node',['Node',['../classoglsl_1_1_node.html',1,'oglsl']]]
 ];

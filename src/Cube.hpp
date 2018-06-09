@@ -14,7 +14,7 @@
 
     #include <SFML/OpenGL.hpp>
 
-    namespace example
+    namespace oglsl
     {
 
         class Cube

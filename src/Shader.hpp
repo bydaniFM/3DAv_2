@@ -19,7 +19,7 @@
     #include <GL/glew.h>
     //#include <Non_Copyable.hpp>
 
-    namespace example
+    namespace oglsl
     {
 
         class Shader// : Non_Copyable

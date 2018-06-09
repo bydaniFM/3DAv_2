@@ -9,7 +9,7 @@ Date:	18/05/2018
 
 using namespace std;
 
-namespace example
+namespace oglsl
 {
 	Mesh::Mesh
 	(

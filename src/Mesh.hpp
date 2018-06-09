@@ -21,7 +21,7 @@
 
 using namespace std;
 
-namespace example
+namespace oglsl
 {
 	typedef Color_Buffer_Rgba8888 Texture;
 

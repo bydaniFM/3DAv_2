@@ -13,7 +13,7 @@ Date:	02/06/2018
 
 using namespace glm;
 
-namespace example
+namespace oglsl
 {
 	myScene::myScene()
 	{
@@ -35,12 +35,14 @@ namespace example
 
 		camera.move(glm::vec3(0.f, 10.f, -60.f));
 
-		helix_angle = 0.1f;
+		angle = 0.1f;
 	}
 
 	void myScene::update()
 	{
-		getObject("plane")->rotate_around_z(helix_angle);
+		getObject("plane")->rotate_around_z(angle);
+
+		Scene::update();
 	}
 
 	void myScene::processInput(Input::InputData input_data)

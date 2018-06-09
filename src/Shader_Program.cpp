@@ -14,7 +14,7 @@
 
 #include "Shader_Program.hpp"
 
-namespace example
+namespace oglsl
 {
 
     bool Shader_Program::link ()

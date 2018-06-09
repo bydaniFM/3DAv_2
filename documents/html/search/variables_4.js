@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['g',['g',['../structexample_1_1_color___buffer___rgba8888_1_1_color.html#a02b8df3c9800b6d9efab7872ead00da1',1,'example::Color_Buffer_Rgba8888::Color']]]
+  ['float_5fvalue',['float_value',['../classoglsl_1_1_variant.html#a015e1723259d6cc659f19a1a7ec1fe4d',1,'oglsl::Variant']]]
 ];

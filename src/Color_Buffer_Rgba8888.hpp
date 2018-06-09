@@ -17,7 +17,7 @@
     #include <stdint.h>             // This header is <csdint> on C++11...
     #include <vector>
 
-    namespace example
+    namespace oglsl
     {
 
         class Color_Buffer_Rgba8888 : public Color_Buffer

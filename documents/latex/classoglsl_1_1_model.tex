@@ -1,0 +1,76 @@
+\hypertarget{classoglsl_1_1_model}{}\section{oglsl\+:\+:Model Class Reference}
+\label{classoglsl_1_1_model}\index{oglsl\+::\+Model@{oglsl\+::\+Model}}
+
+
+Represents a 3D model with several meshes.  
+
+
+
+
+{\ttfamily \#include $<$Model.\+hpp$>$}
+
+Inheritance diagram for oglsl\+:\+:Model\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classoglsl_1_1_model}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoglsl_1_1_model_a1d1c934e59303cf5782cc3b45f80e462}{Model}} (char $\ast$path, shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader)
+\begin{DoxyCompactList}\small\item\em Initialices shader ids and loads model. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classoglsl_1_1_model_ab3c8fe28157eaa2fd01646a0fc081f0f}{Model}} (char $\ast$path, shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader, glm\+::vec3 color)
+\begin{DoxyCompactList}\small\item\em Initialices shader ids, loads model and sets base color. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_model_a22b769c49add4d10774e90466338c695}{render}} (const glm\+::mat4 \&parent\+\_\+model\+\_\+view) override
+\begin{DoxyCompactList}\small\item\em Sets texture and uniforms, and render all meshes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Represents a 3D model with several meshes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_model_a1d1c934e59303cf5782cc3b45f80e462}\label{classoglsl_1_1_model_a1d1c934e59303cf5782cc3b45f80e462}} 
+\index{oglsl\+::\+Model@{oglsl\+::\+Model}!Model@{Model}}
+\index{Model@{Model}!oglsl\+::\+Model@{oglsl\+::\+Model}}
+\subsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily oglsl\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialices shader ids and loads model. 
+
+\mbox{\Hypertarget{classoglsl_1_1_model_ab3c8fe28157eaa2fd01646a0fc081f0f}\label{classoglsl_1_1_model_ab3c8fe28157eaa2fd01646a0fc081f0f}} 
+\index{oglsl\+::\+Model@{oglsl\+::\+Model}!Model@{Model}}
+\index{Model@{Model}!oglsl\+::\+Model@{oglsl\+::\+Model}}
+\subsubsection{\texorpdfstring{Model()}{Model()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily oglsl\+::\+Model\+::\+Model (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader,  }\item[{glm\+::vec3}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Initialices shader ids, loads model and sets base color. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_model_a22b769c49add4d10774e90466338c695}\label{classoglsl_1_1_model_a22b769c49add4d10774e90466338c695}} 
+\index{oglsl\+::\+Model@{oglsl\+::\+Model}!render@{render}}
+\index{render@{render}!oglsl\+::\+Model@{oglsl\+::\+Model}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void oglsl\+::\+Model\+::render (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{parent\+\_\+model\+\_\+view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Sets texture and uniforms, and render all meshes. 
+
+
+
+Reimplemented from \mbox{\hyperlink{classoglsl_1_1_node_a09545b18a2d798327601a6251c091444}{oglsl\+::\+Node}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_model_8hpp}{Model.\+hpp}}\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_model_8cpp}{Model.\+cpp}}\end{DoxyCompactItemize}

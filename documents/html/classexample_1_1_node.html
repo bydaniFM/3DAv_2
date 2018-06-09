@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classexample_1_1_node.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classexample_1_1_node-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">example::Node Class Reference</div>  </div>
@@ -108,16 +109,37 @@ Inheritance diagram for example::Node:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a27eff42d7d0078761627f2fa5ede06bc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#a27eff42d7d0078761627f2fa5ede06bc">Node</a> ()</td></tr>
-<tr class="separator:a27eff42d7d0078761627f2fa5ede06bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e9c30ac62693f7fa0a4080202df45df"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#a6e9c30ac62693f7fa0a4080202df45df">render</a> ()</td></tr>
-<tr class="separator:a6e9c30ac62693f7fa0a4080202df45df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a064cdd4ba93aa74cff9f5b037ed84bbf"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#a064cdd4ba93aa74cff9f5b037ed84bbf">Node</a> ()=default</td></tr>
+<tr class="separator:a064cdd4ba93aa74cff9f5b037ed84bbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d38a83c31d57519fd1df600f1f30e27"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#a0d38a83c31d57519fd1df600f1f30e27">~Node</a> ()=default</td></tr>
+<tr class="separator:a0d38a83c31d57519fd1df600f1f30e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a520d3d88a4600b0d9987dbeae10ddede"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#a520d3d88a4600b0d9987dbeae10ddede">render</a> (const glm::mat4 &amp;parent_model_view)</td></tr>
+<tr class="separator:a520d3d88a4600b0d9987dbeae10ddede"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d570b9e13063686b8057d8f561e196e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#a6d570b9e13063686b8057d8f561e196e">update</a> ()</td></tr>
 <tr class="separator:a6d570b9e13063686b8057d8f561e196e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67a27b32f8d6211bac54a7ef5e8c8dc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#a67a27b32f8d6211bac54a7ef5e8c8dc6">addChild</a> (string name, shared_ptr&lt; <a class="el" href="classexample_1_1_node.html">Node</a> &gt; child)</td></tr>
+<tr class="separator:a67a27b32f8d6211bac54a7ef5e8c8dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35e8fbeddcdf711d734bd00a470f0178"><td class="memItemLeft" align="right" valign="top">map&lt; string, shared_ptr&lt; <a class="el" href="classexample_1_1_node.html">Node</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#a35e8fbeddcdf711d734bd00a470f0178">getChildren</a> ()</td></tr>
+<tr class="separator:a35e8fbeddcdf711d734bd00a470f0178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0193704909c9018ba9ceab210556bb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#af0193704909c9018ba9ceab210556bb7">move</a> (const glm::vec3 &amp;displacement)</td></tr>
+<tr class="separator:af0193704909c9018ba9ceab210556bb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4eff1ab9218668c46dcb2d436db93be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#ab4eff1ab9218668c46dcb2d436db93be">rotate_around_x</a> (float angle)</td></tr>
+<tr class="separator:ab4eff1ab9218668c46dcb2d436db93be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0b0dcf74439bd1b31b7e86908586b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#a0f0b0dcf74439bd1b31b7e86908586b5">rotate_around_y</a> (float angle)</td></tr>
+<tr class="separator:a0f0b0dcf74439bd1b31b7e86908586b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae218610f555df382bd7cdf63b794fb0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#aae218610f555df382bd7cdf63b794fb0">rotate_around_z</a> (float angle)</td></tr>
+<tr class="separator:aae218610f555df382bd7cdf63b794fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1fbe6b0c8bcb630130f5f39a1b85769"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#ab1fbe6b0c8bcb630130f5f39a1b85769">scale</a> (float scale)</td></tr>
+<tr class="separator:ab1fbe6b0c8bcb630130f5f39a1b85769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a98a9bba2771dc273f59d8f1adda2e3e9"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_node.html#a98a9bba2771dc273f59d8f1adda2e3e9">transform</a></td></tr>
+<tr class="separator:a98a9bba2771dc273f59d8f1adda2e3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a27eff42d7d0078761627f2fa5ede06bc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27eff42d7d0078761627f2fa5ede06bc">&#9670;&nbsp;</a></span>Node()</h2>
+<a id="a064cdd4ba93aa74cff9f5b037ed84bbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a064cdd4ba93aa74cff9f5b037ed84bbf">&#9670;&nbsp;</a></span>Node()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -134,7 +156,32 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0d38a83c31d57519fd1df600f1f30e27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d38a83c31d57519fd1df600f1f30e27">&#9670;&nbsp;</a></span>~Node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual example::Node::~Node </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -142,8 +189,95 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6e9c30ac62693f7fa0a4080202df45df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6e9c30ac62693f7fa0a4080202df45df">&#9670;&nbsp;</a></span>render()</h2>
+<a id="a67a27b32f8d6211bac54a7ef5e8c8dc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67a27b32f8d6211bac54a7ef5e8c8dc6">&#9670;&nbsp;</a></span>addChild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void example::Node::addChild </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="classexample_1_1_node.html">Node</a> &gt;&#160;</td>
+          <td class="paramname"><em>child</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a35e8fbeddcdf711d734bd00a470f0178"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a35e8fbeddcdf711d734bd00a470f0178">&#9670;&nbsp;</a></span>getChildren()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt; string, shared_ptr &lt; <a class="el" href="classexample_1_1_node.html">Node</a> &gt; &gt; example::Node::getChildren </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af0193704909c9018ba9ceab210556bb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0193704909c9018ba9ceab210556bb7">&#9670;&nbsp;</a></span>move()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void example::Node::move </td>
+          <td>(</td>
+          <td class="paramtype">const glm::vec3 &amp;&#160;</td>
+          <td class="paramname"><em>displacement</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a520d3d88a4600b0d9987dbeae10ddede"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a520d3d88a4600b0d9987dbeae10ddede">&#9670;&nbsp;</a></span>render()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,7 +288,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void example::Node::render </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const glm::mat4 &amp;&#160;</td>
+          <td class="paramname"><em>parent_model_view</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -165,7 +300,111 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented in <a class="el" href="classexample_1_1_elevation___mesh.html#a67216abcf32e92e3da91810e10822c6e">example::Elevation_Mesh</a>, and <a class="el" href="classexample_1_1_model.html#ade64225bbb0381bbd5a8dddeac81d983">example::Model</a>.</p>
+<p>Reimplemented in <a class="el" href="classexample_1_1_elevation___mesh.html#a6af1c74193b5e68d638382caa08f1d1a">example::Elevation_Mesh</a>, and <a class="el" href="classexample_1_1_model.html#ab280b30836095117f49acc5dfa92daf9">example::Model</a>.</p>
+
+</div>
+</div>
+<a id="ab4eff1ab9218668c46dcb2d436db93be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4eff1ab9218668c46dcb2d436db93be">&#9670;&nbsp;</a></span>rotate_around_x()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void example::Node::rotate_around_x </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0f0b0dcf74439bd1b31b7e86908586b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f0b0dcf74439bd1b31b7e86908586b5">&#9670;&nbsp;</a></span>rotate_around_y()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void example::Node::rotate_around_y </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aae218610f555df382bd7cdf63b794fb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae218610f555df382bd7cdf63b794fb0">&#9670;&nbsp;</a></span>rotate_around_z()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void example::Node::rotate_around_z </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1fbe6b0c8bcb630130f5f39a1b85769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1fbe6b0c8bcb630130f5f39a1b85769">&#9670;&nbsp;</a></span>scale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void example::Node::scale </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>scale</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -188,6 +427,29 @@ Public Member Functions</h2></td></tr>
   </td>
   <td class="mlabels-right">
 <span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a98a9bba2771dc273f59d8f1adda2e3e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98a9bba2771dc273f59d8f1adda2e3e9">&#9670;&nbsp;</a></span>transform</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">glm::mat4 example::Node::transform</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

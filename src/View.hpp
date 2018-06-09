@@ -20,7 +20,7 @@
 	#include "Scene.hpp"
 	#include "Input.hpp"
 
-    namespace example
+    namespace oglsl
     {
 
         class View

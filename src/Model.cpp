@@ -12,7 +12,7 @@ extern "C"
 #include <targa.h>
 }
 
-namespace example
+namespace oglsl
 {
 	void Model::render(const glm::mat4 & parent_model_view)
 	{

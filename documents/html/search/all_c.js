@@ -1,9 +1,13 @@
 var searchData=
 [
-  ['scene',['Scene',['../classexample_1_1_scene.html',1,'example::Scene'],['../classexample_1_1_scene.html#a70c556631b334b52249e8c3de5dfbdb3',1,'example::Scene::Scene()']]],
-  ['scene_2ehpp',['Scene.hpp',['../_scene_8hpp.html',1,'']]],
-  ['set',['set',['../structexample_1_1_color___buffer___rgba8888_1_1_color.html#ab468e761b5196e508eff6cf396d50cce',1,'example::Color_Buffer_Rgba8888::Color']]],
-  ['set_5fcolor',['set_color',['../classexample_1_1_color___buffer.html#a3fbfa949ee340ccdb40ad0ce8339b827',1,'example::Color_Buffer::set_color()'],['../classexample_1_1_color___buffer___rgba8888.html#a408bf6adf54fc9958b74d21c8f6da178',1,'example::Color_Buffer_Rgba8888::set_color(int r, int g, int b)'],['../classexample_1_1_color___buffer___rgba8888.html#a5033d0d18293c92936fd2ff5318e3f0f',1,'example::Color_Buffer_Rgba8888::set_color(const Color &amp;new_color)']]],
-  ['set_5fpixel',['set_pixel',['../classexample_1_1_color___buffer.html#a967ea326ec0889a36db523727a8154b5',1,'example::Color_Buffer::set_pixel(int x, int y)=0'],['../classexample_1_1_color___buffer.html#a1c919e629ef74e418e1ad416d0a5e85a',1,'example::Color_Buffer::set_pixel(size_t offset)=0'],['../classexample_1_1_color___buffer___rgba8888.html#ac741fa7bca9b980a475e6f7033b64347',1,'example::Color_Buffer_Rgba8888::set_pixel(size_t offset)'],['../classexample_1_1_color___buffer___rgba8888.html#aceb94fbc6797177c5a401f4d10d56766',1,'example::Color_Buffer_Rgba8888::set_pixel(int x, int y)']]],
-  ['size',['size',['../classexample_1_1_color___buffer___rgba8888.html#a635f30dda6b8e1851b444ff6e0d2a092',1,'example::Color_Buffer_Rgba8888']]]
+  ['offset_5fat',['offset_at',['../classoglsl_1_1_color___buffer.html#a0db75521a37e974d14c2b984aabe3c51',1,'oglsl::Color_Buffer']]],
+  ['oglsl',['oglsl',['../namespaceoglsl.html',1,'']]],
+  ['operator_20bool',['operator bool',['../classoglsl_1_1_variant.html#af52c432aaf8fd2b41b1f0bc8c60daaa8',1,'oglsl::Variant']]],
+  ['operator_20const_20char_20_2a',['operator const char *',['../classoglsl_1_1_shader_1_1_source___code.html#a0e0ee6581e24a6633294a6db926b8b7c',1,'oglsl::Shader::Source_Code']]],
+  ['operator_20float',['operator float',['../classoglsl_1_1_variant.html#a8c0eb7364db9e1bbec5f2541bae92a92',1,'oglsl::Variant']]],
+  ['operator_20gluint',['operator GLuint',['../classoglsl_1_1_shader.html#af1bd8a3a30dff0e4f1c0e110db845169',1,'oglsl::Shader::operator GLuint()'],['../classoglsl_1_1_shader___program.html#adad81ab380ceef8c885f084dfd6287c7',1,'oglsl::Shader_Program::operator GLuint()']]],
+  ['operator_20int',['operator int',['../classoglsl_1_1_variant.html#a901e24dc44ebebaacf0d9c0ee64528a7',1,'oglsl::Variant']]],
+  ['operator_20string',['operator string',['../classoglsl_1_1_variant.html#ac47c31403ca1d9770ad683b1cdaa42ef',1,'oglsl::Variant']]],
+  ['operator_3d',['operator=',['../structoglsl_1_1_color___buffer___rgba8888_1_1_color.html#ac6313a1fc7e2fe36405131ef17c83866',1,'oglsl::Color_Buffer_Rgba8888::Color::operator=()'],['../classoglsl_1_1_variant.html#aafd03d4fe5aed76e477b9c1c493d7da7',1,'oglsl::Variant::operator=(const Variant &amp;other)'],['../classoglsl_1_1_variant.html#a69ee102989142f60a760785b7610d3ac',1,'oglsl::Variant::operator=(bool new_value)'],['../classoglsl_1_1_variant.html#aefcbba97a5c59aba0aaac2b36e70e3e3',1,'oglsl::Variant::operator=(int new_value)'],['../classoglsl_1_1_variant.html#a6343065fd630b414ec29578c981c0859',1,'oglsl::Variant::operator=(float new_value)'],['../classoglsl_1_1_variant.html#a7e429221bddc63d4dd1913d057a68c6c',1,'oglsl::Variant::operator=(string new_value)']]],
+  ['string_20_26',['string &amp;',['../classoglsl_1_1_shader_1_1_source___code.html#a1305244d85aabc655fba7cf4f55cc5b4',1,'oglsl::Shader::Source_Code']]]
 ];

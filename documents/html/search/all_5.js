@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['g',['g',['../structexample_1_1_color___buffer___rgba8888_1_1_color.html#a02b8df3c9800b6d9efab7872ead00da1',1,'example::Color_Buffer_Rgba8888::Color']]],
-  ['get_5fheight',['get_height',['../classexample_1_1_color___buffer.html#a4d1495a260205b83e1bd28dd04c6eda2',1,'example::Color_Buffer']]],
-  ['get_5fpixel',['get_pixel',['../classexample_1_1_color___buffer___rgba8888.html#afd80c65a9ba578b74f044ae8927e5a97',1,'example::Color_Buffer_Rgba8888']]],
-  ['get_5fwidth',['get_width',['../classexample_1_1_color___buffer.html#a0bbc4a120bc04b512e303baf8330ff82',1,'example::Color_Buffer']]],
-  ['getinput',['getInput',['../classexample_1_1_input.html#a9db162ac185cdf3a9f77fb9c49158f51',1,'example::Input']]],
-  ['gl_5fdraw_5fpixels',['gl_draw_pixels',['../classexample_1_1_color___buffer.html#a793b667028b2eb7efde2cee76066eac7',1,'example::Color_Buffer::gl_draw_pixels()'],['../classexample_1_1_color___buffer___rgba8888.html#a66e133b6fd196f02a0ba454dd3fc550f',1,'example::Color_Buffer_Rgba8888::gl_draw_pixels()']]]
+  ['float_5fvalue',['float_value',['../classoglsl_1_1_variant.html#a015e1723259d6cc659f19a1a7ec1fe4d',1,'oglsl::Variant']]],
+  ['fragment_5fshader',['Fragment_Shader',['../classoglsl_1_1_fragment___shader.html',1,'oglsl::Fragment_Shader'],['../classoglsl_1_1_fragment___shader.html#a69700cf85e0a653b0de60f3694886f4f',1,'oglsl::Fragment_Shader::Fragment_Shader()']]],
+  ['fragment_5fshader_2ehpp',['Fragment_Shader.hpp',['../_fragment___shader_8hpp.html',1,'']]],
+  ['from_5ffile',['from_file',['../classoglsl_1_1_shader_1_1_source___code.html#adac6de037ca94b53b53db86ca1bca304',1,'oglsl::Shader::Source_Code']]],
+  ['from_5fstring',['from_string',['../classoglsl_1_1_shader_1_1_source___code.html#a9bb3f9ec92c2ca8e88ed4505ee3673d5',1,'oglsl::Shader::Source_Code']]]
 ];

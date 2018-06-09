@@ -88,6 +88,7 @@ $(document).ready(function(){initNavTree('classexample_1_1_scene.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classexample_1_1_scene-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">example::Scene Class Reference</div>  </div>
@@ -95,15 +96,60 @@ $(document).ready(function(){initNavTree('classexample_1_1_scene.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_scene_8hpp_source.html">Scene.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for example::Scene:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classexample_1_1_scene.png" usemap="#example::Scene_map" alt=""/>
+  <map id="example::Scene_map" name="example::Scene_map">
+<area href="classexample_1_1my_scene.html" alt="example::myScene" shape="rect" coords="0,56,116,80"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a70c556631b334b52249e8c3de5dfbdb3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#a70c556631b334b52249e8c3de5dfbdb3">Scene</a> ()</td></tr>
+<tr class="memdesc:a70c556631b334b52249e8c3de5dfbdb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up scene variables and default shaders.  <a href="#a70c556631b334b52249e8c3de5dfbdb3">More...</a><br /></td></tr>
 <tr class="separator:a70c556631b334b52249e8c3de5dfbdb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab11cb4f5a9023180eb1a9f5c9265f1ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#ab11cb4f5a9023180eb1a9f5c9265f1ec">add</a> (shared_ptr&lt; <a class="el" href="classexample_1_1_node.html">Node</a> &gt; node)</td></tr>
-<tr class="separator:ab11cb4f5a9023180eb1a9f5c9265f1ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad84740d850908b110decaaa3fbd784c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#aad84740d850908b110decaaa3fbd784c">add</a> (string name, shared_ptr&lt; <a class="el" href="classexample_1_1_node.html">Node</a> &gt; node)</td></tr>
+<tr class="memdesc:aad84740d850908b110decaaa3fbd784c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ads a new object to the scene.  <a href="#aad84740d850908b110decaaa3fbd784c">More...</a><br /></td></tr>
+<tr class="separator:aad84740d850908b110decaaa3fbd784c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8636f5257b9514898b6f57a0161c3169"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classexample_1_1_node.html">Node</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#a8636f5257b9514898b6f57a0161c3169">getObject</a> (string name)</td></tr>
+<tr class="memdesc:a8636f5257b9514898b6f57a0161c3169"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets and object from the scene root.  <a href="#a8636f5257b9514898b6f57a0161c3169">More...</a><br /></td></tr>
+<tr class="separator:a8636f5257b9514898b6f57a0161c3169"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e8672b9fab7eaa38bc039467dc0b66a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#a6e8672b9fab7eaa38bc039467dc0b66a">render</a> ()</td></tr>
+<tr class="memdesc:a6e8672b9fab7eaa38bc039467dc0b66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the scene First renders the skybox and then all the objects in the graph.  <a href="#a6e8672b9fab7eaa38bc039467dc0b66a">More...</a><br /></td></tr>
 <tr class="separator:a6e8672b9fab7eaa38bc039467dc0b66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0a25c01b0759a02ab7a00364a853b6f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#af0a25c01b0759a02ab7a00364a853b6f">update</a> ()</td></tr>
+<tr class="memdesc:af0a25c01b0759a02ab7a00364a853b6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the graph root.  <a href="#af0a25c01b0759a02ab7a00364a853b6f">More...</a><br /></td></tr>
+<tr class="separator:af0a25c01b0759a02ab7a00364a853b6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96fdbfc5f6fde59dd1372af8e0ad6bfb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#a96fdbfc5f6fde59dd1372af8e0ad6bfb">resize</a> (int width, int height)</td></tr>
+<tr class="memdesc:a96fdbfc5f6fde59dd1372af8e0ad6bfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the camera and projection_matrix of all shaders.  <a href="#a96fdbfc5f6fde59dd1372af8e0ad6bfb">More...</a><br /></td></tr>
+<tr class="separator:a96fdbfc5f6fde59dd1372af8e0ad6bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a798a6c155c57e9368b72014795a64d77"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#a798a6c155c57e9368b72014795a64d77">processInput</a> (<a class="el" href="classexample_1_1_input.html#af6bf4fd763ca01bd106ca3b03f162e3d">Input::InputData</a> input_data)</td></tr>
+<tr class="memdesc:a798a6c155c57e9368b72014795a64d77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Processes input data To implement in child scene.  <a href="#a798a6c155c57e9368b72014795a64d77">More...</a><br /></td></tr>
+<tr class="separator:a798a6c155c57e9368b72014795a64d77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1d8381ffdb26c061d10fc2d1b3448cc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#ac1d8381ffdb26c061d10fc2d1b3448cc">configure_light</a> (shared_ptr&lt; <a class="el" href="classexample_1_1_shader___program.html">Shader_Program</a> &gt; program)</td></tr>
+<tr class="memdesc:ac1d8381ffdb26c061d10fc2d1b3448cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configures lights Default setup.  <a href="#ac1d8381ffdb26c061d10fc2d1b3448cc">More...</a><br /></td></tr>
+<tr class="separator:ac1d8381ffdb26c061d10fc2d1b3448cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a44bfea9e279b461235fff82b3b241be2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classexample_1_1_camera.html">Camera</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#a44bfea9e279b461235fff82b3b241be2">camera</a></td></tr>
+<tr class="memdesc:a44bfea9e279b461235fff82b3b241be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Main camera.  <a href="#a44bfea9e279b461235fff82b3b241be2">More...</a><br /></td></tr>
+<tr class="separator:a44bfea9e279b461235fff82b3b241be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20f50fcaf3d8deef29ddb83108185a2"><td class="memItemLeft" align="right" valign="top">shared_ptr&lt; <a class="el" href="classexample_1_1_skybox.html">Skybox</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#ad20f50fcaf3d8deef29ddb83108185a2">skybox</a></td></tr>
+<tr class="memdesc:ad20f50fcaf3d8deef29ddb83108185a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default skybox.  <a href="#ad20f50fcaf3d8deef29ddb83108185a2">More...</a><br /></td></tr>
+<tr class="separator:ad20f50fcaf3d8deef29ddb83108185a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f3b06f8a07cf82c5876be93a036ac8c"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#a4f3b06f8a07cf82c5876be93a036ac8c">angle_around_x</a></td></tr>
+<tr class="memdesc:a4f3b06f8a07cf82c5876be93a036ac8c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classexample_1_1_camera.html">Camera</a> angle around x axis.  <a href="#a4f3b06f8a07cf82c5876be93a036ac8c">More...</a><br /></td></tr>
+<tr class="separator:a4f3b06f8a07cf82c5876be93a036ac8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bf6905673690b7f9345c7543db5c63d"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#a9bf6905673690b7f9345c7543db5c63d">angle_around_y</a></td></tr>
+<tr class="memdesc:a9bf6905673690b7f9345c7543db5c63d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classexample_1_1_camera.html">Camera</a> angle around y axis.  <a href="#a9bf6905673690b7f9345c7543db5c63d">More...</a><br /></td></tr>
+<tr class="separator:a9bf6905673690b7f9345c7543db5c63d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af21081d9e0af2bbdd958a3fdf3460031"><td class="memItemLeft" align="right" valign="top">map&lt; string, shared_ptr&lt; <a class="el" href="classexample_1_1_shader___program.html">Shader_Program</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classexample_1_1_scene.html#af21081d9e0af2bbdd958a3fdf3460031">shaders</a></td></tr>
+<tr class="memdesc:af21081d9e0af2bbdd958a3fdf3460031"><td class="mdescLeft">&#160;</td><td class="mdescRight">Available shaders for the scene.  <a href="#af21081d9e0af2bbdd958a3fdf3460031">More...</a><br /></td></tr>
+<tr class="separator:af21081d9e0af2bbdd958a3fdf3460031"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a70c556631b334b52249e8c3de5dfbdb3"></a>
@@ -111,9 +157,6 @@ Public Member Functions</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">example::Scene::Scene </td>
@@ -122,18 +165,15 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
+
+<p>Sets up scene variables and default shaders. </p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ab11cb4f5a9023180eb1a9f5c9265f1ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab11cb4f5a9023180eb1a9f5c9265f1ec">&#9670;&nbsp;</a></span>add()</h2>
+<a id="aad84740d850908b110decaaa3fbd784c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad84740d850908b110decaaa3fbd784c">&#9670;&nbsp;</a></span>add()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,8 +184,80 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void example::Scene::add </td>
           <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">shared_ptr&lt; <a class="el" href="classexample_1_1_node.html">Node</a> &gt;&#160;</td>
-          <td class="paramname"><em>node</em></td><td>)</td>
+          <td class="paramname"><em>node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ads a new object to the scene. </p>
+
+</div>
+</div>
+<a id="ac1d8381ffdb26c061d10fc2d1b3448cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1d8381ffdb26c061d10fc2d1b3448cc">&#9670;&nbsp;</a></span>configure_light()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void example::Scene::configure_light </td>
+          <td>(</td>
+          <td class="paramtype">shared_ptr&lt; <a class="el" href="classexample_1_1_shader___program.html">Shader_Program</a> &gt;&#160;</td>
+          <td class="paramname"><em>program</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configures lights Default setup. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">program</td><td><a class="el" href="classexample_1_1_shader.html">Shader</a> to apply light parameters. Must support lightning </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8636f5257b9514898b6f57a0161c3169"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8636f5257b9514898b6f57a0161c3169">&#9670;&nbsp;</a></span>getObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt; <a class="el" href="classexample_1_1_node.html">Node</a> &gt; example::Scene::getObject </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>name</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -155,6 +267,38 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Gets and object from the scene root. </p>
+
+</div>
+</div>
+<a id="a798a6c155c57e9368b72014795a64d77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a798a6c155c57e9368b72014795a64d77">&#9670;&nbsp;</a></span>processInput()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void example::Scene::processInput </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classexample_1_1_input.html#af6bf4fd763ca01bd106ca3b03f162e3d">Input::InputData</a>&#160;</td>
+          <td class="paramname"><em>input_data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Processes input data To implement in child scene. </p>
+
+<p>Reimplemented in <a class="el" href="classexample_1_1my_scene.html#a61a6d862d5c0b1ef8e31daa089699bd4">example::myScene</a>.</p>
 
 </div>
 </div>
@@ -181,10 +325,201 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Renders the scene First renders the skybox and then all the objects in the graph. </p>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<a id="a96fdbfc5f6fde59dd1372af8e0ad6bfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96fdbfc5f6fde59dd1372af8e0ad6bfb">&#9670;&nbsp;</a></span>resize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void example::Scene::resize </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>width</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>height</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Resizes the camera and projection_matrix of all shaders. </p>
+
+</div>
+</div>
+<a id="af0a25c01b0759a02ab7a00364a853b6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0a25c01b0759a02ab7a00364a853b6f">&#9670;&nbsp;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void example::Scene::update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Updates the graph root. </p>
+
+<p>Reimplemented in <a class="el" href="classexample_1_1my_scene.html#a56843ecc84a14a7938897baa09b29e3f">example::myScene</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4f3b06f8a07cf82c5876be93a036ac8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f3b06f8a07cf82c5876be93a036ac8c">&#9670;&nbsp;</a></span>angle_around_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float example::Scene::angle_around_x</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classexample_1_1_camera.html">Camera</a> angle around x axis. </p>
+
+</div>
+</div>
+<a id="a9bf6905673690b7f9345c7543db5c63d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bf6905673690b7f9345c7543db5c63d">&#9670;&nbsp;</a></span>angle_around_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float example::Scene::angle_around_y</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p><a class="el" href="classexample_1_1_camera.html">Camera</a> angle around y axis. </p>
+
+</div>
+</div>
+<a id="a44bfea9e279b461235fff82b3b241be2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44bfea9e279b461235fff82b3b241be2">&#9670;&nbsp;</a></span>camera</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classexample_1_1_camera.html">Camera</a> example::Scene::camera</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Main camera. </p>
+
+</div>
+</div>
+<a id="af21081d9e0af2bbdd958a3fdf3460031"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af21081d9e0af2bbdd958a3fdf3460031">&#9670;&nbsp;</a></span>shaders</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">map&lt; string, shared_ptr&lt; <a class="el" href="classexample_1_1_shader___program.html">Shader_Program</a> &gt; &gt; example::Scene::shaders</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Available shaders for the scene. </p>
+
+</div>
+</div>
+<a id="ad20f50fcaf3d8deef29ddb83108185a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20f50fcaf3d8deef29ddb83108185a2">&#9670;&nbsp;</a></span>skybox</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt; <a class="el" href="classexample_1_1_skybox.html">Skybox</a> &gt; example::Scene::skybox</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default skybox. </p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>D:/GitKraken/3DAv_2/src/<a class="el" href="_scene_8hpp_source.html">Scene.hpp</a></li>
+<li>D:/GitKraken/3DAv_2/src/<a class="el" href="_scene_8cpp.html">Scene.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

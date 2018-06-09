@@ -1,6 +1,6 @@
 var classexample_1_1_input =
 [
-    [ "InputData", "classexample_1_1_input.html#a574fd91f61d018474389e778c31e0da2", null ],
+    [ "InputData", "classexample_1_1_input.html#af6bf4fd763ca01bd106ca3b03f162e3d", null ],
     [ "input_type", "classexample_1_1_input.html#a315efe66cfd6b49cbe0f46ab46ece59f", [
       [ "close", "classexample_1_1_input.html#a315efe66cfd6b49cbe0f46ab46ece59fab257fe2f5ed273f10e2dab9437dce0d1", null ],
       [ "resize", "classexample_1_1_input.html#a315efe66cfd6b49cbe0f46ab46ece59fa4798b64ed7b9b9c65d9a313aa9081be2", null ],

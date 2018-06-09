@@ -17,7 +17,7 @@
 
     #include "Shader.hpp"
 
-    namespace example
+    namespace oglsl
     {
 
         class Fragment_Shader : public Shader

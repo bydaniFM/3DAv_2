@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['offset_5fat',['offset_at',['../classexample_1_1_color___buffer.html#ae316a2df43a9ead02cc45170a8d0f7ed',1,'example::Color_Buffer']]],
-  ['operator_3d',['operator=',['../structexample_1_1_color___buffer___rgba8888_1_1_color.html#ada91a7b49ff32dc823e5cf733fc94b55',1,'example::Color_Buffer_Rgba8888::Color']]]
+  ['link',['link',['../classoglsl_1_1_shader___program.html#a91879ef2ebeee83ffddcbf6d7ec6904c',1,'oglsl::Shader_Program']]],
+  ['log',['log',['../classoglsl_1_1_shader.html#a5556801b4f5dffa82d3835003a73184a',1,'oglsl::Shader::log()'],['../classoglsl_1_1_shader___program.html#addd674132d0eedf58f6bc92f0e446dc5',1,'oglsl::Shader_Program::log()']]]
 ];

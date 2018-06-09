@@ -1,0 +1,202 @@
+\hypertarget{classoglsl_1_1_scene}{}\section{oglsl\+:\+:Scene Class Reference}
+\label{classoglsl_1_1_scene}\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+Inheritance diagram for oglsl\+:\+:Scene\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classoglsl_1_1_scene}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoglsl_1_1_scene_a1d13c881f3b0b7d4d7bd8d5225a50481}{Scene}} ()
+\begin{DoxyCompactList}\small\item\em Sets up scene variables and default shaders. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_scene_a1b1296aab1c81101473a38451c139819}{add}} (string name, shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_node}{Node}} $>$ node)
+\begin{DoxyCompactList}\small\item\em Ads a new object to the scene. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_node}{Node}} $>$ \mbox{\hyperlink{classoglsl_1_1_scene_a10b398b3e59b41c5fb0dbadb8120e0f3}{get\+Object}} (string name)
+\begin{DoxyCompactList}\small\item\em Gets and object from the scene root. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_scene_a94b552369f7653c854d38a1553c84288}{render}} ()
+\begin{DoxyCompactList}\small\item\em Renders the scene First renders the skybox and then all the objects in the graph. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classoglsl_1_1_scene_accbf0c6f23ccd909f63851c0bc547449}{update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the graph root. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_scene_a1eac687cef62ac021bfdd98749aa2ee5}{resize}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Resizes the camera and projection\+\_\+matrix of all shaders. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classoglsl_1_1_scene_a7884a3f2b7900aaf348a62ad23223c8e}{process\+Input}} (\mbox{\hyperlink{classoglsl_1_1_input_a3b21d7328538e661f366af5d6059c197}{Input\+::\+Input\+Data}} input\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Processes input data To implement in child scene. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classoglsl_1_1_scene_a91c975ee306374f17b9f348801f2ce3e}{configure\+\_\+light}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ program)
+\begin{DoxyCompactList}\small\item\em Configures lights Default setup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoglsl_1_1_camera}{Camera}} \mbox{\hyperlink{classoglsl_1_1_scene_a272ee5697b5bb4bfb725cb07b944dec4}{camera}}
+\begin{DoxyCompactList}\small\item\em Main camera. \end{DoxyCompactList}\item 
+shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_skybox}{Skybox}} $>$ \mbox{\hyperlink{classoglsl_1_1_scene_af01c494a85900703fc19e5bb7c757ebc}{skybox}}
+\begin{DoxyCompactList}\small\item\em Default skybox. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classoglsl_1_1_scene_a3acba5c9ee3e2712b142550f5f06c488}{angle\+\_\+around\+\_\+x}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classoglsl_1_1_camera}{Camera}} angle around x axis. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classoglsl_1_1_scene_af8751fb0147fb71a1f4d5a0ddf94b99e}{angle\+\_\+around\+\_\+y}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{classoglsl_1_1_camera}{Camera}} angle around y axis. \end{DoxyCompactList}\item 
+map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ $>$ \mbox{\hyperlink{classoglsl_1_1_scene_ac60cfa73f999218a5c801308d29d33eb}{shaders}}
+\begin{DoxyCompactList}\small\item\em Available shaders for the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_scene_a1d13c881f3b0b7d4d7bd8d5225a50481}\label{classoglsl_1_1_scene_a1d13c881f3b0b7d4d7bd8d5225a50481}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!Scene@{Scene}}
+\index{Scene@{Scene}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{Scene()}{Scene()}}
+{\footnotesize\ttfamily oglsl\+::\+Scene\+::\+Scene (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Sets up scene variables and default shaders. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_scene_a1b1296aab1c81101473a38451c139819}\label{classoglsl_1_1_scene_a1b1296aab1c81101473a38451c139819}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!add@{add}}
+\index{add@{add}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily void oglsl\+::\+Scene\+::add (\begin{DoxyParamCaption}\item[{string}]{name,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_node}{Node}} $>$}]{node }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Ads a new object to the scene. 
+
+\mbox{\Hypertarget{classoglsl_1_1_scene_a91c975ee306374f17b9f348801f2ce3e}\label{classoglsl_1_1_scene_a91c975ee306374f17b9f348801f2ce3e}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!configure\+\_\+light@{configure\+\_\+light}}
+\index{configure\+\_\+light@{configure\+\_\+light}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{configure\+\_\+light()}{configure\_light()}}
+{\footnotesize\ttfamily void oglsl\+::\+Scene\+::configure\+\_\+light (\begin{DoxyParamCaption}\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{program }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Configures lights Default setup. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em program} & \mbox{\hyperlink{classoglsl_1_1_shader}{Shader}} to apply light parameters. Must support lightning \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classoglsl_1_1_scene_a10b398b3e59b41c5fb0dbadb8120e0f3}\label{classoglsl_1_1_scene_a10b398b3e59b41c5fb0dbadb8120e0f3}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!get\+Object@{get\+Object}}
+\index{get\+Object@{get\+Object}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{get\+Object()}{getObject()}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_node}{Node}} $>$ oglsl\+::\+Scene\+::get\+Object (\begin{DoxyParamCaption}\item[{string}]{name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets and object from the scene root. 
+
+\mbox{\Hypertarget{classoglsl_1_1_scene_a7884a3f2b7900aaf348a62ad23223c8e}\label{classoglsl_1_1_scene_a7884a3f2b7900aaf348a62ad23223c8e}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!process\+Input@{process\+Input}}
+\index{process\+Input@{process\+Input}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{process\+Input()}{processInput()}}
+{\footnotesize\ttfamily virtual void oglsl\+::\+Scene\+::process\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoglsl_1_1_input_a3b21d7328538e661f366af5d6059c197}{Input\+::\+Input\+Data}}}]{input\+\_\+data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Processes input data To implement in child scene. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classoglsl_1_1my_scene_aeab1e8cfe8c40f6110e1789a74008191}{oglsl\+::my\+Scene}}.
+
+\mbox{\Hypertarget{classoglsl_1_1_scene_a94b552369f7653c854d38a1553c84288}\label{classoglsl_1_1_scene_a94b552369f7653c854d38a1553c84288}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!render@{render}}
+\index{render@{render}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void oglsl\+::\+Scene\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Renders the scene First renders the skybox and then all the objects in the graph. 
+
+\mbox{\Hypertarget{classoglsl_1_1_scene_a1eac687cef62ac021bfdd98749aa2ee5}\label{classoglsl_1_1_scene_a1eac687cef62ac021bfdd98749aa2ee5}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!resize@{resize}}
+\index{resize@{resize}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily void oglsl\+::\+Scene\+::resize (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Resizes the camera and projection\+\_\+matrix of all shaders. 
+
+\mbox{\Hypertarget{classoglsl_1_1_scene_accbf0c6f23ccd909f63851c0bc547449}\label{classoglsl_1_1_scene_accbf0c6f23ccd909f63851c0bc547449}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!update@{update}}
+\index{update@{update}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void oglsl\+::\+Scene\+::update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Updates the graph root. 
+
+
+
+Reimplemented in \mbox{\hyperlink{classoglsl_1_1my_scene_a798dcfe11aee5c093013c59b665b6754}{oglsl\+::my\+Scene}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_scene_a3acba5c9ee3e2712b142550f5f06c488}\label{classoglsl_1_1_scene_a3acba5c9ee3e2712b142550f5f06c488}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!angle\+\_\+around\+\_\+x@{angle\+\_\+around\+\_\+x}}
+\index{angle\+\_\+around\+\_\+x@{angle\+\_\+around\+\_\+x}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{angle\+\_\+around\+\_\+x}{angle\_around\_x}}
+{\footnotesize\ttfamily float oglsl\+::\+Scene\+::angle\+\_\+around\+\_\+x\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{classoglsl_1_1_camera}{Camera}} angle around x axis. 
+
+\mbox{\Hypertarget{classoglsl_1_1_scene_af8751fb0147fb71a1f4d5a0ddf94b99e}\label{classoglsl_1_1_scene_af8751fb0147fb71a1f4d5a0ddf94b99e}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!angle\+\_\+around\+\_\+y@{angle\+\_\+around\+\_\+y}}
+\index{angle\+\_\+around\+\_\+y@{angle\+\_\+around\+\_\+y}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{angle\+\_\+around\+\_\+y}{angle\_around\_y}}
+{\footnotesize\ttfamily float oglsl\+::\+Scene\+::angle\+\_\+around\+\_\+y\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\mbox{\hyperlink{classoglsl_1_1_camera}{Camera}} angle around y axis. 
+
+\mbox{\Hypertarget{classoglsl_1_1_scene_a272ee5697b5bb4bfb725cb07b944dec4}\label{classoglsl_1_1_scene_a272ee5697b5bb4bfb725cb07b944dec4}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!camera@{camera}}
+\index{camera@{camera}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{camera}{camera}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classoglsl_1_1_camera}{Camera}} oglsl\+::\+Scene\+::camera\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Main camera. 
+
+\mbox{\Hypertarget{classoglsl_1_1_scene_ac60cfa73f999218a5c801308d29d33eb}\label{classoglsl_1_1_scene_ac60cfa73f999218a5c801308d29d33eb}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!shaders@{shaders}}
+\index{shaders@{shaders}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{shaders}{shaders}}
+{\footnotesize\ttfamily map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ $>$ oglsl\+::\+Scene\+::shaders\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Available shaders for the scene. 
+
+\mbox{\Hypertarget{classoglsl_1_1_scene_af01c494a85900703fc19e5bb7c757ebc}\label{classoglsl_1_1_scene_af01c494a85900703fc19e5bb7c757ebc}} 
+\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!skybox@{skybox}}
+\index{skybox@{skybox}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
+\subsubsection{\texorpdfstring{skybox}{skybox}}
+{\footnotesize\ttfamily shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_skybox}{Skybox}} $>$ oglsl\+::\+Scene\+::skybox\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Default skybox. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_scene_8hpp}{Scene.\+hpp}}\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_scene_8cpp}{Scene.\+cpp}}\end{DoxyCompactItemize}

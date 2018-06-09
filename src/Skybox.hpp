@@ -17,7 +17,7 @@
 #include "Texture_Cube.hpp"
 #include "Shader_Program.hpp"
 
-namespace example
+namespace oglsl
 {
 
     class Skybox

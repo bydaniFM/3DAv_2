@@ -1,0 +1,140 @@
+\hypertarget{classoglsl_1_1_color___buffer}{}\section{oglsl\+:\+:Color\+\_\+\+Buffer Class Reference}
+\label{classoglsl_1_1_color___buffer}\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+
+
+{\ttfamily \#include $<$Color\+\_\+\+Buffer.\+hpp$>$}
+
+Inheritance diagram for oglsl\+:\+:Color\+\_\+\+Buffer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classoglsl_1_1_color___buffer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoglsl_1_1_color___buffer_aef41961965c6ee31c7948e8d917e9128}{Color\+\_\+\+Buffer}} (size\+\_\+t \mbox{\hyperlink{classoglsl_1_1_color___buffer_a520198eca2cfb64729d134d12efae304}{width}}, size\+\_\+t \mbox{\hyperlink{classoglsl_1_1_color___buffer_a18db6640d6dec54b6695821b9dcaf9c5}{height}})
+\item 
+size\+\_\+t \mbox{\hyperlink{classoglsl_1_1_color___buffer_ad8f3838322c9e15aa4ebe0f687f0c482}{get\+\_\+width}} () const
+\item 
+size\+\_\+t \mbox{\hyperlink{classoglsl_1_1_color___buffer_ae13e503d22d65745da0c8c83fb024e5c}{get\+\_\+height}} () const
+\item 
+int \mbox{\hyperlink{classoglsl_1_1_color___buffer_a0db75521a37e974d14c2b984aabe3c51}{offset\+\_\+at}} (int x, int y) const
+\item 
+virtual int \mbox{\hyperlink{classoglsl_1_1_color___buffer_a0d182abbbcfddd72467ce085b7eb88b7}{bits\+\_\+per\+\_\+color}} () const =0
+\item 
+virtual void \mbox{\hyperlink{classoglsl_1_1_color___buffer_a200116c77f9ce43da0156e4260aa1e71}{set\+\_\+color}} (int r, int g, int b)=0
+\item 
+virtual void \mbox{\hyperlink{classoglsl_1_1_color___buffer_a45662e4f8c5d9776eb125d1c605d36d8}{set\+\_\+pixel}} (int x, int y)=0
+\item 
+virtual void \mbox{\hyperlink{classoglsl_1_1_color___buffer_aa3b45a2c94da2a9b3e410637152a6a91}{set\+\_\+pixel}} (size\+\_\+t offset)=0
+\item 
+virtual void \mbox{\hyperlink{classoglsl_1_1_color___buffer_a250795f2a7e3b8edc47accc5605d62a3}{gl\+\_\+draw\+\_\+pixels}} (int raster\+\_\+x, int raster\+\_\+y) const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \mbox{\hyperlink{classoglsl_1_1_color___buffer_a520198eca2cfb64729d134d12efae304}{width}}
+\item 
+size\+\_\+t \mbox{\hyperlink{classoglsl_1_1_color___buffer_a18db6640d6dec54b6695821b9dcaf9c5}{height}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_aef41961965c6ee31c7948e8d917e9128}\label{classoglsl_1_1_color___buffer_aef41961965c6ee31c7948e8d917e9128}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!Color\+\_\+\+Buffer@{Color\+\_\+\+Buffer}}
+\index{Color\+\_\+\+Buffer@{Color\+\_\+\+Buffer}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{Color\+\_\+\+Buffer()}{Color\_Buffer()}}
+{\footnotesize\ttfamily oglsl\+::\+Color\+\_\+\+Buffer\+::\+Color\+\_\+\+Buffer (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{width,  }\item[{size\+\_\+t}]{height }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_a0d182abbbcfddd72467ce085b7eb88b7}\label{classoglsl_1_1_color___buffer_a0d182abbbcfddd72467ce085b7eb88b7}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!bits\+\_\+per\+\_\+color@{bits\+\_\+per\+\_\+color}}
+\index{bits\+\_\+per\+\_\+color@{bits\+\_\+per\+\_\+color}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{bits\+\_\+per\+\_\+color()}{bits\_per\_color()}}
+{\footnotesize\ttfamily virtual int oglsl\+::\+Color\+\_\+\+Buffer\+::bits\+\_\+per\+\_\+color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classoglsl_1_1_color___buffer___rgba8888_a3b4da4899c6765e8689ec2b438ecba84}{oglsl\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgba8888}}.
+
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_ae13e503d22d65745da0c8c83fb024e5c}\label{classoglsl_1_1_color___buffer_ae13e503d22d65745da0c8c83fb024e5c}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!get\+\_\+height@{get\+\_\+height}}
+\index{get\+\_\+height@{get\+\_\+height}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{get\+\_\+height()}{get\_height()}}
+{\footnotesize\ttfamily size\+\_\+t oglsl\+::\+Color\+\_\+\+Buffer\+::get\+\_\+height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_ad8f3838322c9e15aa4ebe0f687f0c482}\label{classoglsl_1_1_color___buffer_ad8f3838322c9e15aa4ebe0f687f0c482}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!get\+\_\+width@{get\+\_\+width}}
+\index{get\+\_\+width@{get\+\_\+width}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{get\+\_\+width()}{get\_width()}}
+{\footnotesize\ttfamily size\+\_\+t oglsl\+::\+Color\+\_\+\+Buffer\+::get\+\_\+width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_a250795f2a7e3b8edc47accc5605d62a3}\label{classoglsl_1_1_color___buffer_a250795f2a7e3b8edc47accc5605d62a3}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!gl\+\_\+draw\+\_\+pixels@{gl\+\_\+draw\+\_\+pixels}}
+\index{gl\+\_\+draw\+\_\+pixels@{gl\+\_\+draw\+\_\+pixels}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{gl\+\_\+draw\+\_\+pixels()}{gl\_draw\_pixels()}}
+{\footnotesize\ttfamily virtual void oglsl\+::\+Color\+\_\+\+Buffer\+::gl\+\_\+draw\+\_\+pixels (\begin{DoxyParamCaption}\item[{int}]{raster\+\_\+x,  }\item[{int}]{raster\+\_\+y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classoglsl_1_1_color___buffer___rgba8888_a06d2384e10162f928e59bfa6e23046da}{oglsl\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgba8888}}.
+
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_a0db75521a37e974d14c2b984aabe3c51}\label{classoglsl_1_1_color___buffer_a0db75521a37e974d14c2b984aabe3c51}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!offset\+\_\+at@{offset\+\_\+at}}
+\index{offset\+\_\+at@{offset\+\_\+at}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{offset\+\_\+at()}{offset\_at()}}
+{\footnotesize\ttfamily int oglsl\+::\+Color\+\_\+\+Buffer\+::offset\+\_\+at (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_a200116c77f9ce43da0156e4260aa1e71}\label{classoglsl_1_1_color___buffer_a200116c77f9ce43da0156e4260aa1e71}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!set\+\_\+color@{set\+\_\+color}}
+\index{set\+\_\+color@{set\+\_\+color}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{set\+\_\+color()}{set\_color()}}
+{\footnotesize\ttfamily virtual void oglsl\+::\+Color\+\_\+\+Buffer\+::set\+\_\+color (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classoglsl_1_1_color___buffer___rgba8888_a5860a8570962cd69e864e2dc43884373}{oglsl\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgba8888}}.
+
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_a45662e4f8c5d9776eb125d1c605d36d8}\label{classoglsl_1_1_color___buffer_a45662e4f8c5d9776eb125d1c605d36d8}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!set\+\_\+pixel@{set\+\_\+pixel}}
+\index{set\+\_\+pixel@{set\+\_\+pixel}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{set\+\_\+pixel()}{set\_pixel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual void oglsl\+::\+Color\+\_\+\+Buffer\+::set\+\_\+pixel (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classoglsl_1_1_color___buffer___rgba8888_a88a98459049a2366ef58a08a1716b9f9}{oglsl\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgba8888}}.
+
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_aa3b45a2c94da2a9b3e410637152a6a91}\label{classoglsl_1_1_color___buffer_aa3b45a2c94da2a9b3e410637152a6a91}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!set\+\_\+pixel@{set\+\_\+pixel}}
+\index{set\+\_\+pixel@{set\+\_\+pixel}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{set\+\_\+pixel()}{set\_pixel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual void oglsl\+::\+Color\+\_\+\+Buffer\+::set\+\_\+pixel (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \mbox{\hyperlink{classoglsl_1_1_color___buffer___rgba8888_a9a62b5f6084af1d6fd1fc7b075c6e025}{oglsl\+::\+Color\+\_\+\+Buffer\+\_\+\+Rgba8888}}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_a18db6640d6dec54b6695821b9dcaf9c5}\label{classoglsl_1_1_color___buffer_a18db6640d6dec54b6695821b9dcaf9c5}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!height@{height}}
+\index{height@{height}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily size\+\_\+t oglsl\+::\+Color\+\_\+\+Buffer\+::height\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{classoglsl_1_1_color___buffer_a520198eca2cfb64729d134d12efae304}\label{classoglsl_1_1_color___buffer_a520198eca2cfb64729d134d12efae304}} 
+\index{oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}!width@{width}}
+\index{width@{width}!oglsl\+::\+Color\+\_\+\+Buffer@{oglsl\+::\+Color\+\_\+\+Buffer}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily size\+\_\+t oglsl\+::\+Color\+\_\+\+Buffer\+::width\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_color___buffer_8hpp}{Color\+\_\+\+Buffer.\+hpp}}\end{DoxyCompactItemize}

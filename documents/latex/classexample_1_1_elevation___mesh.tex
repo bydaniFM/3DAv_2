@@ -13,7 +13,7 @@ Inheritance diagram for example\+:\+:Elevation\+\_\+\+Mesh\+:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{classexample_1_1_elevation___mesh_a585a87a8af21d707e5608440c8c8ac6e}{Elevation\+\_\+\+Mesh}} (int cols, int rows, float width, float depth, float elevation)
+\mbox{\hyperlink{classexample_1_1_elevation___mesh_a631c220a9e5c04f1c84b5301329c3791}{Elevation\+\_\+\+Mesh}} (int cols, int rows, float width, float depth, float elevation, shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader)
 \item 
 \mbox{\hyperlink{classexample_1_1_elevation___mesh_a64aaa59bc4b872cf5180e444d3cb1073}{$\sim$\+Elevation\+\_\+\+Mesh}} ()
 \item 
@@ -21,16 +21,17 @@ glm\+::vec3 \mbox{\hyperlink{classexample_1_1_elevation___mesh_a3a4637a65ae4c1a7
 \item 
 glm\+::vec3 \mbox{\hyperlink{classexample_1_1_elevation___mesh_aee6583fd55f431f0a6b8dc8e99b6db94}{calculate\+\_\+normal}} (const Point3f \&p0, const Point3f \&p1, const Point3f \&p2, const Point3f \&p3, const Point3f \&p4, const Point3f \&p5, const Point3f \&p6, const Point3f \&p7, const Point3f \&p8)
 \item 
-void \mbox{\hyperlink{classexample_1_1_elevation___mesh_a67216abcf32e92e3da91810e10822c6e}{render}} ()
+void \mbox{\hyperlink{classexample_1_1_elevation___mesh_a6af1c74193b5e68d638382caa08f1d1a}{render}} (const glm\+::mat4 \&parent\+\_\+model\+\_\+view) override
 \end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{classexample_1_1_elevation___mesh_a585a87a8af21d707e5608440c8c8ac6e}\label{classexample_1_1_elevation___mesh_a585a87a8af21d707e5608440c8c8ac6e}} 
+\mbox{\Hypertarget{classexample_1_1_elevation___mesh_a631c220a9e5c04f1c84b5301329c3791}\label{classexample_1_1_elevation___mesh_a631c220a9e5c04f1c84b5301329c3791}} 
 \index{example\+::\+Elevation\+\_\+\+Mesh@{example\+::\+Elevation\+\_\+\+Mesh}!Elevation\+\_\+\+Mesh@{Elevation\+\_\+\+Mesh}}
 \index{Elevation\+\_\+\+Mesh@{Elevation\+\_\+\+Mesh}!example\+::\+Elevation\+\_\+\+Mesh@{example\+::\+Elevation\+\_\+\+Mesh}}
 \subsubsection{\texorpdfstring{Elevation\+\_\+\+Mesh()}{Elevation\_Mesh()}}
-{\footnotesize\ttfamily example\+::\+Elevation\+\_\+\+Mesh\+::\+Elevation\+\_\+\+Mesh (\begin{DoxyParamCaption}\item[{int}]{cols,  }\item[{int}]{rows,  }\item[{float}]{width,  }\item[{float}]{depth,  }\item[{float}]{elevation }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily example\+::\+Elevation\+\_\+\+Mesh\+::\+Elevation\+\_\+\+Mesh (\begin{DoxyParamCaption}\item[{int}]{cols,  }\item[{int}]{rows,  }\item[{float}]{width,  }\item[{float}]{depth,  }\item[{float}]{elevation,  }\item[{shared\+\_\+ptr$<$ \mbox{\hyperlink{classexample_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{classexample_1_1_elevation___mesh_a64aaa59bc4b872cf5180e444d3cb1073}\label{classexample_1_1_elevation___mesh_a64aaa59bc4b872cf5180e444d3cb1073}} 
 \index{example\+::\+Elevation\+\_\+\+Mesh@{example\+::\+Elevation\+\_\+\+Mesh}!````~Elevation\+\_\+\+Mesh@{$\sim$\+Elevation\+\_\+\+Mesh}}
@@ -53,15 +54,15 @@ void \mbox{\hyperlink{classexample_1_1_elevation___mesh_a67216abcf32e92e3da91810
 \subsubsection{\texorpdfstring{calculate\+\_\+normal()}{calculate\_normal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily glm\+::vec3 example\+::\+Elevation\+\_\+\+Mesh\+::calculate\+\_\+normal (\begin{DoxyParamCaption}\item[{const Point3f \&}]{p0,  }\item[{const Point3f \&}]{p1,  }\item[{const Point3f \&}]{p2,  }\item[{const Point3f \&}]{p3,  }\item[{const Point3f \&}]{p4,  }\item[{const Point3f \&}]{p5,  }\item[{const Point3f \&}]{p6,  }\item[{const Point3f \&}]{p7,  }\item[{const Point3f \&}]{p8 }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{classexample_1_1_elevation___mesh_a67216abcf32e92e3da91810e10822c6e}\label{classexample_1_1_elevation___mesh_a67216abcf32e92e3da91810e10822c6e}} 
+\mbox{\Hypertarget{classexample_1_1_elevation___mesh_a6af1c74193b5e68d638382caa08f1d1a}\label{classexample_1_1_elevation___mesh_a6af1c74193b5e68d638382caa08f1d1a}} 
 \index{example\+::\+Elevation\+\_\+\+Mesh@{example\+::\+Elevation\+\_\+\+Mesh}!render@{render}}
 \index{render@{render}!example\+::\+Elevation\+\_\+\+Mesh@{example\+::\+Elevation\+\_\+\+Mesh}}
 \subsubsection{\texorpdfstring{render()}{render()}}
-{\footnotesize\ttfamily void example\+::\+Elevation\+\_\+\+Mesh\+::render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily void example\+::\+Elevation\+\_\+\+Mesh\+::render (\begin{DoxyParamCaption}\item[{const glm\+::mat4 \&}]{parent\+\_\+model\+\_\+view }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
 
 
 
-Reimplemented from \mbox{\hyperlink{classexample_1_1_node_a6e9c30ac62693f7fa0a4080202df45df}{example\+::\+Node}}.
+Reimplemented from \mbox{\hyperlink{classexample_1_1_node_a520d3d88a4600b0d9987dbeae10ddede}{example\+::\+Node}}.
 
 
 

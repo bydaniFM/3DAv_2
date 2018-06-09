@@ -7,7 +7,7 @@ Date:	02/06/2018
 
 #include "Scene.hpp"
 
-namespace example
+namespace oglsl
 {
 	using namespace std;
 	
@@ -51,7 +51,6 @@ namespace example
 
 		skybox = make_shared<Skybox>("..\\..\\assets\\sky-cube-map-", shaders["sky"]);
 
-		// Se habilita el backface culling, una luz y materiales b�sicos:
 
 		glEnable(GL_CULL_FACE);
 		glEnable(GL_DEPTH_TEST);

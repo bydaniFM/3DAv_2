@@ -17,7 +17,7 @@ Date:			30/05/2018
 using std::string;
 using std::to_string;
 
-namespace example
+namespace oglsl
 {
 
 	class Variant

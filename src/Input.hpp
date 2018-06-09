@@ -19,8 +19,9 @@ Date:	30/05/2018
 using namespace std;
 using namespace sf;
 
-namespace example
+namespace oglsl
 {
+	/// Controls user input
 	class Input
 	{
 	public:
@@ -52,6 +53,7 @@ namespace example
 
 	public:
 
+		/// Initialises inputs
 		Input(shared_ptr<Window> window)
 			:
 			window(window)
@@ -72,6 +74,7 @@ namespace example
 			mouse_sensibility = 100;
 		}
 
+		/// Checks for all inputs, saves them in input_data and returns it
 		InputData check()
 		{
 			bool mouse_moved = false;
