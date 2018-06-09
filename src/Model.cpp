@@ -95,6 +95,7 @@ namespace example
 			normal.x = mesh->mNormals[i].x;
 			normal.y = mesh->mNormals[i].y;
 			normal.z = mesh->mNormals[i].z;
+			normals.push_back(normal);
 
 			glm::vec2 texCoord;
 			if (mesh->mTextureCoords[0]) // does the mesh contain texture coordinates?

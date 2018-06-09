@@ -55,6 +55,12 @@ namespace example
 		GLuint  vao_id;                  // Id del VAO de la malla
 		GLsizei number_of_indices;
 
+		bool   has_texture;
+
+		GLuint texture_id;
+		GLint  main_color_id;
+		GLint  has_texture_id;
+
     public:
 
 		Elevation_Mesh(int cols, int rows, float width, float depth, float elevation, shared_ptr < Shader_Program > shader);
@@ -74,10 +80,7 @@ namespace example
         void render (const glm::mat4 & parent_model_view) override;
 
 	private:
-
-		bool   has_texture;
-		GLuint texture_id;
-
+		
 		std::auto_ptr< Texture > load_texture(const char * texture_file_path);
 
     };

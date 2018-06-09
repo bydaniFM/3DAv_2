@@ -26,11 +26,12 @@ namespace example
 
 		GLint			model_view_matrix_id;
 		GLint			projection_matrix_id;
+		GLint			normal_matrix_id;
 		GLuint			texture_id;
 		GLint			main_color_id;
 		GLint			has_texture_id;
 
-		glm::vec4		main_color;
+		glm::vec3		main_color;
 
 		///Meshes will share only one shader, while having different colors/textures
 		shared_ptr < Shader_Program > shader;
@@ -47,23 +48,25 @@ namespace example
 		{
 			model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
 			projection_matrix_id = shader->get_uniform_id("projection_matrix");
-			main_color_id        = shader->get_uniform_id("main_color");
+			normal_matrix_id     = shader->get_uniform_id("normal_matrix");
+			main_color_id        = shader->get_uniform_id("material_color");
 			has_texture_id		 = shader->get_uniform_id("no_texture");
 
-			main_color = glm::vec4(1, 1, 1, 1);
+			main_color = glm::vec3(1, 1, 1);
 			
 			loadModel(path);
 
 		}
 
-		Model(char *path, shared_ptr<Shader_Program> shader, glm::vec4 color)
+		Model(char *path, shared_ptr<Shader_Program> shader, glm::vec3 color)
 			:
 			shader(shader),
 			has_texture(false)
 		{
 			model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
 			projection_matrix_id = shader->get_uniform_id("projection_matrix");
-			main_color_id		 = shader->get_uniform_id("main_color");
+			normal_matrix_id	 = shader->get_uniform_id("normal_matrix");
+			main_color_id		 = shader->get_uniform_id("material_color");
 			has_texture_id       = shader->get_uniform_id("no_texture");
 
 			main_color = color;

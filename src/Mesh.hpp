@@ -25,24 +25,11 @@ namespace example
 {
 	typedef Color_Buffer_Rgba8888 Texture;
 
-	/*struct Vertex {
-		glm::vec3 Position;
-		glm::vec3 Normal;
-		glm::vec2 TexCoords;
-	};*/
-
-	/*struct Texture {
-		unsigned int id;
-		string type;
-		string path;
-	};*/
-
 	class Mesh
 	{
 	private:
 
 		///Base color of the model
-		//Queda setear el id de opengl
 		Texture::Color color;
 
 		typedef glm::vec2 Point2f;
@@ -63,7 +50,6 @@ namespace example
 		GLsizei number_of_indices;
 
 		
-
 	public:
 
 		//(Mesh(const string & path);

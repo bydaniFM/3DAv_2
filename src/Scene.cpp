@@ -9,39 +9,8 @@ Date:	02/06/2018
 
 namespace example
 {
-
 	using namespace std;
-
-	const string Scene::vertex_shader_code =
-		"#version 330\n"
-		""
-		"uniform mat4 model_view_matrix;"
-		"uniform mat4 projection_matrix;"
-		""
-		"layout (location = 0) in vec3 vertex_coordinates;"
-		"layout (location = 1) in vec3 vertex_texture_uv;"
-		""
-		"out vec2 texture_uv;"
-		""
-		"void main()"
-		"{"
-		"    texture_uv = vertex_texture_uv;"
-		"   gl_Position = projection_matrix * model_view_matrix * vec4(vertex_coordinates, 1.0);"
-		"}";
-
-	const string Scene::fragment_shader_code =
-		"#version 330\n"
-		""
-		"uniform  sampler2D sampler;"
-		"in  vec2 texture_uv;"
-		"out vec4 fragment_color;"
-		""
-		"void main()"
-		"{"
-		//"    fragment_color = vec4(1.0, 1.0, 1.0, 1.0);"
-		"    fragment_color = vec4(texture(sampler, texture.st).rgb, 1.0);"
-		"}";
-
+	
 	Scene::Scene()
 		:
 		camera(1.f, 1000.f)
@@ -55,16 +24,27 @@ namespace example
 
 		shaders["default"].reset(new Shader_Program);
 
-		shaders["default"]->attach(Vertex_Shader(Shader::Source_Code::from_file("..\\..\\assets\\default_textured.vs")));
+		shaders["default"]->attach(Vertex_Shader  (Shader::Source_Code::from_file("..\\..\\assets\\default_textured.vs")));
 		shaders["default"]->attach(Fragment_Shader(Shader::Source_Code::from_file("..\\..\\assets\\default_textured.fs")));
-		/*shaders["default"]->attach(Vertex_Shader(Shader::Source_Code::from_string(vertex_shader_code)));
-		shaders["default"]->attach(Fragment_Shader(Shader::Source_Code::from_string(fragment_shader_code)));*/
 
 		shaders["default"]->link();
 
 		model_view_matrix_id = shaders["default"]->get_uniform_id("model_view_matrix");
 		projection_matrix_id = shaders["default"]->get_uniform_id("projection_matrix");
-		//GLint main_color_id = shaders["default"]->get_uniform_id("main_color");
+
+		//Default lit shader
+
+		shaders["default_lit"].reset(new Shader_Program);
+
+		shaders["default_lit"]->attach(Vertex_Shader  (Shader::Source_Code::from_file("..\\..\\assets\\default_textured_lit.vs")));
+		shaders["default_lit"]->attach(Fragment_Shader(Shader::Source_Code::from_file("..\\..\\assets\\default_textured_lit.fs")));
+
+		shaders["default_lit"]->link();
+
+		model_view_matrix_id = shaders["default_lit"]->get_uniform_id("model_view_matrix");
+		projection_matrix_id = shaders["default_lit"]->get_uniform_id("projection_matrix");
+
+		configure_light(shaders["default_lit"]);
 
 		//Sky shader
 
@@ -74,5 +54,19 @@ namespace example
 
 		glEnable(GL_CULL_FACE);
 		glEnable(GL_DEPTH_TEST);
+
+	}
+
+	void Scene::configure_light(shared_ptr < Shader_Program > program)
+	{
+		GLint light_position	= program->get_uniform_id("light.position");
+		GLint light_color		= program->get_uniform_id("light.color");
+		GLint ambient_intensity = program->get_uniform_id("ambient_intensity");
+		GLint diffuse_intensity = program->get_uniform_id("diffuse_intensity");
+
+		program->set_uniform_value(light_position, glm::vec4(10.f, 10.f, 10.f, 1.f));
+		program->set_uniform_value(light_color, glm::vec3(1.f, 1.f, 1.f));
+		program->set_uniform_value(ambient_intensity, 0.2f);
+		program->set_uniform_value(diffuse_intensity, 0.8f);
 	}
 }

@@ -21,14 +21,9 @@ namespace example
 	)
 	{
 
-
 		number_of_indices = indices.size();
 
 		//Setup Mesh
-
-		/*glGenBuffers(VBO_COUNT, vbo_ids);
-		glGenVertexArrays(1, &vao_id);
-		glBindVertexArray(vao_id);*/
 
 		glGenVertexArrays(1, &vao_id);
 		glGenBuffers(1, &vbo_ids[COORDINATES_VBO]);
@@ -51,6 +46,14 @@ namespace example
 
 		glEnableVertexAttribArray(1);
 		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+
+		// Se configuran el atributo de normales:
+
+		glBindBuffer(GL_ARRAY_BUFFER, vbo_ids[NORMALS_VBO]);
+		glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), normals.data(), GL_STATIC_DRAW);
+
+		glEnableVertexAttribArray(2);
+		glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
 		// Se configuran los índices:
 

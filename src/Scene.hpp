@@ -27,10 +27,7 @@ namespace example
 		//vector<shared_ptr<Node>> graph;
 
 		shared_ptr< Node > root;
-
-		static const std::string   vertex_shader_code;
-		static const std::string fragment_shader_code;
-
+		
 		GLint model_view_matrix_id;
 		GLint projection_matrix_id;
 
@@ -70,6 +67,7 @@ namespace example
 		void resize(int width, int height)
 		{
 			camera.set_ratio(float(width) / height);
+			glViewport(0, 0, width, height);
 
 			glm::mat4 projection_matrix = camera.get_projection();
 
@@ -83,5 +81,7 @@ namespace example
 		virtual void processInput(Input::InputData input_data)
 		{
 		}
+
+		virtual void configure_light(shared_ptr < Shader_Program > program);
 	};
 }

@@ -28,10 +28,12 @@ namespace example
 
 	Elevation_Mesh::Elevation_Mesh(int cols, int rows, float width, float depth, float elevation, shared_ptr < Shader_Program > shader)
 		:
-		shader(shader)
+		shader(shader),
+		has_texture(false)
     {
 		model_view_matrix_id = shader->get_uniform_id("model_view_matrix");
-		projection_matrix_id = shader->get_uniform_id("projection_matrix");
+		main_color_id        = shader->get_uniform_id("main_color");
+		has_texture_id       = shader->get_uniform_id("no_texture");
 
 		unsigned number_of_vertices =  cols      *  rows;
 				 number_of_indices  = (cols - 1) * (rows - 1) * 2 * 3;
@@ -45,7 +47,8 @@ namespace example
 
 		// 1 CARGAR TEXTURA DE ELEVACION
 		std::auto_ptr< Texture > texture = load_texture("..\\..\\assets\\elevation_texture.tga");//(texture_path);
-		/*
+		
+		// Aplicar textura (misma que elevación)
 		has_texture = texture.get() != 0;
 
 		if (has_texture)
@@ -75,7 +78,8 @@ namespace example
 				texture->colors()
 			);
 		}
-		*/
+
+		
 		// Se generan los datos de las posiciones:
 
 		float x_step = width / (cols - 1);
@@ -83,14 +87,22 @@ namespace example
 
 		float z = -width / 2.f;
 
+		float texture_coordinate[] = { 0.f, 1.f };
+
 		for (int row = 0, i = 0; row < rows; ++row)		// row = z's
 		{
 			float x = -width / 2.f;
 
+			float v = texture_coordinate[row & 1];
+
 			for (int col = 0; col < cols; ++col)		// col = x's
 			{
+				//Calculate uvs
+				float u = texture_coordinate[col & 1];
+				uvs[i] = Point2f{ u, v };
+
+				//Calculate positions
 				float h = 0.f;
-				// 1 SAMPLEAR LA TEXTURA USANDO COL Y ROW, Y GUARDAR LA ALTURA EN h
 				h = texture->get_pixel( col * (texture->get_width() / cols),
 										row * (texture->get_height() / rows)) / 255.f * elevation;
 				positions[i++] = Point3f{ x, h, z };
@@ -138,9 +150,14 @@ namespace example
 
 		// Se generan índices para los VBOs del cubo:
 
-		glGenBuffers(VBO_COUNT, vbo_ids);
+		/*glGenBuffers(VBO_COUNT, vbo_ids);
 		glGenVertexArrays(1, &vao_id);
+		glBindVertexArray(vao_id);*/
 
+		glGenVertexArrays(1, &vao_id);
+		glGenBuffers(1, &vbo_ids[COORDINATES_VBO]);
+		glGenBuffers(1, &vbo_ids[UVS_VBO]);
+		glGenBuffers(1, &vbo_ids[INDICES_VBO]);
 		glBindVertexArray(vao_id);
 
 		// Se suben a un VBO los datos de coordenadas:
@@ -151,24 +168,23 @@ namespace example
 		glEnableVertexAttribArray(0);
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
 
-		// Se suben a un VBO los datos de color:
+		// Se suben a un VBO los datos de uvs:
 
-		/*glBindBuffer (GL_ARRAY_BUFFER, vbo_ids[COLORS_VBO]);
-		glBufferData (GL_ARRAY_BUFFER, sizeof(colors), colors, GL_STATIC_DRAW);*/
+		// Se configuran el atributo de coordenadas de textura:
 
-		// Se suben a un VBO los datos de normales:
+		glBindBuffer(GL_ARRAY_BUFFER, vbo_ids[UVS_VBO]);
+		glBufferData(GL_ARRAY_BUFFER, uvs.size() * sizeof(glm::vec2), uvs.data(), GL_STATIC_DRAW);
 
-		// DESCOMENTAR CUANDO ESTËN LAS NORMALES
-		//glBindBuffer(GL_ARRAY_BUFFER, vbo_ids[NORMALS_VBO]);
-		//glBufferData(GL_ARRAY_BUFFER, sizeof(normals), normals.data(), GL_STATIC_DRAW);
-		//glEnableVertexAttribArray(0);
-		//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
 
-		// NO ES NECESARIO EN OPENGL MODERNO:
-		// Se dejan activados los estados usados:
-		//glEnableClientState (GL_VERTEX_ARRAY);
-		//glEnableClientState (GL_COLOR_ARRAY );
-		//glEnableClientState (GL_NORMAL_ARRAY);
+		// Se configuran el atributo de normales:
+
+		/*glBindBuffer(GL_ARRAY_BUFFER, vbo_ids[NORMALS_VBO]);
+		glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), normals.data(), GL_STATIC_DRAW);
+
+		glEnableVertexAttribArray(2);
+		glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, 0, 0);*/
 
 		// Se suben a un VBO los datos de índices:
 
@@ -186,15 +202,7 @@ namespace example
 		glDeleteVertexArrays(1, &vao_id);
         glDeleteBuffers (VBO_COUNT, vbo_ids);
     }
-
-	/*Elevation_Mesh::Point3f Elevation_Mesh::calculateNormal(Point3f p0, Point3f p1, Point3f p2, Point3f p3, Point3f p4)
-	{
-		Point3f normal{ 0,0,0 };
-
-
-
-		return normal;
-	}*/
+	
 
 	glm::vec3 Elevation_Mesh::calculate_normal(const Point3f & p0, const Point3f & p1, const Point3f & p2)
 	{
@@ -256,13 +264,17 @@ namespace example
 
 		shader->use();
 		shader->set_uniform_value(model_view_matrix_id, model_view);
+		shader->set_uniform_value(main_color_id, glm::vec3(1.0, 1.0, 1.0));
+		shader->set_uniform_value(has_texture_id, !has_texture);
 
 		// Se selecciona el VAO que contiene los datos de la malla y se dibujan sus elementos:
 
-		glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+		glPolygonMode(GL_FRONT, GL_FILL);
 
 		glBindVertexArray(vao_id);
 		glDrawElements(GL_TRIANGLES, number_of_indices, GL_UNSIGNED_INT, 0);
+		//glBindVertexArray(0);
     }
 
 	std::auto_ptr< Texture > Elevation_Mesh::load_texture(const char * texture_file_path)
