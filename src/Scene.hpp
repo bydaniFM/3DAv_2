@@ -78,8 +78,9 @@ namespace example
 
 			for (auto & shader : shaders)
 			{
+				GLuint proj_id = shader.second->get_uniform_id("projection_matrix");
 				shader.second->use();
-				shader.second->set_uniform_value(projection_matrix_id, projection_matrix);
+				shader.second->set_uniform_value(proj_id, projection_matrix);
 			}
 		}
 
