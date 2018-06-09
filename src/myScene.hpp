@@ -17,13 +17,13 @@ namespace example
 {
 	class myScene : public Scene
 	{
-		//shared_ptr < Scene > scene;
-		//Scene * scene;
+		float helix_angle;
 
 	public:
 
 		myScene();
 
 		void processInput(Input::InputData input_data) override;
+		void update() override;
 	};
 }

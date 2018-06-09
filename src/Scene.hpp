@@ -45,9 +45,14 @@ namespace example
 
 		Scene();
 
-		void add(shared_ptr<Node> node)
+		void add(string name, shared_ptr<Node> node)
 		{
-			root->addChild(node);
+			root->addChild(name, node);
+		}
+
+		shared_ptr < Node > getObject(string name)
+		{
+			return root->getChildren()[name];
 		}
 
 		void render()
@@ -62,7 +67,7 @@ namespace example
 			root->render(camera.get_model_view());
 		}
 
-		void update()
+		virtual void update()
 		{
 			root->update();
 		}

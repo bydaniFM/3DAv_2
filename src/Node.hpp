@@ -7,6 +7,7 @@ Date:	30/05/2018
 
 #pragma once
 
+#include <map>
 #include <vector>
 #include <memory>
 
@@ -19,7 +20,7 @@ namespace example
 {
 	class Node
 	{
-		vector < shared_ptr < Node > > children;
+		map < string, shared_ptr < Node > > children;
 
 	protected:
 
@@ -34,7 +35,7 @@ namespace example
 		{
 			for (auto & child : children)
 			{
-				child->render(parent_model_view);
+				child.second->render(parent_model_view);
 			}
 		}
 
@@ -42,13 +43,18 @@ namespace example
 		{
 			for (auto & child : children)
 			{
-				child->update();
+				child.second->update();
 			}
 		}
 
-		void addChild(shared_ptr<Node> child)
+		void addChild(string name, shared_ptr<Node> child)
 		{
-			children.push_back(child);
+			children[name] = child;
+		}
+
+		map < string, shared_ptr < Node > > getChildren()
+		{
+			return children;
 		}
 
 		void move(const glm::vec3 & displacement)
@@ -67,6 +73,11 @@ namespace example
 		void rotate_around_z(float angle)
 		{
 			transform = glm::rotate(transform, angle, glm::vec3(0, 0, 1));
+		}
+
+		void scale(float scale)
+		{
+			transform = glm::scale(transform, glm::vec3(scale, scale, scale));
 		}
 
 		// ...

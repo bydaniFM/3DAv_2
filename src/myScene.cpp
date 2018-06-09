@@ -19,11 +19,28 @@ namespace example
 	{
 		//scene = make_shared<Scene>();
 
-		//add(make_shared<Elevation_Mesh>(50, 50, 20.f, 20.f, 2.f, shaders["default"]));
-		add(make_shared<Model>((char*)"..\\..\\assets\\mill.obj", shaders["default_lit"], glm::vec3(1, 0, 0)));
-		add(make_shared<Model>((char*)"..\\..\\assets\\spitfire.FBX", shaders["default_lit"]));
+		add("terrain", make_shared<Elevation_Mesh>(50, 50, 20.f, 20.f, 2.f, shaders["default"]));
+		add("mill",    make_shared<Model>((char*)"..\\..\\assets\\mill.obj", shaders["default_lit"], glm::vec3(1, 0, 0)));
+		add("plane",   make_shared<Model>((char*)"..\\..\\assets\\spitfire.FBX", shaders["default_lit"]));
+
+		getObject("terrain")->move(glm::vec3(0, -2000, 1000));
+		getObject("terrain")->scale(500.f);
+
+		getObject("mill")->addChild("mill_blades", make_shared<Model>((char*)"..\\..\\assets\\blades.obj", shaders["default_lit"], glm::vec3(0, 1, 0)));
+		getObject("mill")->scale(0.3f);
+		getObject("mill")->move(glm::vec3(-70, 0, 0));
+
+		getObject("plane")->move(glm::vec3(0, -180, 400));
+		getObject("plane")->rotate_around_x(-90);
 
 		camera.move(glm::vec3(0.f, 10.f, -60.f));
+
+		helix_angle = 0.1f;
+	}
+
+	void myScene::update()
+	{
+		getObject("plane")->rotate_around_z(helix_angle);
 	}
 
 	void myScene::processInput(Input::InputData input_data)

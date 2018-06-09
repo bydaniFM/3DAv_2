@@ -13,7 +13,7 @@ namespace example
 	
 	Scene::Scene()
 		:
-		camera(1.f, 2000.f)
+		camera(1.f, 5000.f)
 	{
 		root = make_shared<Node>();
 
