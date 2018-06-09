@@ -60,6 +60,8 @@ namespace example
 
 	void Scene::configure_light(shared_ptr < Shader_Program > program)
 	{
+		program->use();
+
 		GLint light_position	= program->get_uniform_id("light.position");
 		GLint light_color		= program->get_uniform_id("light.color");
 		GLint ambient_intensity = program->get_uniform_id("ambient_intensity");

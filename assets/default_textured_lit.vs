@@ -34,6 +34,6 @@ void main()
     texture_uv = vertex_texture_uv;
 
     front_color = ambient_intensity * material_color + diffuse_intensity * light_intensity * light.color * material_color;
-    front_color = material_color;
+    //front_color = material_color + vec3(light.position);// light_intensity;// * light.color * material_color;
     gl_Position = projection_matrix * position;
 }

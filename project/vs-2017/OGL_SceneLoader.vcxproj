@@ -15,7 +15,6 @@
     <ClInclude Include="..\..\src\Camera.hpp" />
     <ClInclude Include="..\..\src\Color_Buffer.hpp" />
     <ClInclude Include="..\..\src\Color_Buffer_Rgba8888.hpp" />
-    <ClInclude Include="..\..\src\Cube.hpp" />
     <ClInclude Include="..\..\src\Elevation_Mesh.hpp" />
     <ClInclude Include="..\..\src\Fragment_Shader.hpp" />
     <ClInclude Include="..\..\src\Input.hpp" />
@@ -33,7 +32,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\libraries\targa\src\targa.c" />
-    <ClCompile Include="..\..\src\Cube.cpp" />
     <ClCompile Include="..\..\src\Elevation_Mesh.cpp" />
     <ClCompile Include="..\..\src\main.cpp" />
     <ClCompile Include="..\..\src\Mesh.cpp" />

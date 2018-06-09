@@ -47,9 +47,10 @@ namespace example
 
 		// 1 CARGAR TEXTURA DE ELEVACION
 		std::auto_ptr< Texture > texture = load_texture("..\\..\\assets\\elevation_texture.tga");//(texture_path);
+		std::auto_ptr< Texture > col_texture = load_texture("..\\..\\assets\\terrain_texture.tga");//(texture_path);
 		
 		// Aplicar textura (misma que elevación)
-		has_texture = texture.get() != 0;
+		has_texture = col_texture.get() != 0;
 
 		if (has_texture)
 		{
@@ -70,16 +71,16 @@ namespace example
 				GL_TEXTURE_2D,
 				0,
 				GL_RGBA,
-				texture->get_width(),
-				texture->get_height(),
+				col_texture->get_width(),
+				col_texture->get_height(),
 				0,
 				GL_RGBA,
 				GL_UNSIGNED_BYTE,
-				texture->colors()
+				col_texture->colors()
 			);
 		}
-
 		
+
 		// Se generan los datos de las posiciones:
 
 		float x_step = width / (cols - 1);
@@ -99,7 +100,8 @@ namespace example
 			{
 				//Calculate uvs
 				float u = texture_coordinate[col & 1];
-				uvs[i] = Point2f{ u, v };
+				//uvs[i] = Point2f{ u, v };
+				uvs[i] = Point2f{ row / width / 2.5, col / depth / 2.5 };
 
 				//Calculate positions
 				float h = 0.f;
@@ -125,6 +127,7 @@ namespace example
 
 			z += z_step;
 		}
+
 
 		// Se generan los datos de los índices:
 
@@ -271,7 +274,7 @@ namespace example
 
 		shader->use();
 		shader->set_uniform_value(model_view_matrix_id, model_view);
-		shader->set_uniform_value(main_color_id, glm::vec3(1.0, 1.0, 1.0));
+		shader->set_uniform_value(main_color_id, glm::vec3(1.0f, 1.0f, 1.0f));
 		shader->set_uniform_value(has_texture_id, !has_texture);
 
 		// Se selecciona el VAO que contiene los datos de la malla y se dibujan sus elementos:

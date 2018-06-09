@@ -28,8 +28,12 @@ namespace example
 		glGenVertexArrays(1, &vao_id);
 		glGenBuffers(1, &vbo_ids[COORDINATES_VBO]);
 		glGenBuffers(1, &vbo_ids[UVS_VBO]);
+		glGenBuffers(1, &vbo_ids[NORMALS_VBO]);
 		glGenBuffers(1, &vbo_ids[INDICES_VBO]);
 		glBindVertexArray(vao_id);
+		/*glGenBuffers(VBO_COUNT, vbo_ids);
+		glGenVertexArrays(1, &vao_id);
+		glBindVertexArray(vao_id);*/
 
 		// Se configuran el atributo de coordenadas de posición:
 
@@ -85,10 +89,9 @@ namespace example
 		//glActiveTexture(GL_TEXTURE0);
 
 
-		//Set base color											CONTINUAR
-		//shader.set_uniform_value(0, color.data.value);
 
 		// draw mesh
+
 		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 		glPolygonMode(GL_FRONT, GL_FILL);
 
@@ -96,10 +99,5 @@ namespace example
 		glDrawElements(GL_TRIANGLES, number_of_indices, GL_UNSIGNED_INT, 0);
 		glBindVertexArray(0);
 
-		/*glPolygonMode(GL_FRONT, GL_FILL);
-		glPolygonMode(GL_BACK, GL_POINT);
-
-		glBindVertexArray(vao_id);
-		glDrawArrays(GL_TRIANGLES, 0, number_of_indices);*/
 	}
 }

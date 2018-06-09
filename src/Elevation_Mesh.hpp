@@ -44,8 +44,6 @@ namespace example
             VBO_COUNT
         };
 
-    private:
-
 		shared_ptr < Shader_Program > shader;
 
 		GLint          model_view_matrix_id;

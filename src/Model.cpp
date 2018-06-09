@@ -26,9 +26,11 @@ namespace example
 		}
 
 		glm::mat4 model_view = parent_model_view * Node::transform;
+		glm::mat4 normal_matrix = glm::transpose(glm::inverse(model_view));
 
 		shader->use();
 		shader->set_uniform_value(model_view_matrix_id, model_view);
+		shader->set_uniform_value(normal_matrix_id, normal_matrix);
 		shader->set_uniform_value(main_color_id, main_color);
 		shader->set_uniform_value(has_texture_id, !has_texture);
 
