@@ -21,7 +21,7 @@ namespace oglsl
 
 		add("terrain", make_shared<Elevation_Mesh>(50, 50, 20.f, 20.f, 2.f, shaders["default"]));
 		add("mill",    make_shared<Model>((char*)"..\\..\\assets\\mill.obj", shaders["default_lit"], glm::vec3(1, 0, 0)));
-		add("plane",   make_shared<Model>((char*)"..\\..\\assets\\spitfire.FBX", shaders["default_lit"]));
+		add("plane",   make_shared<Model>((char*)"..\\..\\assets\\spitfire.FBX", shaders["frag_lit"]));
 
 		getObject("terrain")->move(glm::vec3(0, -2000, 1000));
 		getObject("terrain")->scale(500.f);
@@ -41,6 +41,7 @@ namespace oglsl
 	void myScene::update()
 	{
 		getObject("plane")->rotate_around_z(angle);
+		getObject("mill")->rotate_around_y(angle);
 
 		Scene::update();
 	}

@@ -40,6 +40,17 @@ namespace oglsl
 
 		configure_light(shaders["default_lit"]);
 
+		//Per fragment lit shader
+
+		shaders["frag_lit"].reset(new Shader_Program);
+
+		shaders["frag_lit"]->attach(Vertex_Shader(Shader::Source_Code::from_file("..\\..\\assets\\default_textured_lit_perfragment.vs")));
+		shaders["frag_lit"]->attach(Fragment_Shader(Shader::Source_Code::from_file("..\\..\\assets\\default_textured_lit_perfragment.fs")));
+
+		shaders["frag_lit"]->link();
+
+		configure_light(shaders["frag_lit"]);
+
 		//Sky shader
 
 		shaders["sky"].reset(new Shader_Program);

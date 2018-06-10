@@ -14,6 +14,7 @@
 
 #include <cassert>
 #include <fstream>
+#include <iostream>
 #include "Shader.hpp"
 
 namespace oglsl
@@ -97,6 +98,8 @@ namespace oglsl
                     log_string.resize  (log_length);
 
                     glGetShaderInfoLog (shader_object_id, log_length, NULL, &log_string.front ());
+
+					std::cout << log_string << std::endl;
                 }
 
                 // Se libera el shader object, ya que ahora es un recurso encapsulado no usable:
