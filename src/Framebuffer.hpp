@@ -19,8 +19,8 @@ namespace oglsl
 
 		std::shared_ptr < Shader_Program > shader;
 
-		static const GLsizei framebuffer_width = 1024;
-		static const GLsizei framebuffer_height = 1024;
+		static const GLsizei framebuffer_width = 2048;
+		static const GLsizei framebuffer_height = 2048;
 		
 		GLuint framebuffer_id;
 		GLuint depthbuffer_id;

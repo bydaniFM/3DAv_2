@@ -284,7 +284,7 @@ namespace oglsl
 
 		glBindVertexArray(vao_id);
 		glDrawElements(GL_TRIANGLES, number_of_indices, GL_UNSIGNED_INT, 0);
-		//glBindVertexArray(0);
+		glBindVertexArray(0);
 
 		shader->disable();
     }
