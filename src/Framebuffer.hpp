@@ -13,12 +13,15 @@ Date:	10/06/2018
 
 namespace oglsl
 {
+	/// Used to render the scene to a framebuffer and apply post processig shaders to it.
 	class Framebuffer
 	{
 	private:
 
+		/// Post processing shader.
 		std::shared_ptr < Shader_Program > shader;
 
+		/// The resolution in wich the scene is going to be rendered in the framebuffer.
 		static const GLsizei framebuffer_width = 2048;
 		static const GLsizei framebuffer_height = 2048;
 		
@@ -31,9 +34,19 @@ namespace oglsl
 
 	public:
 
+		/// Creates a Framebuffer.
+		/// Creation of the GL_FRAMEBUFFER, texture, z-buffer and the screen quad.
+		/// @param post processing shader that will be used to render the framebuffer.
 		Framebuffer(std::shared_ptr < Shader_Program > shader);
 
+		/// Renders the framebuffer in the specified screen dymensions.
+		/// The framebuffer needs to be set before calling to render.
+		/// To be called after rendering all other scene elements.
+		/// @param width screen width.
+		/// @param height screen height.
 		void render(int width, int height);
+		/// Inits the glViewport and the GL_FRAMEBUFFER for the scene objects to be rendered.
+		/// To be called at the start of the scene rendering.
 		void setFramebuffer();
 
 	};

@@ -2,6 +2,11 @@
 \label{classoglsl_1_1_scene}\index{oglsl\+::\+Scene@{oglsl\+::\+Scene}}
 
 
+Default scene setup.  
+
+
+
+
 {\ttfamily \#include $<$Scene.\+hpp$>$}
 
 Inheritance diagram for oglsl\+:\+:Scene\+:\begin{figure}[H]
@@ -20,15 +25,15 @@ void \mbox{\hyperlink{classoglsl_1_1_scene_a1b1296aab1c81101473a38451c139819}{ad
 shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_node}{Node}} $>$ \mbox{\hyperlink{classoglsl_1_1_scene_a10b398b3e59b41c5fb0dbadb8120e0f3}{get\+Object}} (string name)
 \begin{DoxyCompactList}\small\item\em Gets and object from the scene root. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classoglsl_1_1_scene_a94b552369f7653c854d38a1553c84288}{render}} ()
-\begin{DoxyCompactList}\small\item\em Renders the scene First renders the skybox and then all the objects in the graph. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Renders the scene. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classoglsl_1_1_scene_accbf0c6f23ccd909f63851c0bc547449}{update}} ()
 \begin{DoxyCompactList}\small\item\em Updates the graph root. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classoglsl_1_1_scene_a1eac687cef62ac021bfdd98749aa2ee5}{resize}} (int width, int height)
 \begin{DoxyCompactList}\small\item\em Resizes the camera and projection\+\_\+matrix of all shaders. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classoglsl_1_1_scene_a7884a3f2b7900aaf348a62ad23223c8e}{process\+Input}} (\mbox{\hyperlink{classoglsl_1_1_input_a3b21d7328538e661f366af5d6059c197}{Input\+::\+Input\+Data}} input\+\_\+data)
-\begin{DoxyCompactList}\small\item\em Processes input data To implement in child scene. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Processes input data. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{classoglsl_1_1_scene_a91c975ee306374f17b9f348801f2ce3e}{configure\+\_\+light}} (shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ program)
-\begin{DoxyCompactList}\small\item\em Configures lights Default setup. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Configures lights. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -43,6 +48,11 @@ float \mbox{\hyperlink{classoglsl_1_1_scene_af8751fb0147fb71a1f4d5a0ddf94b99e}{a
 map$<$ string, shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ $>$ \mbox{\hyperlink{classoglsl_1_1_scene_ac60cfa73f999218a5c801308d29d33eb}{shaders}}
 \begin{DoxyCompactList}\small\item\em Available shaders for the scene. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Default scene setup. 
+
+Can implement custom children scenes. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classoglsl_1_1_scene_a1d13c881f3b0b7d4d7bd8d5225a50481}\label{classoglsl_1_1_scene_a1d13c881f3b0b7d4d7bd8d5225a50481}} 
@@ -76,11 +86,11 @@ Ads a new object to the scene.
 
 
 
-Configures lights Default setup. 
+Configures lights. 
 
-
+Default setup. 
 \begin{DoxyParams}{Parameters}
-{\em program} & \mbox{\hyperlink{classoglsl_1_1_shader}{Shader}} to apply light parameters. Must support lightning \\
+{\em program} & \mbox{\hyperlink{classoglsl_1_1_shader}{Shader}} to apply light parameters. Must support lightning. \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{classoglsl_1_1_scene_a10b398b3e59b41c5fb0dbadb8120e0f3}\label{classoglsl_1_1_scene_a10b398b3e59b41c5fb0dbadb8120e0f3}} 
@@ -101,9 +111,9 @@ Gets and object from the scene root.
 
 
 
-Processes input data To implement in child scene. 
+Processes input data. 
 
-
+To implement in child scene. 
 
 Reimplemented in \mbox{\hyperlink{classoglsl_1_1my_scene_aeab1e8cfe8c40f6110e1789a74008191}{oglsl\+::my\+Scene}}.
 
@@ -115,9 +125,9 @@ Reimplemented in \mbox{\hyperlink{classoglsl_1_1my_scene_aeab1e8cfe8c40f6110e178
 
 
 
-Renders the scene First renders the skybox and then all the objects in the graph. 
+Renders the scene. 
 
-\mbox{\Hypertarget{classoglsl_1_1_scene_a1eac687cef62ac021bfdd98749aa2ee5}\label{classoglsl_1_1_scene_a1eac687cef62ac021bfdd98749aa2ee5}} 
+First renders the skybox and then all the objects in the graph. \mbox{\Hypertarget{classoglsl_1_1_scene_a1eac687cef62ac021bfdd98749aa2ee5}\label{classoglsl_1_1_scene_a1eac687cef62ac021bfdd98749aa2ee5}} 
 \index{oglsl\+::\+Scene@{oglsl\+::\+Scene}!resize@{resize}}
 \index{resize@{resize}!oglsl\+::\+Scene@{oglsl\+::\+Scene}}
 \subsubsection{\texorpdfstring{resize()}{resize()}}

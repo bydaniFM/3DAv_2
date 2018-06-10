@@ -25,6 +25,8 @@ namespace oglsl
 {
 	typedef Color_Buffer_Rgba8888 Texture;
 
+	/// Represents the mesh data of the models.
+	/// A model can be composed from several meshes.
 	class Mesh
 	{
 	private:
@@ -52,7 +54,8 @@ namespace oglsl
 		
 	public:
 
-		//(Mesh(const string & path);
+		/// Creates a new mesh from the provided mesh data.
+		/// This is achieved by initialising the different OpenGL buffers.
 		Mesh
 		(
 			vector<glm::vec3>		positions, 
@@ -62,6 +65,8 @@ namespace oglsl
 			vector<Texture>      &	textures
 		);
 
+		/// Renders a mesh.
+		/// The applied shader is currently the one defined in Model.
 		void render(Shader_Program & shader);
 	};
 }

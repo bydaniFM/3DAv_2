@@ -22,7 +22,7 @@
 
     namespace oglsl
     {
-
+    	/// DEPRECATED
         class View
         {
         private:

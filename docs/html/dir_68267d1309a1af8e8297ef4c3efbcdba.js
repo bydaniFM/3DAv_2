@@ -19,6 +19,10 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "Fragment_Shader.hpp", "_fragment___shader_8hpp.html", [
       [ "Fragment_Shader", "classoglsl_1_1_fragment___shader.html", "classoglsl_1_1_fragment___shader" ]
     ] ],
+    [ "Framebuffer.cpp", "_framebuffer_8cpp.html", null ],
+    [ "Framebuffer.hpp", "_framebuffer_8hpp.html", [
+      [ "Framebuffer", "classoglsl_1_1_framebuffer.html", "classoglsl_1_1_framebuffer" ]
+    ] ],
     [ "Input.hpp", "_input_8hpp.html", [
       [ "Input", "classoglsl_1_1_input.html", "classoglsl_1_1_input" ]
     ] ],

@@ -15,6 +15,8 @@ using namespace std;
 
 namespace oglsl
 {
+	/// Custom Scene for this specific example.
+	/// Contains the different customizable elements of the scene.
 	class myScene : public Scene
 	{
 		float angle;

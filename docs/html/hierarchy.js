@@ -6,6 +6,7 @@ var hierarchy =
       [ "oglsl::Color_Buffer_Rgba8888", "classoglsl_1_1_color___buffer___rgba8888.html", null ]
     ] ],
     [ "oglsl::Cube", "classoglsl_1_1_cube.html", null ],
+    [ "oglsl::Framebuffer", "classoglsl_1_1_framebuffer.html", null ],
     [ "oglsl::Input", "classoglsl_1_1_input.html", null ],
     [ "oglsl::Mesh", "classoglsl_1_1_mesh.html", null ],
     [ "oglsl::Node", "classoglsl_1_1_node.html", [

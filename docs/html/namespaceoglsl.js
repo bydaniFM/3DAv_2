@@ -6,6 +6,7 @@ var namespaceoglsl =
     [ "Cube", "classoglsl_1_1_cube.html", "classoglsl_1_1_cube" ],
     [ "Elevation_Mesh", "classoglsl_1_1_elevation___mesh.html", "classoglsl_1_1_elevation___mesh" ],
     [ "Fragment_Shader", "classoglsl_1_1_fragment___shader.html", "classoglsl_1_1_fragment___shader" ],
+    [ "Framebuffer", "classoglsl_1_1_framebuffer.html", "classoglsl_1_1_framebuffer" ],
     [ "Input", "classoglsl_1_1_input.html", "classoglsl_1_1_input" ],
     [ "Mesh", "classoglsl_1_1_mesh.html", "classoglsl_1_1_mesh" ],
     [ "Model", "classoglsl_1_1_model.html", "classoglsl_1_1_model" ],

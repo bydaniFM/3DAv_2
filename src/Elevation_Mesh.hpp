@@ -25,6 +25,8 @@ namespace oglsl
 	class   Color_Buffer_Rgba8888;
 	typedef Color_Buffer_Rgba8888 Texture;
 
+	/// Represents a terrain mesh created from an elevation texture.
+	/// The texture works in B/W scale or red scale.
     class Elevation_Mesh : public Node
     {
     private:
@@ -44,7 +46,7 @@ namespace oglsl
             VBO_COUNT
         };
 
-		/// Must be an unlit shader for now
+		/// Must be an unlit shader for now.
 		shared_ptr < Shader_Program > shader;
 
 		GLint   model_view_matrix_id;
@@ -61,7 +63,7 @@ namespace oglsl
 
     public:
 
-		/// Creates an elevetion mesh with texture
+		/// Creates an elevetion mesh with texture.
 		Elevation_Mesh(int cols, int rows, float width, float depth, float elevation, shared_ptr < Shader_Program > shader);
         ~Elevation_Mesh();
 
@@ -75,7 +77,7 @@ namespace oglsl
 			const Point3f & p6, const Point3f & p7, const Point3f & p8
 		);
 		
-		/// Renders the mesh
+		/// Renders the mesh.
         void render (const glm::mat4 & parent_model_view) override;
 
 	private:

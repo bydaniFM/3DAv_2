@@ -2,16 +2,26 @@
 \label{classoglsl_1_1_mesh}\index{oglsl\+::\+Mesh@{oglsl\+::\+Mesh}}
 
 
+Represents the mesh data of the models.  
+
+
+
+
 {\ttfamily \#include $<$Mesh.\+hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classoglsl_1_1_mesh_ac8a19dfa3be1aa4a8c9396057f7b5c78}{Mesh}} (vector$<$ glm\+::vec3 $>$ positions, vector$<$ glm\+::vec3 $>$ normals, vector$<$ glm\+::vec2 $>$ tex\+Coords, vector$<$ unsigned int $>$ \&indices, vector$<$ \mbox{\hyperlink{namespaceoglsl_a3f3bf2d9553fda1a155d7492ee30d7d0}{Texture}} $>$ \&textures)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates a new mesh from the provided mesh data. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{classoglsl_1_1_mesh_a358dea364d978e49c8df22fa9ad62c21}{render}} (\mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} \&shader)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Renders a mesh. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Represents the mesh data of the models. 
+
+A model can be composed from several meshes. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classoglsl_1_1_mesh_ac8a19dfa3be1aa4a8c9396057f7b5c78}\label{classoglsl_1_1_mesh_ac8a19dfa3be1aa4a8c9396057f7b5c78}} 
@@ -22,6 +32,10 @@ void \mbox{\hyperlink{classoglsl_1_1_mesh_a358dea364d978e49c8df22fa9ad62c21}{ren
 
 
 
+Creates a new mesh from the provided mesh data. 
+
+This is achieved by initialising the different Open\+GL buffers. 
+
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{classoglsl_1_1_mesh_a358dea364d978e49c8df22fa9ad62c21}\label{classoglsl_1_1_mesh_a358dea364d978e49c8df22fa9ad62c21}} 
 \index{oglsl\+::\+Mesh@{oglsl\+::\+Mesh}!render@{render}}
@@ -30,6 +44,10 @@ void \mbox{\hyperlink{classoglsl_1_1_mesh_a358dea364d978e49c8df22fa9ad62c21}{ren
 {\footnotesize\ttfamily void oglsl\+::\+Mesh\+::render (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} \&}]{shader }\end{DoxyParamCaption})}
 
 
+
+Renders a mesh. 
+
+The applied shader is currently the one defined in \mbox{\hyperlink{classoglsl_1_1_model}{Model}}. 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

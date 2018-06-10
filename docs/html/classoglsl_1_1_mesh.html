@@ -94,16 +94,24 @@ $(document).ready(function(){initNavTree('classoglsl_1_1_mesh.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Represents the mesh data of the models.  
+ <a href="classoglsl_1_1_mesh.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_mesh_8hpp_source.html">Mesh.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac8a19dfa3be1aa4a8c9396057f7b5c78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoglsl_1_1_mesh.html#ac8a19dfa3be1aa4a8c9396057f7b5c78">Mesh</a> (vector&lt; glm::vec3 &gt; positions, vector&lt; glm::vec3 &gt; normals, vector&lt; glm::vec2 &gt; texCoords, vector&lt; unsigned int &gt; &amp;indices, vector&lt; <a class="el" href="namespaceoglsl.html#a3f3bf2d9553fda1a155d7492ee30d7d0">Texture</a> &gt; &amp;textures)</td></tr>
+<tr class="memdesc:ac8a19dfa3be1aa4a8c9396057f7b5c78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new mesh from the provided mesh data.  <a href="#ac8a19dfa3be1aa4a8c9396057f7b5c78">More...</a><br /></td></tr>
 <tr class="separator:ac8a19dfa3be1aa4a8c9396057f7b5c78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a358dea364d978e49c8df22fa9ad62c21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoglsl_1_1_mesh.html#a358dea364d978e49c8df22fa9ad62c21">render</a> (<a class="el" href="classoglsl_1_1_shader___program.html">Shader_Program</a> &amp;shader)</td></tr>
+<tr class="memdesc:a358dea364d978e49c8df22fa9ad62c21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders a mesh.  <a href="#a358dea364d978e49c8df22fa9ad62c21">More...</a><br /></td></tr>
 <tr class="separator:a358dea364d978e49c8df22fa9ad62c21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents the mesh data of the models. </p>
+<p>A model can be composed from several meshes. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac8a19dfa3be1aa4a8c9396057f7b5c78"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8a19dfa3be1aa4a8c9396057f7b5c78">&#9670;&nbsp;</a></span>Mesh()</h2>
 
@@ -148,6 +156,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Creates a new mesh from the provided mesh data. </p>
+<p>This is achieved by initialising the different OpenGL buffers. </p>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -166,6 +177,9 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Renders a mesh. </p>
+<p>The applied shader is currently the one defined in <a class="el" href="classoglsl_1_1_model.html" title="Represents a 3D model with several meshes. ">Model</a>. </p>
 
 </div>
 </div>

@@ -20,7 +20,7 @@ using namespace std;
 
 namespace oglsl
 {
-	/// Represents a 3D model with several meshes
+	/// Represents a 3D model with several meshes.
 	class Model : public Node
 	{
 		vector<Mesh> meshes;
@@ -31,11 +31,11 @@ namespace oglsl
 		GLint			main_color_id;
 		GLint			has_texture_id;
 
-		/// Base color in case of no texture
-		/// It is white by default when using texture
+		/// Base color in case of no texture.
+		/// It is white by default when using texture.
 		glm::vec3		main_color;
 
-		///Meshes will share only one shader, while having different colors/textures
+		///Meshes will share only one shader, while having different colors/textures.
 		shared_ptr < Shader_Program > shader;
 
 		string directory;
@@ -43,7 +43,8 @@ namespace oglsl
 
 	public:
 
-		/// Initialices shader ids and loads model
+		/// Initialices shader ids and loads model.
+		/// @param shader Will apply to all meshes in the model.
 		Model(char *path, shared_ptr<Shader_Program> shader)
 			:
 			shader(shader),
@@ -60,7 +61,7 @@ namespace oglsl
 
 		}
 
-		/// Initialices shader ids, loads model and sets base color
+		/// Initialices shader ids, loads model and sets base color.
 		Model(char *path, shared_ptr<Shader_Program> shader, glm::vec3 color)
 			:
 			shader(shader),
@@ -76,7 +77,7 @@ namespace oglsl
 			loadModel(path);
 		}
 
-		/// Sets texture and uniforms, and render all meshes
+		/// Sets texture and uniforms, and render all meshes.
 		void render(const glm::mat4 & parent_model_view) override;
 
 	private:

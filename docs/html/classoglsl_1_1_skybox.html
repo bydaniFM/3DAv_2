@@ -94,18 +94,25 @@ $(document).ready(function(){initNavTree('classoglsl_1_1_skybox.html','');});
 </div><!--header-->
 <div class="contents">
 
+<p>Represents the cubemap texture rendered as the scene background.  
+ <a href="classoglsl_1_1_skybox.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="_skybox_8hpp_source.html">Skybox.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1fd7b807be900efc97e0e1ab2f0e0d1b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoglsl_1_1_skybox.html#a1fd7b807be900efc97e0e1ab2f0e0d1b">Skybox</a> (const std::string &amp;texture_path, std::shared_ptr&lt; <a class="el" href="classoglsl_1_1_shader___program.html">Shader_Program</a> &gt; shader)</td></tr>
+<tr class="memdesc:a1fd7b807be900efc97e0e1ab2f0e0d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates the cube ans inits the skybox shader.  <a href="#a1fd7b807be900efc97e0e1ab2f0e0d1b">More...</a><br /></td></tr>
 <tr class="separator:a1fd7b807be900efc97e0e1ab2f0e0d1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae49b37d4211f0f6f3fb7de0199324a3f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoglsl_1_1_skybox.html#ae49b37d4211f0f6f3fb7de0199324a3f">~Skybox</a> ()</td></tr>
 <tr class="separator:ae49b37d4211f0f6f3fb7de0199324a3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ee558805867f1acdfab64f689c41f76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classoglsl_1_1_skybox.html#a2ee558805867f1acdfab64f689c41f76">render</a> (const <a class="el" href="classoglsl_1_1_camera.html">Camera</a> &amp;camera)</td></tr>
+<tr class="memdesc:a2ee558805867f1acdfab64f689c41f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the skybox.  <a href="#a2ee558805867f1acdfab64f689c41f76">More...</a><br /></td></tr>
 <tr class="separator:a2ee558805867f1acdfab64f689c41f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Represents the cubemap texture rendered as the scene background. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a1fd7b807be900efc97e0e1ab2f0e0d1b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1fd7b807be900efc97e0e1ab2f0e0d1b">&#9670;&nbsp;</a></span>Skybox()</h2>
 
@@ -131,6 +138,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Creates the cube ans inits the skybox shader. </p>
 
 </div>
 </div>
@@ -167,6 +176,14 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Renders the skybox. </p>
+<p>Be careful when setting the camera near pane, as the skybox cube is 1x1x1. 0.5 is a safe value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera</td><td><a class="el" href="classoglsl_1_1_scene.html" title="Default scene setup. ">Scene</a> camera. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

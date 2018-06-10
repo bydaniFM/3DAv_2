@@ -21,7 +21,7 @@ using namespace sf;
 
 namespace oglsl
 {
-	/// Controls user input
+	/// Controls user input.
 	class Input
 	{
 	public:
@@ -53,7 +53,7 @@ namespace oglsl
 
 	public:
 
-		/// Initialises inputs
+		/// Initialises inputs.
 		Input(shared_ptr<Window> window)
 			:
 			window(window)
@@ -74,7 +74,7 @@ namespace oglsl
 			mouse_sensibility = 100;
 		}
 
-		/// Checks for all inputs, saves them in input_data and returns it
+		/// Checks for all inputs, saves them in input_data and returns it.
 		InputData check()
 		{
 			bool mouse_moved = false;

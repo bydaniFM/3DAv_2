@@ -24,50 +24,54 @@ using namespace std;
 
 namespace oglsl
 {
+	/// Default scene setup.
+	/// Can implement custom children scenes.
 	class Scene
 	{
-		/// Scene graph's parent node
+		/// Scene graph's parent node.
 		shared_ptr< Node > root;
 
+		/// Framebuffer to render the scene and apply post processing effects.
 		shared_ptr< Framebuffer > framebuffer;
 
+		/// Screen dymensions.
 		int w_width, w_height;
 		
 	protected:
 
-		/// Main camera
+		/// Main camera.
 		Camera camera;
 		
-		/// Default skybox
+		/// Default skybox.
 		shared_ptr < Skybox > skybox;
 
-		/// Camera angle around x axis
+		/// Camera angle around x axis.
 		float angle_around_x;
-		/// Camera angle around y axis
+		/// Camera angle around y axis.
 		float angle_around_y;
 
-		/// Available shaders for the scene
+		/// Available shaders for the scene.
 		map < string, shared_ptr< Shader_Program > > shaders;
 
 	public:
 
-		/// Sets up scene variables and default shaders
+		/// Sets up scene variables and default shaders.
 		Scene();
 
-		/// Ads a new object to the scene
+		/// Ads a new object to the scene.
 		void add(string name, shared_ptr<Node> node)
 		{
 			root->addChild(name, node);
 		}
 
-		/// Gets and object from the scene root
+		/// Gets and object from the scene root.
 		shared_ptr < Node > getObject(string name)
 		{
 			return root->getChildren()[name];
 		}
 
-		/// Renders the scene
-		/// First renders the skybox and then all the objects in the graph
+		/// Renders the scene.
+		/// First renders the skybox and then all the objects in the graph.
 		void render()
 		{
 			framebuffer->setFramebuffer();
@@ -83,13 +87,13 @@ namespace oglsl
 			framebuffer->render(w_width, w_height);
 		}
 
-		/// Updates the graph root
+		/// Updates the graph root.
 		virtual void update()
 		{
 			root->update();
 		}
 
-		/// Resizes the camera and projection_matrix of all shaders
+		/// Resizes the camera and projection_matrix of all shaders.
 		void resize(int width, int height)
 		{
 			w_width = width;
@@ -108,15 +112,15 @@ namespace oglsl
 			}
 		}
 
-		/// Processes input data
-		/// To implement in child scene
+		/// Processes input data.
+		/// To implement in child scene.
 		virtual void processInput(Input::InputData input_data)
 		{
 		}
 
-		/// Configures lights
-		/// Default setup
-		/// @param program Shader to apply light parameters. Must support lightning
+		/// Configures lights.
+		/// Default setup.
+		/// @param program Shader to apply light parameters. Must support lightning.
 		virtual void configure_light(shared_ptr < Shader_Program > program);
 	};
 }

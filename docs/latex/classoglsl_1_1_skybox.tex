@@ -2,18 +2,26 @@
 \label{classoglsl_1_1_skybox}\index{oglsl\+::\+Skybox@{oglsl\+::\+Skybox}}
 
 
+Represents the cubemap texture rendered as the scene background.  
+
+
+
+
 {\ttfamily \#include $<$Skybox.\+hpp$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classoglsl_1_1_skybox_a1fd7b807be900efc97e0e1ab2f0e0d1b}{Skybox}} (const std\+::string \&texture\+\_\+path, std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader)
-\item 
+\begin{DoxyCompactList}\small\item\em Creates the cube ans inits the skybox shader. \end{DoxyCompactList}\item 
 \mbox{\hyperlink{classoglsl_1_1_skybox_ae49b37d4211f0f6f3fb7de0199324a3f}{$\sim$\+Skybox}} ()
 \item 
 void \mbox{\hyperlink{classoglsl_1_1_skybox_a2ee558805867f1acdfab64f689c41f76}{render}} (const \mbox{\hyperlink{classoglsl_1_1_camera}{Camera}} \&camera)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Renders the skybox. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Represents the cubemap texture rendered as the scene background. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{classoglsl_1_1_skybox_a1fd7b807be900efc97e0e1ab2f0e0d1b}\label{classoglsl_1_1_skybox_a1fd7b807be900efc97e0e1ab2f0e0d1b}} 
@@ -21,6 +29,10 @@ void \mbox{\hyperlink{classoglsl_1_1_skybox_a2ee558805867f1acdfab64f689c41f76}{r
 \index{Skybox@{Skybox}!oglsl\+::\+Skybox@{oglsl\+::\+Skybox}}
 \subsubsection{\texorpdfstring{Skybox()}{Skybox()}}
 {\footnotesize\ttfamily oglsl\+::\+Skybox\+::\+Skybox (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{texture\+\_\+path,  }\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader }\end{DoxyParamCaption})}
+
+
+
+Creates the cube ans inits the skybox shader. 
 
 \mbox{\Hypertarget{classoglsl_1_1_skybox_ae49b37d4211f0f6f3fb7de0199324a3f}\label{classoglsl_1_1_skybox_ae49b37d4211f0f6f3fb7de0199324a3f}} 
 \index{oglsl\+::\+Skybox@{oglsl\+::\+Skybox}!````~Skybox@{$\sim$\+Skybox}}
@@ -37,6 +49,15 @@ void \mbox{\hyperlink{classoglsl_1_1_skybox_a2ee558805867f1acdfab64f689c41f76}{r
 \subsubsection{\texorpdfstring{render()}{render()}}
 {\footnotesize\ttfamily void oglsl\+::\+Skybox\+::render (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{classoglsl_1_1_camera}{Camera}} \&}]{camera }\end{DoxyParamCaption})}
 
+
+
+Renders the skybox. 
+
+Be careful when setting the camera near pane, as the skybox cube is 1x1x1. 0.\+5 is a safe value. 
+\begin{DoxyParams}{Parameters}
+{\em camera} & \mbox{\hyperlink{classoglsl_1_1_scene}{Scene}} camera. \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

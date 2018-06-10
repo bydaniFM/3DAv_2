@@ -1,0 +1,77 @@
+\hypertarget{classoglsl_1_1_framebuffer}{}\section{oglsl\+:\+:Framebuffer Class Reference}
+\label{classoglsl_1_1_framebuffer}\index{oglsl\+::\+Framebuffer@{oglsl\+::\+Framebuffer}}
+
+
+Used to render the scene to a framebuffer and apply post processig shaders to it.  
+
+
+
+
+{\ttfamily \#include $<$Framebuffer.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classoglsl_1_1_framebuffer_a69506454416fe0134814dade467e147e}{Framebuffer}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$ shader)
+\begin{DoxyCompactList}\small\item\em Creates a \mbox{\hyperlink{classoglsl_1_1_framebuffer}{Framebuffer}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_framebuffer_a628dd0fb23006b139c75786a3d7da1a6}{render}} (int width, int height)
+\begin{DoxyCompactList}\small\item\em Renders the framebuffer in the specified screen dymensions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classoglsl_1_1_framebuffer_a3e0f4248aed96f483a318b34ea8c9cb8}{set\+Framebuffer}} ()
+\begin{DoxyCompactList}\small\item\em Inits the gl\+Viewport and the G\+L\+\_\+\+F\+R\+A\+M\+E\+B\+U\+F\+F\+ER for the scene objects to be rendered. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used to render the scene to a framebuffer and apply post processig shaders to it. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_framebuffer_a69506454416fe0134814dade467e147e}\label{classoglsl_1_1_framebuffer_a69506454416fe0134814dade467e147e}} 
+\index{oglsl\+::\+Framebuffer@{oglsl\+::\+Framebuffer}!Framebuffer@{Framebuffer}}
+\index{Framebuffer@{Framebuffer}!oglsl\+::\+Framebuffer@{oglsl\+::\+Framebuffer}}
+\subsubsection{\texorpdfstring{Framebuffer()}{Framebuffer()}}
+{\footnotesize\ttfamily oglsl\+::\+Framebuffer\+::\+Framebuffer (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classoglsl_1_1_shader___program}{Shader\+\_\+\+Program}} $>$}]{shader }\end{DoxyParamCaption})}
+
+
+
+Creates a \mbox{\hyperlink{classoglsl_1_1_framebuffer}{Framebuffer}}. 
+
+Creation of the G\+L\+\_\+\+F\+R\+A\+M\+E\+B\+U\+F\+F\+ER, texture, z-\/buffer and the screen quad. 
+\begin{DoxyParams}{Parameters}
+{\em post} & processing shader that will be used to render the framebuffer. \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classoglsl_1_1_framebuffer_a628dd0fb23006b139c75786a3d7da1a6}\label{classoglsl_1_1_framebuffer_a628dd0fb23006b139c75786a3d7da1a6}} 
+\index{oglsl\+::\+Framebuffer@{oglsl\+::\+Framebuffer}!render@{render}}
+\index{render@{render}!oglsl\+::\+Framebuffer@{oglsl\+::\+Framebuffer}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void oglsl\+::\+Framebuffer\+::render (\begin{DoxyParamCaption}\item[{int}]{width,  }\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Renders the framebuffer in the specified screen dymensions. 
+
+The framebuffer needs to be set before calling to render. To be called after rendering all other scene elements. 
+\begin{DoxyParams}{Parameters}
+{\em width} & screen width. \\
+\hline
+{\em height} & screen height. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classoglsl_1_1_framebuffer_a3e0f4248aed96f483a318b34ea8c9cb8}\label{classoglsl_1_1_framebuffer_a3e0f4248aed96f483a318b34ea8c9cb8}} 
+\index{oglsl\+::\+Framebuffer@{oglsl\+::\+Framebuffer}!set\+Framebuffer@{set\+Framebuffer}}
+\index{set\+Framebuffer@{set\+Framebuffer}!oglsl\+::\+Framebuffer@{oglsl\+::\+Framebuffer}}
+\subsubsection{\texorpdfstring{set\+Framebuffer()}{setFramebuffer()}}
+{\footnotesize\ttfamily void oglsl\+::\+Framebuffer\+::set\+Framebuffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inits the gl\+Viewport and the G\+L\+\_\+\+F\+R\+A\+M\+E\+B\+U\+F\+F\+ER for the scene objects to be rendered. 
+
+To be called at the start of the scene rendering. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_framebuffer_8hpp}{Framebuffer.\+hpp}}\item 
+D\+:/\+Git\+Kraken/3\+D\+Av\+\_\+2/src/\mbox{\hyperlink{_framebuffer_8cpp}{Framebuffer.\+cpp}}\end{DoxyCompactItemize}

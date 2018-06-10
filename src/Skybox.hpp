@@ -19,7 +19,7 @@
 
 namespace oglsl
 {
-
+	/// Represents the cubemap texture rendered as the scene background.
     class Skybox
     {
     private:
@@ -32,15 +32,20 @@ namespace oglsl
 
         Texture_Cube   texture_cube;
 
+		/// Skybox shader.
 		std::shared_ptr < Shader_Program > shader;
 
     public:
 
+		/// Creates the cube ans inits the skybox shader.
         Skybox(const std::string & texture_path, std::shared_ptr < Shader_Program > shader);
         ~Skybox();
 
     public:
 
+		/// Renders the skybox.
+		/// Be careful when setting the camera near pane, as the skybox cube is 1x1x1. 0.5 is a safe value.
+		/// @param camera Scene camera.
         void render (const Camera & camera);
 
     };
