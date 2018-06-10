@@ -13,7 +13,7 @@ namespace oglsl
 	
 	Scene::Scene()
 		:
-		camera(1.f, 5000.f)
+		camera(0.5f, 5000.f)
 	{
 		root = make_shared<Node>();
 
