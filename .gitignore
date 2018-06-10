@@ -219,3 +219,6 @@ _Pvt_Extensions
 
 # Do not ignore assets
 !assets/**
+
+# Do not ignore libraries
+!libraries/**
