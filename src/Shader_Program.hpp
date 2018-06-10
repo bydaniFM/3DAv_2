@@ -22,6 +22,7 @@ Date:			30/05/2018
 #define OGL_SHADER_PROGRAM_HEADER
 
     #include <cassert>
+	#include <iostream>
     #include "Shader.hpp"
 	#include <glm/glm.hpp>                          // vec3, vec4, ivec4, mat4
 	#include <glm/gtc/matrix_transform.hpp>         // translate, rotate, scale, perspective
@@ -106,7 +107,9 @@ Date:			30/05/2018
 
                 GLint   uniform_id  = glGetUniformLocation (program_object_id, identifier);
 
-                assert (uniform_id != -1);
+                //assert (uniform_id != -1);
+				if (uniform_id == -1)
+					std::cout << "Tried to get the id of an unexisting uniform" << std::endl;
 
                 return (uniform_id);
             }

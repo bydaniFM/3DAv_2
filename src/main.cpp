@@ -46,7 +46,7 @@ int main ()
 		if (input_data->at(Input::close))
 			running = false;
 
-		if (input_data->at(Input::resize))
+		if (input_data->at(Input::resize).as_bool())
 		{
 			Vector2u window_size = window->getSize();
 			 scene->resize(window_size.x, window_size.y);

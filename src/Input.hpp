@@ -78,6 +78,7 @@ namespace oglsl
 		InputData check()
 		{
 			bool mouse_moved = false;
+			bool did_resize = false;
 
 			while (window->pollEvent(event))
 			{
@@ -91,7 +92,7 @@ namespace oglsl
 
 					case Event::Resized:
 					{
-						(*input_data)[resize] = true;
+						did_resize = true;
 						break;
 					}
 
@@ -158,6 +159,8 @@ namespace oglsl
 				(*input_data)[axis_x] = 0.f;
 				(*input_data)[axis_y] = 0.f;
 			}
+
+			(*input_data)[resize] = did_resize;
 
 			return input_data;
 		}

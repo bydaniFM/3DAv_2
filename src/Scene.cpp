@@ -51,6 +51,17 @@ namespace oglsl
 
 		skybox = make_shared<Skybox>("..\\..\\assets\\sky-cube-map-", shaders["sky"]);
 
+		// Postprocessing shader
+
+		shaders["postprocessing"].reset(new Shader_Program);
+
+		shaders["postprocessing"]->attach(Vertex_Shader(Shader::Source_Code::from_file("..\\..\\assets\\postprocessing.vs")));
+		shaders["postprocessing"]->attach(Fragment_Shader(Shader::Source_Code::from_file("..\\..\\assets\\postprocessing.fs")));
+
+		shaders["postprocessing"]->link();
+
+		framebuffer = make_shared<Framebuffer>(shaders["postprocessing"]);
+
 
 		glEnable(GL_CULL_FACE);
 		glEnable(GL_DEPTH_TEST);

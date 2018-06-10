@@ -14,6 +14,7 @@ Date:	30/05/2018
 #include "Node.hpp"
 #include "Camera.hpp"
 #include "Skybox.hpp"
+#include "Framebuffer.hpp"
 #include "Shader_Program.hpp"
 #include "Vertex_Shader.hpp"
 #include "Fragment_Shader.hpp"
@@ -27,6 +28,10 @@ namespace oglsl
 	{
 		/// Scene graph's parent node
 		shared_ptr< Node > root;
+
+		shared_ptr< Framebuffer > framebuffer;
+
+		int w_width, w_height;
 		
 	protected:
 
@@ -65,14 +70,17 @@ namespace oglsl
 		/// First renders the skybox and then all the objects in the graph
 		void render()
 		{
+			framebuffer->setFramebuffer();
 
-			glClearColor(.4f, .4f, .4f, 1.f);
+			//glClearColor(.4f, .4f, .4f, 1.f);
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 			skybox->render(camera);
 
 			//root->render(glm::inverse(camera.get_model_view()));
 			root->render(camera.get_model_view());
+
+			framebuffer->render(w_width, w_height);
 		}
 
 		/// Updates the graph root
@@ -84,6 +92,9 @@ namespace oglsl
 		/// Resizes the camera and projection_matrix of all shaders
 		void resize(int width, int height)
 		{
+			w_width = width;
+			w_height = height;
+
 			camera.set_ratio(float(width) / height);
 			glViewport(0, 0, width, height);
 
