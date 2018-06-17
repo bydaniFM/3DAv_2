@@ -3,7 +3,7 @@
 This is an OpenGL scene renderer.
 Usign GLSL 3.30 core.
 
-See the documentation [here](https://danifm.github.io/3DAv_2/) (generated with doxygen).
+See the documentation [here](https://danifm.github.io/OpenGL-Scene-Loader/) (generated with doxygen).
 
 Licensed under MIT License. See docs/LICENSE.md for more info.
 
